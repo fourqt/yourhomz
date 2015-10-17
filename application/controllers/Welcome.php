@@ -20,6 +20,16 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->load->database();
+
+    $feeds = $this->db->get('pg_aggregate');
+    foreach ($feeds->result() as $row)  //Iterate through results
+   {
+      echo $row->aggfnoid."<br />";
+   }
+    
+
+    die();
 		$this->load->view('welcome_message');
 	}
 }
