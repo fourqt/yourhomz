@@ -15,5 +15,8 @@
 	},
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*"
-	}
+	},
+	"require": {
+    "leafo/scssphp": "0.0.12"
+  	}
 }

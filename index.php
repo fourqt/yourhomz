@@ -63,6 +63,9 @@
  * Different environments will require different levels of error reporting.
  * By default development will show errors but testing and live will hide them.
  */
+/* - scss php compiler code attached here with composer - */
+require "vendor/leafo/scssphp/scss.inc.php";
+/* - scss php compiler code end here with composer - */
 switch (ENVIRONMENT)
 {
 	case 'development':
