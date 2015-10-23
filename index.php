@@ -64,7 +64,10 @@
  * By default development will show errors but testing and live will hide them.
  */
 /* - scss php compiler code attached here with composer - */
-require "vendor/leafo/scssphp/scss.inc.php";
+//$directory = "assets/stylesheets";
+//require "vendor/leafo/scssphp/scss.inc.php";
+//require "application/third_party/lessphp/lessc.inc.php";
+//scss_server::serveFrom($directory);
 /* - scss php compiler code end here with composer - */
 switch (ENVIRONMENT)
 {
