@@ -9,6 +9,7 @@ $inline .= '$(".tooltips").tooltip();';
 Assets::add_js($inline, 'inline');
 
 ?>
+<!--front page header-->
 <!doctype html>
 <head>
     <meta charset="utf-8">
