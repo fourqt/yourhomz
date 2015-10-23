@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
-| Memcached settings
+| Memcached settings (CI3)
 | -------------------------------------------------------------------------
 | Your Memcached servers can be specified below.
 |
