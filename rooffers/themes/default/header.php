@@ -1,13 +1,10 @@
 <?php
-
-Assets::add_css(array('bootstrap.min.css', 'bootstrap-responsive.min.css'));
-
+Assets::add_css(array('modern.min.css'));
 Assets::add_js('bootstrap.min.js');
 
 $inline  = '$(".dropdown-toggle").dropdown();';
 $inline .= '$(".tooltips").tooltip();';
 Assets::add_js($inline, 'inline');
-
 ?>
 <!--front page header-->
 <!doctype html>
@@ -24,7 +21,10 @@ Assets::add_js($inline, 'inline');
     /* Modernizr is loaded before CSS so CSS can utilize its features */
     echo Assets::js('modernizr-2.5.3.js');
     ?>
-    <?php echo Assets::css(); ?>
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url()."style.php/_bootstrap.scss"; ?>" />
+    <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />
+	<?php echo Assets::css(); ?>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico">
 </head>
-<body>
+<body class="">

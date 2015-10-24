@@ -3,9 +3,11 @@
 ?>
 <p><br/><a href="<?php echo site_url(); ?>">&larr; <?php echo lang('us_back_to') . $this->settings_lib->item('site.title'); ?></a></p>
 
-<div id="login">
-	<h2><?php echo lang('us_login'); ?></h2>
-
+<div class="row">
+<div class="col-md-3 center">
+<div id="login" class="login-box">
+	<a href="index.html" class="logo-name text-lg text-center">ROOFERS ADMIN</a>
+	<p class="text-center m-t-md"><?php echo lang('us_login'); ?></p>
 	<?php echo Template::message(); ?>
 
 	<?php
@@ -73,4 +75,4 @@
 		<br/><?php echo anchor('/forgot_password', lang('us_forgot_your_password')); ?>
 	</p>
 
-</div>
+</div></div></div>
