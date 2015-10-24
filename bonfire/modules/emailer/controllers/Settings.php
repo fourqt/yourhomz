@@ -316,7 +316,7 @@ class Settings extends Admin_Controller
             }
         }
 
-        Template::set('users', $this->user_model->where('users.deleted', 0)->find_all());
+        Template::set('users', $this->user_model->where('users.deleted', false)->find_all());
         Template::set('toolbar_title', lang('emailer_create_email'));
 
         Template::render();

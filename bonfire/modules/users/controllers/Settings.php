@@ -105,7 +105,7 @@ class Settings extends Admin_Controller
         // Filters
         if (preg_match('{first_letter-([A-Z])}', $filter, $matches)) {
             $filterType = 'first_letter';
-            $firstLetter = $matches[1];
+            $firstLetter = strtolower($matches[1]);
             Template::set('first_letter', $firstLetter);
         } elseif (preg_match('{role_id-([0-9]*)}', $filter, $matches)) {
             $filterType = 'role_id';
@@ -116,13 +116,13 @@ class Settings extends Admin_Controller
 
         switch ($filterType) {
             case 'inactive':
-                $where['users.active'] = 0;
+                $where['users.active'] = false;
                 break;
             case 'banned':
-                $where['users.banned'] = 1;
+                $where['users.banned'] = true;
                 break;
             case 'deleted':
-                $where['users.deleted'] = 1;
+                $where['users.deleted'] = true;
                 break;
             case 'role_id':
                 $where['users.role_id'] = $roleId;
