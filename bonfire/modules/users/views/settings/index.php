@@ -93,7 +93,7 @@ else :
 				<td><?php
                     echo anchor(site_url(SITE_AREA . "/settings/users/edit/{$user->id}"), $user->username);
 
-					if ($user->banned) :
+					if ($user->banned == 't') :
 					?>
                     <span class="label label-warning"><?php echo lang('us_tab_banned'); ?></span>
 					<?php endif; ?>

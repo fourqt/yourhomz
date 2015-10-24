@@ -66,7 +66,7 @@
                     <td><?php echo $user->id; ?></td>
                     <td>
                         <a href='<?php echo site_url(SITE_AREA . "/settings/users/edit/{$user->id}"); ?>'><?php echo $user->username; ?></a>
-                        <?php echo $user->banned ? '<span class="label label-warning">Banned</span>' : ''; ?>
+                        <?php echo ($user->banned == 't') ? '<span class="label label-warning">Banned</span>' : ''; ?>
                     </td>
                     <td><?php echo $user->display_name; ?></td>
                     <td><?php echo empty($user->email) ? '' : mailto($user->email); ?></td>

@@ -32,7 +32,7 @@ if (validation_errors()) :
 <?php
 endif;
 
-if (isset($user) && $user->banned) :
+if (isset($user) && $user->banned == 't') :
 ?>
 <div class="alert alert-warning fade in">
     <h4 class="alert-heading"><?php echo lang('us_banned_admin_note'); ?></h4>
