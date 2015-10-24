@@ -1,6 +1,7 @@
 <?php
 	$site_open = $this->settings_lib->item('auth.allow_register');
 ?>
+<div class="page-inner">
 <div id="main-wrapper">
 <p><br/><a href="<?php echo site_url(); ?>">&larr; <?php echo lang('us_back_to') . $this->settings_lib->item('site.title'); ?></a></p>
 <div class="row">
@@ -11,17 +12,13 @@
 	<?php echo Template::message(); ?>
 
 	<?php
-		if (validation_errors()) :
+		//if (validation_errors()) :
 	?>
-	<div class="row-fluid">
-		<div class="span12">
-			<div class="alert alert-danger alert-dismissible" role="alert">
+			<div class="alert alert-error alert-dismissible" role="alert">
             	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<?php echo validation_errors(); ?>
 			</div>
-		</div>
-	</div>
-	<?php endif; ?>
+	<?php //endif; ?>
 
 	<?php echo form_open(LOGIN_URL, array('autocomplete' => 'off')); ?>
 
@@ -77,3 +74,4 @@
 </div>
 </div>
 </div>
+</main>
