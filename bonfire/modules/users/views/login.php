@@ -3,12 +3,12 @@
 ?>
 <div class="page-inner">
 <div id="main-wrapper">
-<p><br/><a href="<?php echo site_url(); ?>">&larr; <?php echo lang('us_back_to') . $this->settings_lib->item('site.title'); ?></a></p>
 <div class="row">
 <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 center">
-<div id="login" class="login-box">
-	<a href="index.html" class="logo-name text-lg text-center">ROOFERS ADMIN</a>
-	<p class="text-center m-t-md"><?php echo lang('us_login'); ?></p>
+<div class="login-box">
+<a href="<?php echo site_url(); ?>" class="logo-name text-lg text-center m-b-md"><?php echo $this->settings_lib->item('site.title');?> Admin</a>
+<div id="login">
+	<p class="text-center"><?php echo lang('us_login'); ?></p>
 	<?php echo Template::message(); ?>
 
 	<?php
@@ -45,7 +45,7 @@
 
 		<div class="control-group">
 			<div class="controls">
-				<input class="btn btn-success" type="submit" name="log-me-in" id="submit" value="<?php e(lang('us_let_me_in')); ?>" tabindex="5" />
+				<input class="btn btn-success btn-block" type="submit" name="log-me-in" id="submit" value="<?php e(lang('us_let_me_in')); ?>" tabindex="5" />
 			</div>
 		</div>
 	<?php echo form_close(); ?>
@@ -61,15 +61,16 @@
 				echo $activate_str; ?>
 			</p>
 	<?php endif; ?>
+    
+	<?php echo anchor('/forgot_password', lang('us_forgot_your_password'), array('class' => 'display-block text-center m-t-md text-sm')); ?>
+    <?php if ( $site_open ) : ?>
+		<?php echo anchor(REGISTER_URL, lang('us_sign_up'), array('class' => 'btn btn-default btn-block m-t-md m-b-md')); ?>
+	<?php endif; ?>
+   <!-- <a href="forgot.html" class="display-block text-center m-t-md text-sm">Forgot Password?</a>
+	<a href="register.html" class="btn btn-default btn-block m-t-md">Create an account</a>-->
 
-	<p style="text-align: center">
-		<?php if ( $site_open ) : ?>
-			<?php echo anchor(REGISTER_URL, lang('us_sign_up')); ?>
-		<?php endif; ?>
-
-		<br/><?php echo anchor('/forgot_password', lang('us_forgot_your_password')); ?>
-	</p>
-
+</div>
+<p class="text-center m-t-xs text-sm">2015 &copy; Rooffers by 4th Quarter Technologies.</p>
 </div>
 </div>
 </div>
