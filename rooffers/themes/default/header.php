@@ -1,6 +1,6 @@
 <?php
 Assets::add_css(array('modern.min.css'));
-Assets::add_js('bootstrap.min.js');
+Assets::add_js(array('pace.min.js','bootstrap.min.js'));
 
 $inline  = '$(".dropdown-toggle").dropdown();';
 $inline .= '$(".tooltips").tooltip();';
@@ -22,6 +22,7 @@ Assets::add_js($inline, 'inline');
     echo Assets::js('modernizr-2.5.3.js');
     ?>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url()."assets/css/pace-theme-flash.css"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_bootstrap.scss"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />
 	<?php echo Assets::css(); ?>
