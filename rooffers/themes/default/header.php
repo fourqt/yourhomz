@@ -1,6 +1,6 @@
 <?php
-Assets::add_css(array('modern.min.css'));
-Assets::add_js(array('pace.min.js','bootstrap.min.js'));
+Assets::add_css(array('modern.min.css','uniform.default.min.css','switchery.min.css','waves.min.css','summernote.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css'));
+Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','bootstrap.min.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','classie.js','waves.min.js','navmain.js','summernote.min.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern.js'));
 
 $inline  = '$(".dropdown-toggle").dropdown();';
 $inline .= '$(".tooltips").tooltip();';
@@ -19,7 +19,7 @@ Assets::add_js($inline, 'inline');
     <meta name="author" content="<?php e(isset($meta_author) ? $meta_author : ''); ?>">
     <?php
     /* Modernizr is loaded before CSS so CSS can utilize its features */
-    echo Assets::js('modernizr-2.5.3.js');
+    echo Assets::js('modernizr.js');
     ?>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url()."assets/css/pace-theme-flash.css"; ?>" />
