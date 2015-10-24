@@ -402,7 +402,6 @@ class Reports extends Admin_Controller
             )
         );
 
-        $this->activity_model->order_by($where, 'asc');
 
         // Apply the filter, if there is one
         if (empty($filterValue) || $filterValue == 'all') {
@@ -410,8 +409,8 @@ class Reports extends Admin_Controller
         } else {
             $where = $where == 'activity_id' ? 'activity_id <' : $where;
             $total = $this->activity_model->where($where, $filterValue)
-                                          ->where("{$activityTable}.{$activityDeletedField}", 0);
-                                          //->count_by($where, $filterValue);
+                                          ->where("{$activityTable}.{$activityDeletedField}", 0)
+                                          ->count_by($where, $filterValue);
 
             // Set this again for use in the main query
             $this->activity_model->where($where, $filterValue);
@@ -432,9 +431,9 @@ class Reports extends Admin_Controller
         $this->pager['total_rows']        = $total;
         $this->pager['per_page']          = $limit;
         $this->pager['page_query_string'] = true;
-        print_r($this->pager);
 
         $this->pagination->initialize($this->pager);
+//        $this->activity_model->order_by($where, 'asc');
 
         $activityCreated = $this->activity_model->get_created_field();
 

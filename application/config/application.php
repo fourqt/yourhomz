@@ -184,6 +184,7 @@ $config['assets.directories'] = array(
     'base'   => 'assets',
     'cache'  => 'cache',
     'css'    => 'css',
+    'css'    => 'css',
     'image'  => 'images',
     'js'     => 'js',
     'module' => 'module',
