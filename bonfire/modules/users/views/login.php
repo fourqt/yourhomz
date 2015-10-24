@@ -12,13 +12,13 @@
 	<?php echo Template::message(); ?>
 
 	<?php
-		//if (validation_errors()) :
+		if (validation_errors()) :
 	?>
 			<div class="alert alert-error alert-dismissible" role="alert">
             	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<?php echo validation_errors(); ?>
 			</div>
-	<?php //endif; ?>
+	<?php endif; ?>
 
 	<?php echo form_open(LOGIN_URL, array('autocomplete' => 'off')); ?>
 
