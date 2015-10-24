@@ -400,6 +400,7 @@ class CI_Pagination {
 	{
 		// If our item count or per-page total is zero there is no need to continue.
 		// Note: DO NOT change the operator to === here!
+		echo $this->total_rows.'shiv';
 		if ($this->total_rows == 0 OR $this->per_page == 0)
 		{
 			return '';

@@ -156,9 +156,9 @@ class User_model extends BF_Model
     {
         if ($get_deleted) {
             // Get only the deleted users
-            $this->db->where("{$this->table_name}.deleted !=", 0);
+            $this->db->where("{$this->table_name}.deleted !=", false);
         } else {
-            $this->db->where("{$this->table_name}.deleted", 0);
+            $this->db->where("{$this->table_name}.deleted", false);
         }
 
         return $this->db->count_all_results($this->table_name);
@@ -371,18 +371,18 @@ class User_model extends BF_Model
         // Convert actions to the proper values.
         if (isset($post_data['restore']) && $post_data['restore']) {
             // 'restore': unset the soft-delete flag.
-            $data['deleted'] = 0;
+            $data['deleted'] = false;
         }
         if (isset($post_data['unban']) && $post_data['unban']) {
             // 'unban': unset the banned flag.
-            $data['banned'] = 0;
+            $data['banned'] = false;
         }
         if (isset($post_data['activate']) && $post_data['activate']) {
             // 'activate': set the 'active' flag.
             $data['active'] = 1;
         } elseif (isset($post_data['deactivate']) && $post_data['deactivate']) {
             // 'deactivate': unset the 'active' flag.
-            $data['active'] = 0;
+            $data['active'] = false;
         }
 
         return $data;
@@ -721,7 +721,7 @@ class User_model extends BF_Model
 
         $this->db->update(
             $this->table_name,
-            array('active' => 0, 'activate_hash' => $activate_hash),
+            array('active' => false, 'activate_hash' => $activate_hash),
             array('id' => $user_id)
         );
 

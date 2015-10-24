@@ -909,6 +909,10 @@ function check_class($item = '', $class_only = false)
     return '';
 }
 
+function addModClass(){
+    return get_instance()->router->class.'_'.get_instance()->router->fetch_method();
+}
+
 /**
  * A simple helper method for checking menu items against the current method
  * (controller action) (as far as the Router knows).

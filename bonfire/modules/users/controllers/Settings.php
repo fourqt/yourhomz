@@ -100,7 +100,7 @@ class Settings extends Admin_Controller
         }
 
         // Actions done, now display the view.
-        $where = array('users.deleted' => 0);
+        $where = array('users.deleted' => false);
 
         // Filters
         if (preg_match('{first_letter-([A-Z])}', $filter, $matches)) {

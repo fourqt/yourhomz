@@ -134,7 +134,7 @@ class Reports extends Admin_Controller
             Template::set('top_users', $this->activity_model->findTopUsers(5));
             Template::set(
                 'users',
-                $this->user_model->where($this->user_model->get_table() . '.' . $this->user_model->get_deleted_field(), 0)
+                $this->user_model->where($this->user_model->get_table() . '.' . $this->user_model->get_deleted_field(), false)
                                  ->order_by('username', 'asc')
                                  ->find_all()
             );
@@ -371,7 +371,7 @@ class Reports extends Admin_Controller
                 if ($this->hasPermissionViewUser) {
                     // Use the same order_by for the user drop-down/select as is
                     // used on the index page
-                    $this->user_model->where("{$userTable}.{$userDeletedField}", 0)
+                    $this->user_model->where("{$userTable}.{$userDeletedField}", false)
                                      ->order_by('username', 'asc');
 
                     foreach ($this->user_model->find_all() as $e) {
@@ -410,8 +410,8 @@ class Reports extends Admin_Controller
         } else {
             $where = $where == 'activity_id' ? 'activity_id <' : $where;
             $total = $this->activity_model->where($where, $filterValue)
-                                          ->where("{$activityTable}.{$activityDeletedField}", 0)
-                                          ->count_by($where, $filterValue);
+                                          ->where("{$activityTable}.{$activityDeletedField}", 0);
+                                          //->count_by($where, $filterValue);
 
             // Set this again for use in the main query
             $this->activity_model->where($where, $filterValue);
@@ -432,6 +432,7 @@ class Reports extends Admin_Controller
         $this->pager['total_rows']        = $total;
         $this->pager['per_page']          = $limit;
         $this->pager['page_query_string'] = true;
+        print_r($this->pager);
 
         $this->pagination->initialize($this->pager);
 

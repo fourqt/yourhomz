@@ -279,7 +279,7 @@ class Emailer
 
         // Grab records where success = 0
         $query = $this->ci->db->limit($limit)
-                              ->where('success', 0)
+                              ->where('success', false)
                               ->get($this->tableName);
 
         // If the query returned no rows, the queue is empty, so it has been
