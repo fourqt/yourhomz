@@ -1,7 +1,18 @@
-/* compiled by scssphp v0.0.11 on Sat, 24 Oct 2015 06:36:17 +0200 (0.003s) */
+/* compiled by scssphp v0.0.11 on Sat, 24 Oct 2015 14:36:46 +0200 (0.009s) */
 
 /*!
  * Prafull style
  */
 /* CSS Document */
 @charset "utf-8";
+#login {
+  padding: 9px 9px 4px 9px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) ;
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) ;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) ; }
