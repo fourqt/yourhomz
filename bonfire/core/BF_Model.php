@@ -477,6 +477,7 @@ class BF_Model extends CI_Model
         }
 
         // Insert it
+        echo $this->table_name; echo "<pre>"; print_r($data); echo "</pre>";
         $status = $this->db->insert($this->table_name, $data);
         if ($status == false) {
             $this->error = $this->get_db_error_message();

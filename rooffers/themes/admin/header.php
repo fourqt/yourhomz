@@ -32,7 +32,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
     <![endif]-->
 	<noscript>
-		<p>Javascript is required to use Bonfire's admin.</p>
+		<p>Javascript is required to use Rooffer's admin.</p>
 	</noscript>
     <div class="navbar navbar-static-top navbar-inverse" id="topbar" >
         <div class="navbar-inner">

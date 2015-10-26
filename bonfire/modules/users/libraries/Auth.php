@@ -348,10 +348,9 @@ class Auth
         $permissions = $this->loadPermissions();
 
         // Does the user/role have the permission?
-        if (isset($permissions[$permission])) {
+       if (isset($permissions[$permission])) {
             $role_permissions = $this->loadRolePermissions($role_id);
             $permission_id    = $permissions[$permission];
-
             if (isset($role_permissions[$role_id][$permission_id])) {
                 return true;
             }
@@ -374,7 +373,6 @@ class Auth
         // Move permission to lowercase for easier checking.
         $permission  = strtolower($permission);
         $permissions = $this->loadPermissions();
-
         return isset($permissions[$permission]);
     }
 
