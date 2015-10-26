@@ -1,0 +1,58 @@
+/* Basic Typography */
+body {
+	font-family: 'Roboto', sans-serif;
+	background: #f4f4f4;
+}
+
+header#big-detail{
+	background: #009999 url(images/project/image3.jpg) 50% 0 no-repeat;
+}
+
+header#big-detail #innerhead{
+	background: -webkit-linear-gradient(top,rgba(0,0,0,0), rgba(0,0,0,0.7));
+	background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
+	background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+}
+
+nav.topnav{
+	background: rgba(0,0,0,0.5);
+	color: #FFF;
+	padding: 10px 0;
+}
+
+nav.topnav a.logo{
+	display: block;
+	width: 121px;
+	height: 40px;
+	background: url(images/logo.png) 0 0 no-repeat;
+	text-indent: -9999px;
+}
+
+ul.nav-pills-top{}
+ul.nav-pills-top li{}
+ul.nav-pills-top li a{
+	color: #FFF;
+	transition: color 0.1s linear ;
+}
+ul.nav-pills-top > li > a:hover, ul.nav-pills-top > li > a:focus, ul.nav-pills-top > li > a:active{
+	background-color: transparent;
+	color: #17bbc1;
+}
+
+ul.nav-pills-banner{ margin: 350px 0 10px;}
+ul.nav-pills-banner li{}
+ul.nav-pills-banner li a{
+	color: #FFF;
+	border-bottom: 3px solid transparent;
+	font-weight: bold;
+	font-size: 15px;
+	transition-property: color, border-color;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
+}
+
+ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-banner li a:active{
+	background-color: transparent;
+	color: #17bbc1;
+	border-bottom-color: #17bbc1;
+}
