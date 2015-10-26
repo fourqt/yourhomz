@@ -106,15 +106,15 @@ class Migration_Install_initial_tables extends Migration
             'null' => false,
 		),
 		'date_published' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESAMP',
 			'null' => true,
 		),
 		'last_attempt' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESAMP',
 			'null' => true,
 		),
 		'date_sent' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESAMP',
 			'null' => true,
 		),
 	);
@@ -405,7 +405,7 @@ class Migration_Install_initial_tables extends Migration
             'null' => false,
 		),
 		'last_login' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESTAMP',
 			'default' => '0000-00-00 00:00:00',
             'null' => false,
 		),
@@ -416,7 +416,7 @@ class Migration_Install_initial_tables extends Migration
             'null' => false,
 		),
 		'created_on' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESTAMP',
 			'default' => '0000-00-00 00:00:00',
             'null' => false,
 		),
@@ -478,7 +478,7 @@ class Migration_Install_initial_tables extends Migration
             'null' => false,
 		),
 		'created_on' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESTAMP',
             'null' => false,
 		),
 	);

@@ -257,7 +257,6 @@ class Settings extends Admin_Controller
         $permissions = $this->input->post('role_permissions');
         $roleName = $this->input->post('role_name');
         $data = $this->role_model->prep_data($this->input->post());
-
         if ($type == 'insert') {
             $id = $this->role_model->insert($data);
             $return = is_numeric($id);
