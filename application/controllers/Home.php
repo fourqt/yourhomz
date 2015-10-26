@@ -78,6 +78,17 @@ class Home extends MX_Controller
 	 *
 	 * Copied from Base_Controller
 	 */
+	public function detail()
+	{
+		if (! class_exists('Template')) {
+				$this->load->library('Template');
+			}
+		$this->load->library('users/auth');
+		$this->set_current_user();
+
+		Template::render();
+	}//end index()
+
 	protected function set_current_user()
 	{
         if (class_exists('Auth')) {
@@ -102,5 +113,7 @@ class Home extends MX_Controller
 			Template::set('current_user', $this->current_user);
 		}
 	}
+
+
 }
 /* end ./application/controllers/home.php */
