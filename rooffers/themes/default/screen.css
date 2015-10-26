@@ -18,6 +18,11 @@ nav.topnav{
 	background: rgba(0,0,0,0.5);
 	color: #FFF;
 	padding: 10px 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	z-index: 1005;
 }
 
 nav.topnav a.logo{
@@ -39,7 +44,7 @@ ul.nav-pills-top > li > a:hover, ul.nav-pills-top > li > a:focus, ul.nav-pills-t
 	color: #17bbc1;
 }
 
-ul.nav-pills-banner{ margin: 350px 0 10px;}
+ul.nav-pills-banner{}
 ul.nav-pills-banner li{}
 ul.nav-pills-banner li a{
 	color: #FFF;
@@ -55,4 +60,63 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
 	background-color: transparent;
 	color: #17bbc1;
 	border-bottom-color: #17bbc1;
+}
+
+@media (max-width:767px) {
+	ul.nav-pills-banner{ margin: 100px 0 10px;}
+	ul.nav-pills-banner li{}
+	ul.nav-pills-banner li a{
+		border-bottom: 0;
+		transition-property: color, background-color;
+		transition-duration: 0.1s;
+		transition-timing-function: linear;
+	}
+	ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-banner li a:active{
+	background-color: rgba(0,149,155,0.5);
+	color: #FFF;
+	}
+}
+
+/* - sidebar menu - */
+#sidemenu-container{
+	position: relative;
+	z-index: 1006;
+}
+#side-backdrop{
+	background: rgba(0, 0, 0, 0.6);
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+#side-nav-menu{
+	background: #191919;
+    box-sizing: border-box;
+    color: #999;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 248px;
+    left: 100%;
+    padding-top: 30px;
+}
+body.sidenav #side-backdrop{
+	display: block;
+}
+
+body.sidenav #side-nav-menu{
+	translate3d(-248px, 0px, 0px);
+}
+
+@media(min-width:768px){
+	ul.nav-pills-banner{ margin: 350px 0 10px;}
+}
+@media(min-width:992px){
+}
+@media(min-width:1200px){
+	ul.nav-pills-banner{ margin: 380px 0 10px;}
 }

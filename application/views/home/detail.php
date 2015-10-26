@@ -1,3 +1,17 @@
+<header id="big-detail">
+<div id="innerhead">
+    <div class="container">
+        <ul class="nav nav-pills nav-pills-banner nav-justified">
+            <li><a href="javascript:void(0);">Overview</a></li>
+            <li><a href="javascript:void(0);">Configuration</a></li>
+            <li><a href="javascript:void(0);">Payment Plans</a></li>
+            <li><a href="javascript:void(0);">Project Amenities</a></li>
+            <li><a href="javascript:void(0);">Construction Updates</a></li>
+            <li><a href="javascript:void(0);">Discussion</a></li>
+        </ul>
+    </div>
+</div>
+</header>
 <div class="jumbotron" text-align="center">
 	<h1>Welcome to Detail</h1>
 
