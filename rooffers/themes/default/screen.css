@@ -81,6 +81,9 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
 }
 
 /* - sidebar menu - */
+body.sidenav{
+	overflow: hidden;
+}
 #sidemenu-container{
 	position: relative;
 	z-index: 1006;
@@ -124,7 +127,13 @@ body.sidenav #side-nav-menu{
 	left: 0;
 }
 
-#side-nav-menu ul.side-menu-list{}
+#side-nav-menu ul.list-group{}
+#side-nav-menu ul.list-group li{}
+#side-nav-menu ul.list-group li a{ font-weight: 600; padding: 5px 15px; color: #f4f4f4; display: inline-block;}
+#side-nav-menu ul.list-group li a:hover, #side-nav-menu ul.list-group li a:active, #side-nav-menu ul.list-group li a:focus{ color: #18bbc2; text-decoration: none;}
+#side-nav-menu ul.list-group li .share-icons{ padding: 0 11px;}
+#side-nav-menu ul.list-group h3{ color: #FFF; padding: 0 15px;}
+#side-nav-menu ul.list-group li .share-icons a{ padding: 5px 0;}
 
 section#project-head{
 	padding: 10px 0;
