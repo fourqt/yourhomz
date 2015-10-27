@@ -8,13 +8,13 @@
     <div id="sidemenu-container">
     <div id="side-backdrop"></div>
     <div id="side-nav-menu">
-        <ul class="side-menu-list">
-            <li class="full-link menu-list-item uppercase"><a data-href="/" href="/" class="link">Home</a></li>
-            <li class="full-link menu-list-item uppercase"><a title="Know more about roofers.com" target="_blank" href="/about" data-bypass="true" class="link">About Us<i class="hover-icon icon icon-arrow-diagonal"></i></a></li>
-            <li class="full-link menu-list-item uppercase"><a target="_blank" data-bypass="true" href="http://roofers.com/blog" class="link">Blog<i class="hover-icon icon icon-arrow-diagonal"></i></a></li>
-
-            <li class="full-link menu-list-item padded-item"><span class="feedback-item link">Give us your feedback</span></li>
-            <li class="full-link menu-list-item"><a title="Get assets of logo, images of roofers.com" rel="nofollow" href="/media_kit.zip" data-bypass="true" class="link">Media Kit</a></li>
+        <ul class="list-group">
+            <li class="text-uppercase"><a href="javascript:void(0);">Home</a></li>
+            <li class="text-uppercase"><a title="Know more about Roofers.com" href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom">About Us</a></li>
+            <li class="text-uppercase"><a href="javascript:void(0);">Blog</a></li>
+        </ul>
+        <ul class="list-group">
+            <li class="full-link menu-list-item"><a title="Get assets of logo, images of Roofers.com" rel="nofollow" href="/media_kit.zip" data-toggle="tooltip" data-placement="bottom">Media Kit</a></li>
             
             <li class="full-link last-link menu-list-item padded-item">
                 <a data-bypass="true" href="mailto:support@roofers.com" class="support-email">
@@ -22,6 +22,8 @@
                     <div class="circled"><i class="icon icon-message"></i><span>support@roofers.com </span></div>
                 </a>
             </li>
+        </ul>
+        <ul class="list-group">
             <li class="bordered-item last-link menu-list-item padded-item">
                 <div class="text">Follow Us</div>
                 <div class="share-icons">

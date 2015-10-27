@@ -12,6 +12,37 @@
     </div>
 </div>
 </header>
+<section id="project-head">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9 col-md-9 col-sm-9">
+				<div class="row">
+					<div class="col-lg-8 project-headline">
+						<h2>Project Name</h2>
+						<h4>by Project Group</h4>
+						<p>Sr. No. 73A/1+2+75/2P, Near Manjri Stud Farm, Pune-Solapur Road, Pune</p>
+					</div>
+					<div class="col-lg-4">
+						<h2>50.13 Lacs +</h2>
+						<ul class="fa-ul">
+							<li><span>&bull;</span>4.45k/sq.ft+</li>
+							<li><span>&bull;</span>EMI starting 34.9 k</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 btn-right">
+				<div class="btns">
+				<a href="" class="btn btn-default btn-lg">
+					<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+					ShortList
+				</a>
+				<a href="" class="btn btn-default btn-success btn-lg hidden-xs hidden-sm hidden-md">Book Via Floor Plan</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 <div class="jumbotron" text-align="center">
 	<h1>Welcome to Detail</h1>
 

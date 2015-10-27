@@ -7,12 +7,12 @@
             <div class="col-xs-6 col-sm-8 col-md-8 col-lg-8">
                 <ul class="nav nav-pills nav-pills-top pull-right">
                     <?php if (empty($current_user)) : ?>
-                    <li class="hidden-xs"><a href="javascript:void(0);"><i class="fa fa-thumb-tack fa-lg"></i>&nbsp;ShortListed</a></li>
+                    <li class="hidden-xs"><a href="javascript:void(0);"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;ShortListed</a></li>
                     <li class="hidden-xs"><a href="javascript:void(0);">News</a></li>
                     <li><a href="<?php echo site_url(LOGIN_URL); ?>">Sign In</a></li>
                     <li><a href="javascript:void(0);" id="aside-nav-btn"><i class="fa fa-bars fa-lg"></i></a></li>
                     <?php else : ?>
-                    <li class="hidden-xs"><a href="javascript:void(0);"><i class="fa fa-thumb-tack fa-lg"></i>&nbsp;ShortListed</a></li>
+                    <li class="hidden-xs"><a href="javascript:void(0);"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;ShortListed</a></li>
                     <li class="hidden-xs"><a href="javascript:void(0);">News</a></li>
                     <li class="hidden-xs" <?php echo check_method('profile'); ?>><a href="<?php echo site_url('users/profile'); ?>"><?php e(lang('bf_user_settings')); ?></a></li>
                     <li><a href="<?php echo site_url('logout'); ?>"><?php e(lang('bf_action_logout')); ?></a></li>
