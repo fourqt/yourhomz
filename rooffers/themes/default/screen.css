@@ -22,7 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 h1, h2, h3, h4, h5, h6{ color: #393939;}
-
+.bgwhite{ background-color: #FFF; border: #ebebeb solid 1px;}
 header#big-detail{
 	background: #009999 url(images/project/image3.jpg) 50% 0 no-repeat;
 }
@@ -137,6 +137,8 @@ body.sidenav #side-nav-menu{
 
 section#project-head{
 	padding: 10px 0;
+	background-color: #FFF;
+	border-bottom: #ebebeb solid 1px;
 }
 
 section#project-head h2, section#project-head h4{ margin-top: 10px;}
