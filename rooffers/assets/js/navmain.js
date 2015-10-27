@@ -17,4 +17,13 @@ jQuery(document).ready(function($){
 		toggleNav(false);
 	});
 
+	$('a#aside-nav-btn').click(function (e) {
+  		$('body').addClass('sidenav');
+  		e.preventDefault();
+	});
+
+	$('#sidemenu-container').click(function(e){
+		$('body').removeClass('sidenav');
+	});
+
 });

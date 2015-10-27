@@ -30,7 +30,6 @@ nav.topnav a.logo{
 	width: 121px;
 	height: 40px;
 	background: url(images/logo.png) 0 0 no-repeat;
-	text-indent: -9999px;
 }
 
 ul.nav-pills-top{}
@@ -90,6 +89,9 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
     bottom: 0;
     left: 0;
     display: none;
+    transition-property: display;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
 }
 #side-nav-menu{
 	background: #191919;
@@ -103,13 +105,20 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
     width: 248px;
     left: 100%;
     padding-top: 30px;
+    transition-property: transform;
+	transition-duration: 0.3s;
+	transition-timing-function: linear;
 }
 body.sidenav #side-backdrop{
 	display: block;
 }
 
 body.sidenav #side-nav-menu{
-	translate3d(-248px, 0px, 0px);
+	transform: translate3d(-248px, 0px, 0px);
+}
+
+.no-csstransforms3d body.sidenav #side-nav-menu{
+	left: 0;
 }
 
 @media(min-width:768px){
