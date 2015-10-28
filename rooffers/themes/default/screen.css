@@ -3,7 +3,26 @@ body {
 	font-family: 'Roboto', sans-serif;
 	background: #f4f4f4;
 }
+@font-face {
+  font-family: 'Glyphicons Halflings';
 
+  src: url('bsfont/glyphicons-halflings-regular.eot');
+  src: url('bsfont/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('bsfont/glyphicons-halflings-regular.woff2') format('woff2'), url('bsfont/glyphicons-halflings-regular.woff') format('woff'), url('bsfont/glyphicons-halflings-regular.ttf') format('truetype'), url('bsfont/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+h1, h2, h3, h4, h5, h6{ color: #393939;}
+.bgwhite{ background-color: #FFF; border: #ebebeb solid 1px;}
 header#big-detail{
 	background: #009999 url(images/project/image3.jpg) 50% 0 no-repeat;
 }
@@ -33,7 +52,6 @@ nav.topnav a.logo{
 	width: 121px;
 	height: 40px;
 	background: url(images/logo.png) 0 0 no-repeat;
-	text-indent: -9999px;
 }
 
 ul.nav-pills-top{}
@@ -71,6 +89,77 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
 =======
 }
 
+/* - sidebar menu - */
+body.sidenav{
+	overflow: hidden;
+}
+#sidemenu-container{
+	position: relative;
+	z-index: 1006;
+}
+#side-backdrop{
+	background: rgba(0, 0, 0, 0.6);
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    transition-property: display;
+	transition-duration: 0.1s;
+	transition-timing-function: linear;
+}
+body.sidenav #side-backdrop{
+	display: block;
+}
+
+#side-nav-menu{
+	background: #191919;
+    box-sizing: border-box;
+    color: #999;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    width: 248px;
+    left: 100%;
+    padding-top: 30px;
+    transition-property: transform;
+	transition-duration: 0.3s;
+	transition-timing-function: linear;
+}
+body.sidenav #side-nav-menu{
+	transform: translate3d(-248px, 0px, 0px);
+}
+.no-csstransforms3d body.sidenav #side-nav-menu{
+	left: 0;
+}
+
+#side-nav-menu ul.list-group{}
+#side-nav-menu ul.list-group li{}
+#side-nav-menu ul.list-group li a{ font-weight: 600; padding: 5px 15px; color: #f4f4f4; display: inline-block;}
+#side-nav-menu ul.list-group li a:hover, #side-nav-menu ul.list-group li a:active, #side-nav-menu ul.list-group li a:focus{ color: #18bbc2; text-decoration: none;}
+#side-nav-menu ul.list-group li .share-icons{ padding: 0 11px;}
+#side-nav-menu ul.list-group h3{ color: #FFF; padding: 0 15px;}
+#side-nav-menu ul.list-group li .share-icons a{ padding: 5px 0;}
+
+section#project-head{
+	padding: 10px 0;
+	background-color: #FFF;
+	border-bottom: #ebebeb solid 1px;
+}
+
+section#project-head h2, section#project-head h4{ margin-top: 10px;}
+section#project-head h2{}
+section#project-head h4{}
+section#project-head p{}
+section#project-head ul{ list-style: none; padding: 0; margin-left: 0;}
+section#project-head ul li{ display: inline-block;}
+section#project-head ul li span{ padding: 0 5px;}
+section#project-head ul li:first-child span{ display: none;}
+
+
 @media (max-width:767px) {
 	ul.nav-pills-banner{ margin: 100px 0 10px;}
 	ul.nav-pills-banner li{}
@@ -84,45 +173,14 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
 	background-color: rgba(0,149,155,0.5);
 	color: #FFF;
 	}
-}
-
-/* - sidebar menu - */
-#sidemenu-container{
-	position: relative;
-	z-index: 1006;
-}
-#side-backdrop{
-	background: rgba(0, 0, 0, 0.6);
-	position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: none;
-}
-#side-nav-menu{
-	background: #191919;
-    box-sizing: border-box;
-    color: #999;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    width: 248px;
-    left: 100%;
-    padding-top: 30px;
-}
-body.sidenav #side-backdrop{
-	display: block;
-}
-
-body.sidenav #side-nav-menu{
-	translate3d(-248px, 0px, 0px);
+	section#project-head .btn-right{ text-align: left;}
+	section#project-head .btns{ padding: 10px 0;}
 }
 
 @media(min-width:768px){
 	ul.nav-pills-banner{ margin: 350px 0 10px;}
+	section#project-head .btn-right{ text-align: right;}
+	section#project-head .btns{ padding: 30px 0;}
 }
 @media(min-width:992px){
 }

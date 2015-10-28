@@ -30,7 +30,7 @@ $(document).ready(function() {
         $(".search-form").css("margin-top", "-60px")
     }), $(".toggle-fullscreen").click(function() {
         e()
-    }), Waves.displayEffect(), $('[data-toggle~="tooltip"]').tooltip({
+    }), $('[data-toggle~="tooltip"]').tooltip({
         container: "body"
     });
     var s = Array.prototype.slice.call(document.querySelectorAll(".js-switch"));
