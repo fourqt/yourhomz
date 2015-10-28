@@ -288,8 +288,19 @@ $config['commonmark.valid_drivers'] = array(
     'MarkdownExtra',
     'LeagueCommonMark',
 );
+
 // This is the driver configured to be used by the CommonMark library. The driver
 // will be loaded from either /bonfire/libraries/CommonMark/drivers/ or
 // /application/libraries/CommonMark/drivers/ (capitalization is important on most
 // servers). The file name for the driver must be CommonMark_{drivername}.php
 $config['commonmark.driver'] = 'MarkdownExtended';
+
+// Here Users roles ID will be stored so can be referenced within the site
+
+$config['role.builder'] = 7;
+$config['projects.types'] = array(
+	0=> array('name'=>'Apartment', 'id'=>'0'),
+	1=> array('name'=>'Penthouse', 'id'=>'0'),
+	2=> array('name'=>'Free Hold Plots', 'id'=>'0'),
+	3=> array('name'=>'Row House', 'id'=>'0')
+	);
