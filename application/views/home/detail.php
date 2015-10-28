@@ -46,20 +46,38 @@
 <div class="container m-t-lg">
 	<div class="row">
 		<div class="col-lg-9 col-md-9">
-			<div class="proarticle bgwhite">
+			<div id="proarticle" class="bgwhite">
 
 				left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left</div>
 		</div>
 		<div class="col-lg-3 col-md-3">
-			<div class="proaside">
+			<div id="proaside">
 				<div class="project-contact-form bgwhite">
-					<div class="logo"></div>
-					<div class="detail">
-						<h3>Project Group</h3>
-						<h4>Developer<br>011-3034-5412</h4>
+					<div class="detail text-center p">
+						<div class="logo">
+							<img src="<?=base_url();?>assets/images/logos/logotemp.jpg" class="img-responsive">
+						</div>
+						<h3 class="m-t-xs m-b-xxs">Project Group</h3>
+						<h4 class="m-t-xxs">Developer<br>011-3034-5412</h4>
 					</div>
-					<hr>
-					test
+					<hr class="no-m">
+					<div class="form p">
+						<form>
+							<div class="form-group">
+                            	<label for="name" class="iefall-show">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                            	<label for="phone" class="iefall-show">Phone</label>
+                                <input type="text" class="form-control" id="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="iefall-show">Email address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                            <button type="submit" class="btn btn-default btn-block">Request Callback</button>
+                        </form>
+					</div>
 				</div>
 			</div>
 		</div>
