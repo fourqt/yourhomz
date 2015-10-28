@@ -37,14 +37,11 @@ nav.topnav{
 	background: rgba(0,0,0,0.5);
 	color: #FFF;
 	padding: 10px 0;
-<<<<<<< HEAD
-=======
 	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
 	z-index: 1005;
->>>>>>> 4f07b939976780ea4b5f59d2ef8f4aec02b1fc0b
 }
 
 nav.topnav a.logo{
@@ -65,11 +62,7 @@ ul.nav-pills-top > li > a:hover, ul.nav-pills-top > li > a:focus, ul.nav-pills-t
 	color: #17bbc1;
 }
 
-<<<<<<< HEAD
-ul.nav-pills-banner{ margin: 350px 0 10px;}
-=======
 ul.nav-pills-banner{}
->>>>>>> 4f07b939976780ea4b5f59d2ef8f4aec02b1fc0b
 ul.nav-pills-banner li{}
 ul.nav-pills-banner li a{
 	color: #FFF;
@@ -85,8 +78,6 @@ ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-ban
 	background-color: transparent;
 	color: #17bbc1;
 	border-bottom-color: #17bbc1;
-<<<<<<< HEAD
-=======
 }
 
 /* - sidebar menu - */
@@ -144,6 +135,8 @@ body.sidenav #side-nav-menu{
 #side-nav-menu ul.list-group h3{ color: #FFF; padding: 0 15px;}
 #side-nav-menu ul.list-group li .share-icons a{ padding: 5px 0;}
 
+/* - project detail page start - */
+/* - project detail page - header - */
 section#project-head{
 	padding: 10px 0;
 	background-color: #FFF;
@@ -158,7 +151,15 @@ section#project-head ul{ list-style: none; padding: 0; margin-left: 0;}
 section#project-head ul li{ display: inline-block;}
 section#project-head ul li span{ padding: 0 5px;}
 section#project-head ul li:first-child span{ display: none;}
+/* - project detail page - aside - */
+#proaside{}
+#proaside .project-contact-form{}
+#proaside .project-contact-form .detail{}
+#proaside .project-contact-form .detail .logo{ margin: 0 15%;}
+#proaside .project-contact-form .detail h3{}
 
+.iefall-show{ display: none;}
+.no-placeholder .iefall-show{ display: block;}
 
 @media (max-width:767px) {
 	ul.nav-pills-banner{ margin: 100px 0 10px;}
@@ -186,5 +187,4 @@ section#project-head ul li:first-child span{ display: none;}
 }
 @media(min-width:1200px){
 	ul.nav-pills-banner{ margin: 380px 0 10px;}
->>>>>>> 4f07b939976780ea4b5f59d2ef8f4aec02b1fc0b
 }

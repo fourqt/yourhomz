@@ -19,7 +19,7 @@ Assets::add_js($inline, 'inline');
     <meta name="author" content="<?php e(isset($meta_author) ? $meta_author : ''); ?>">
     <?php
     /* Modernizr is loaded before CSS so CSS can utilize its features */
-    echo Assets::js('modernizr.js');
+    echo Assets::js('modernizr-custom.js');
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url()."assets/css/pace-theme-flash.css"; ?>" />

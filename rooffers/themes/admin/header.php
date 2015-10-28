@@ -1,9 +1,6 @@
 <?php
 
-Assets::add_css(array(
-    'bootstrap.css',
-    'bootstrap-responsive.css',
-));
+Assets::add_css(array('bootstrap.css','bootstrap-responsive.css'));
 
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     Assets::add_js($this->load->view('ui/shortcut_keys', $shortcut_data, true), 'inline');
@@ -25,6 +22,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     ?>
 	<script src="<?php echo Template::theme_url('js/modernizr-2.5.3.js'); ?>"></script>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />
 	<?php echo Assets::css(null, true); ?>
 </head>
 <body class="desktop">
