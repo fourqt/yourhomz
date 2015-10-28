@@ -168,7 +168,7 @@ class Migration_Version_02_upgrades extends Migration
             'null' => false,
 		),
 		'created_on' => array(
-			'type' => 'DATETIME',
+			'type' => 'TIMESTAMP',
             'null' => false,
 		),
 	);

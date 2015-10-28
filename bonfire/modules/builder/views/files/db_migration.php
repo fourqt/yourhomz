@@ -67,7 +67,10 @@ for ($counter = 1; $field_total >= $counter; $counter++) {
             $migrationFields .= "
             'default'    => '0000-00-00 00:00:00',";
             break;
-
+        case 'TIMESTAMP':    
+            $migrationFields .= "
+            'default'    => null,";
+            break;
         default:
             break;
     }
@@ -98,8 +101,8 @@ if ($useSoftDeletes) {
 if ($useCreated) {
     $migrationFields .= "
         '{$created_field}' => array(
-            'type'       => 'datetime',
-            'default'    => '0000-00-00 00:00:00',
+            'type'       => 'TIMESTAMP',
+            'default'    => null,
         ),";
     if ($logUser) {
         $migrationFields .= "
@@ -115,8 +118,8 @@ if ($useCreated) {
 if ($useModified) {
     $migrationFields .= "
         '{$modified_field}' => array(
-            'type'       => 'datetime',
-            'default'    => '0000-00-00 00:00:00',
+            'type'       => 'TIMESTAMP',
+            'default'    => null,
         ),";
     if ($logUser) {
         $migrationFields .= "

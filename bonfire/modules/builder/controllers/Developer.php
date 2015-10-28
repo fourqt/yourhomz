@@ -49,6 +49,7 @@ class Developer extends Admin_Controller
 
         $this->lang->load('builder');
         $this->load->config('modulebuilder');
+        $this->load->dbforge();
 
         $this->options = $this->config->item('modulebuilder');
         if (isset($this->options['form_error_delimiters'])

@@ -477,8 +477,7 @@ class BF_Model extends CI_Model
         }
 
         // Insert it
-        echo $this->table_name; echo "<pre>"; print_r($data); echo "</pre>";
-        $status = $this->db->insert($this->table_name, $data);
+        $status = $this->db->set($data)->insert($this->table_name);
         if ($status == false) {
             $this->error = $this->get_db_error_message();
         } elseif ($this->return_insert_id) {
@@ -1401,7 +1400,7 @@ class BF_Model extends CI_Model
     public function get_field_info()
     {
         if (empty($this->field_info)) {
-            $this->field_info = $this->db->field_data($this->table_name);
+            $this->field_info = $this->db->field_data($this->db->dbprefix($this->table_name));
         }
 
         return $this->field_info;
