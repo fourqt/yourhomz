@@ -51,7 +51,17 @@
 				left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left<br>left</div>
 		</div>
 		<div class="col-lg-3 col-md-3">
-			<div class="proaside bgwhite">right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right<br>right</div>
+			<div class="proaside">
+				<div class="project-contact-form bgwhite">
+					<div class="logo"></div>
+					<div class="detail">
+						<h3>Project Group</h3>
+						<h4>Developer<br>011-3034-5412</h4>
+					</div>
+					<hr>
+					test
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
