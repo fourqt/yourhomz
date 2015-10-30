@@ -21,7 +21,7 @@ Assets::add_js($inline, 'inline');
     /* Modernizr is loaded before CSS so CSS can utilize its features */
     echo Assets::js('modernizr-custom.js');
     ?>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,500' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url()."assets/css/pace-theme-flash.css"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_bootstrap.scss"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />

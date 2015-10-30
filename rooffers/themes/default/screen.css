@@ -161,13 +161,36 @@ section#project-head ul li:first-child span{ display: none;}
 #proaside .project-contact-form .btn-social-block .half{ width: 50%; border-color: #ebebeb; color: #333;}
 #proaside .project-contact-form .btn-social-block .half:hover{ border-color: #ebebeb; background-color: #FFF; color: #00959b;}
 
-#proarticle .swipe-gallery{ width: 100%; height: 345px; overflow: hidden;}
-#proarticle .swipe-gallery figure{ display: block; float: left; overflow: hidden;}
-#proarticle .swipe-gallery figure.size1{ width: 268px; height: 200px;}
-#proarticle .swipe-gallery figure.size2{ width: 200px; height: 140px;}
-#proarticle .swipe-gallery figure a{ display: block;}
-#proarticle .swipe-gallery figure a img{ width: 100%; height: auto;}
+#proarticle .swipe-gallery{ width: 100%;}
+#proarticle .swipe-gallery figure{ display: block; float: left; position: relative;}
+#proarticle .swipe-gallery figure a{ display: block; text-align: center; overflow: hidden; background-color: #f4f4f4; border: #ebebeb solid 1px; font-size: 0; opacity: 1; z-index: 2; position: relative;}
+#proarticle .swipe-gallery figure a img{ max-width: 100%; max-height: 100%; vertical-align: middle;}
+#proarticle .swipe-gallery figure.moresmall a{ opacity: 0.5;}
+#proarticle .swipe-gallery figure .moreimg{ width:100%; height: 100%; position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: #000; font-size: 24px; text-align: center; padding-top: 34px; color: #FFF; line-height: 24px; z-index: 1;}
+#proarticle .swipe-gallery figure .moreimg span{ font-size: 18px; display: block; line-height: 20px;}
 #proarticle .swipe-gallery figcaption{ display: none;}
+
+#proarticle .overview{}
+#proarticle .overview ul.fa-ul{ margin-left: 0;}
+#proarticle .overview ul.fa-ul > li{ float: left; width: 50%; padding: 5px 5px 5px 60px;}
+#proarticle .overview ul.fa-ul > li .fa-li{ left: 0; top: 10px; color: #18bbc2;}
+#proarticle .overview ul.fa-ul > li b{ display: block;}
+
+#proarticle .npconfig{ padding-bottom: 0;}
+#proarticle .npcl{ padding-top: 10px;}
+#proarticle .npcl ul.onenav{}
+#proarticle .npcl ul.onenav li{}
+#proarticle .npcl ul.onenav li a{ padding: 5px 10px; font-weight: 500;}
+#proarticle .npcl ul.onenav li > a:hover, #proarticle .npcl ul.onenav li > a:active, #proarticle .npcl ul.onenav li > a:focus{ background: transparent; color: #18bbc2; border-bottom: #18bbc2 solid 2px;}
+#proarticle .npcl ul.onenav li.active > a, #proarticle .npcl ul.onenav li.active > a:hover, #proarticle .npcl ul.onenav li.active > a:active, #proarticle .npcl ul.onenav li.active > a:focus{ background: transparent; color: #18bbc2; border-bottom: #18bbc2 solid 2px;}
+#proarticle .npcl .twonav{}
+#proarticle .npcl .twonav{ margin-bottom: 0;}
+#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0;}
+#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
+#proarticle .npcl .twonav a.list-group-item.active{ background-color: transparent; border-left: #18bbc2 solid 3px;}
+#proarticle .npcl .twonav a.list-group-item:hover, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #f1f1f1;}
+
+#proarticle .npcr{ margin-left: -1px;}
 
 .iefall-show{ display: none;}
 .no-placeholder .iefall-show{ display: block;}
@@ -187,15 +210,38 @@ section#project-head ul li:first-child span{ display: none;}
 	}
 	section#project-head .btn-right{ text-align: left;}
 	section#project-head .btns{ padding: 10px 0;}
+
+	#proarticle .overview ul.fa-ul > li{ width: 100%;}
+	#proarticle .swipe-gallery figure.morebig a{ opacity: 0.5;}
+	#proarticle .swipe-gallery figure.size1{ width: 100%; height: auto;}
+	#proarticle .swipe-gallery figure.size1 a{ width: 100%; height: auto; line-height: 100%;}
+	#proarticle .swipe-gallery figure .moreimg{ padding-top: 18px;}
 }
 
 @media(min-width:768px){
 	ul.nav-pills-banner{ margin: 350px 0 10px;}
 	section#project-head .btn-right{ text-align: right;}
 	section#project-head .btns{ padding: 30px 0;}
+
+	#proarticle .swipe-gallery figure.size1{ width: 226px; height: 127px;}
+	#proarticle .swipe-gallery figure.size2{ width: 168px; height: 94px;}
+	#proarticle .swipe-gallery figure.size1 a{ width: 226px; height: 127px; line-height: 127px;}
+	#proarticle .swipe-gallery figure.size2 a{ width: 168px; height: 94px; line-height: 94px;}
+	#proarticle .swipe-gallery figure .moreimg{ padding-top: 18px;}
 }
 @media(min-width:992px){
+	#proarticle .swipe-gallery figure.size1{ width: 218px; height: 122px;}
+	#proarticle .swipe-gallery figure.size2{ width: 162px; height: 91px;}
+	#proarticle .swipe-gallery figure.size1 a{ width: 218px; height: 122px; line-height: 122px;}
+	#proarticle .swipe-gallery figure.size2 a{ width: 162px; height: 91px; line-height: 91px;}
+	#proarticle .swipe-gallery figure .moreimg{ padding-top: 18px;}
 }
 @media(min-width:1200px){
 	ul.nav-pills-banner{ margin: 380px 0 10px;}
+
+	#proarticle .swipe-gallery figure.size1{ width: 268px; height: 151px;}
+	#proarticle .swipe-gallery figure.size2{ width: 200px; height: 112px;}
+	#proarticle .swipe-gallery figure.size1 a{ width: 268px; height: 151px; line-height: 151px;}
+	#proarticle .swipe-gallery figure.size2 a{ width: 200px; height: 112px; line-height: 112px;}
+	#proarticle .swipe-gallery figure .moreimg{ padding-top: 34px;}
 }
