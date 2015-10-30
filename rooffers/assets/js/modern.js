@@ -170,4 +170,15 @@ $(document).ready(function() {
             })
         })
     }
+
+    $('.magnific-imgpop').magnificPopup({
+        type: 'image'
+        // other options
+    });
+
+    $('#collapseOne .imgd button').click(function(){
+        $('#collapseOne .imgd button').removeClass('active');
+        $(this).addClass('active');
+        $('#collapseOne .imgd a').toggleClass('hidden');
+    });
 });

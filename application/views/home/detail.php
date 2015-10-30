@@ -153,7 +153,28 @@
 						    		</div>
 						    		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 						      		<div class="panel-body">
-						        		Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        		<div class="imgd">
+						        			<a class="magnific-imgpop 3d" href="<?=base_url();?>assets/images/projectgallery/img1.jpg"><img src="<?=base_url();?>assets/images/projectgallery/small/img1.jpg"></a>
+						        			<a class="magnific-imgpop 2d hidden" href="<?=base_url();?>assets/images/projectgallery/img2.jpg"><img src="<?=base_url();?>assets/images/projectgallery/small/img2.jpg"></a>
+						        			<div class="btn-group" role="group" aria-label="apartment-image-button">
+						        				<button type="button" class="btn btn-default active">3D</button>
+						        				<button type="button" class="btn btn-default">2D</button>
+											</div>
+						        		</div>
+						        		<div class="row">
+						        			<div class="col-sm-9 col-xs-12">
+						        				<h2 class="no-m m-t-sm">3 Bed 3 Bath Apartment</h2>
+						        				<div class="row">
+						        					<div class="col-xs-6"><h4><small class="text-uppercase">Builtup Area</small><br>1640 sqft.</h4></div>
+						        					<div class="col-xs-6"><h4><small>POSSESSION STARTS</small><br>Jun, 2017</h4></div>
+						        				</div>
+						        			</div>
+						        			<div class="col-sm-3 col-xs-12">
+						        				<div class="m-t-sm p-h-xs p-v-xs bg-gray body">
+						        					<small class="text-uppercase"><b>min. total price</b></small><h3 class="no-m"><i class="fa fa-rupee"></i>&nbsp;65.44 Lacs</h3><small>(onwards)</small>
+						        				</div>
+						        			</div>
+						        		</div>
 						      		</div>
 						    		</div>
 						  		</div>
@@ -169,7 +190,12 @@
 						    </div>
 						    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        <ul class="clearfix clist row no-s">
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm room"></i>Living Room</li>
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm kitchen"></i>Kitchen</li>
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm balcony"></i>2 Balconies</li>
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm toilet"></i>3 Toilets</li>
+									</ul>
 						      </div>
 						    </div>
 						  </div>
@@ -185,7 +211,12 @@
 						    </div>
 						    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 						      <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        <ul class="clearfix clist row no-s">
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm room"></i>Living Room</li>
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm kitchen"></i>Kitchen</li>
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm balcony"></i>2 Balconies</li>
+									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm toilet"></i>3 Toilets</li>
+									</ul>
 						      </div>
 						    </div>
 						  </div>
@@ -201,7 +232,30 @@
 						    </div>
 						    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 						      <div class="panel-body">
-						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+						        	<h3 class="m-t-xs p-h-xxs">Flooring</h3>
+						        	<ul class="clearfix clist row no-s">
+									  	<li class="col-sm-6 p-v-xxs"><b>Balcony:</b> Anti Skid Vitrified Tiles</li>
+									  	<li class="col-sm-6 p-v-xxs"><b>Kitchen:</b> Vitrified Tiles</li>
+									  	<li class="col-sm-6 p-v-xxs"><b>Living/Dining:</b> Vitrified Tiles</li>
+									  	<li class="col-sm-6 p-v-xxs"><b>Master Bedroom:</b> Vitrified Tiles</li>
+									  	<li class="col-sm-6 p-v-xxs"><b>Other Bedroom:</b> Vitrified Tiles</li>
+									  	<li class="col-sm-6 p-v-xxs"><b>Toilets:</b> Anti Skid Ceramic Tiles</li>
+									</ul>
+						        	<h3 class="m-t-xs p-h-xxs">Fitting</h3>
+						        		<ul class="clearfix clist row no-s">
+						        			<li class="col-sm-6 p-v-xxs"><b>Doors:</b> Teak Wood Flush Door</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Electrical:</b> Concealed Copper Wirings with Modular Switches</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Kitchen:</b> Black Granite Platform with SS Sink</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Windows:</b> UPVC Aluminium Windows</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Toilets:</b> Designer Roca or Equivalent Fittings</li>
+						        		</ul>
+						        	<h3 class="m-t-xs p-h-xxs">Walls</h3>
+						        		<ul class="clearfix clist row no-s">
+						        			<li class="col-sm-6 p-v-xxs"><b>Exterior:</b> Emulsion Paints</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Interior:</b> Emulsion Paints</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Kitchen:</b> Glazed Ceramic Tiles</li>
+						        			<li class="col-sm-6 p-v-xxs"><b>Toilets:</b> Glazed Ceramic Tiles</li>
+						        		</ul>
 						      </div>
 						    </div>
 						  </div>
@@ -224,6 +278,127 @@
 						</div>
 						</div>
 					</div>
+				</div>
+				<div class="locality bgwhite p m-t-md">
+					<h2 class="no-s">Locality</h2>
+					<hr class="m-t-sm no-m">
+					<h4>Insights into Electronic City</h4>
+					<p>Located off the NH-VII (Bangalore-Hosur Road), Phase I of the Electronic City is the important segment among other two phases. Divided into three phases, Electronic City is the largest technology hub of Bangalore. Popularly known as ECity, it is the Silicon Valley of India, which houses around 300 companies with a very large work force of employees. This industrial estate boasts an oasis of large, medium and small industries spanning software services, hardware; high end telecommunications; manufacture of indigenous components; electronic musical instruments, just to name a few. Infosys, Wipro, Biocon, HP, Siemens, Mahindra Satyam are some of the renowned industries located over here. NH-VII, the 10 lane stretch between Silk Board Junction and Electronic is the longest elevated highway in India. Also, the NICE Road(Bangalore-Mysore Structure Corridor) that further connects NH-VII and Bannerghatta Road also passes through the vicinity. To boost the connectivity for the people, the BMRCL (Bangalore Metro Rail Corporation Ltd) has started working on the Metro Line starting from R.V. Road to Bommasandra. This new line will be an added advantage for the inhabitants and the working professionals to travel to their destinations with ease. In addition to excellent location,Electronic City is at a close proximity from places like Koramangala, JP Nagar, etc. Also within the vicinity, you can find various shopping malls and convenient stores. This is the perfect place for the residents wherein they have an option to live in a pollution free environment away from the city buzz, yet connected to the main Bangalore City.</p>
+					<section class="map hidden-xs">
+						<h3 class="text-uppercase">Explore Neighbourhood - Map View</h3>
+						<div class="npmapbox">
+							<div class="map-controls">
+								<span class="map-btn plus"><i class="fa fa-plus"></i></span>
+								<span class="map-btn minus"><i class="fa fa-minus"></i></span>
+							</div>
+							<div class="map-list">
+								<div class="panel-group" id="maptab" role="tablist" aria-multiselectable="true">
+							  		<div class="panel panel-default p-h-xxs">
+							    		<div class="panel-heading no-s bg-n no-b" role="tab" id="mh1">
+							      		<h3 class="panel-title">
+							        		<a role="button" data-toggle="collapse" data-parent="#maptab" href="#mapc1" aria-expanded="true" aria-controls="mapc1">
+								          		<i class="fa fa-plus-square-o fa-fw"></i>
+								          		<i class="fa fa-minus-square-o fa-fw"></i>
+								          		Bus Stations
+							        		</a>
+							      		</h3>
+							    		</div>
+							    		<div id="mapc1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mh1">
+							      		<div class="panel-body no-s">
+							        			<ul class="clearfix clist row no-s">
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Rayasandra</span><span class="badge">1.3 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Chikkanagamangala</span><span class="badge">1.9 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Gattahalli</span><span class="badge">2.3 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Dodda Nag Mangala Bus</span><span class="badge">2.3 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Rayasandra New Layo</span><span class="badge">12.7 km</span></a></li>
+												</ul>
+							      		</div>
+							    		</div>
+							  		</div>
+							  		<div class="panel panel-default p-h-xxs">
+							    		<div class="panel-heading no-s bg-n no-b" role="tab" id="mh2">
+							      		<h3 class="panel-title">
+							        		<a role="button" data-toggle="collapse" data-parent="#maptab" href="#mapc2" aria-expanded="true" aria-controls="mapc2">
+								          		<i class="fa fa-plus-square-o fa-fw"></i>
+								          		<i class="fa fa-minus-square-o fa-fw"></i>
+								          		Train Stations
+							        		</a>
+							      		</h3>
+							    		</div>
+							    		<div id="mapc2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mh2">
+							      		<div class="panel-body no-s">
+							        			<ul class="clearfix clist row no-s">
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Karmelaram</span><span class="badge">8.5 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Heelalige</span><span class="badge">8.8 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Belandur Road</span><span class="badge">12.1 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Rashtreeya Vidyalaya</span><span class="badge">16.2 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Jayaprakash Nagar</span><span class="badge">17.3 km</span></a></li>
+												</ul>
+							      		</div>
+							    		</div>
+							  		</div>
+							  		<div class="panel panel-default p-h-xxs">
+							    		<div class="panel-heading no-s bg-n no-b" role="tab" id="mh3">
+							      		<h3 class="panel-title">
+							        		<a role="button" data-toggle="collapse" data-parent="#maptab" href="#mapc3" aria-expanded="true" aria-controls="mapc3">
+								          		<i class="fa fa-plus-square-o fa-fw"></i>
+								          		<i class="fa fa-minus-square-o fa-fw"></i>
+								          		Airports
+							        		</a>
+							      		</h3>
+							    		</div>
+							    		<div id="mapc3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mh3">
+							      		<div class="panel-body no-s">
+							        			<ul class="clearfix clist row no-s">
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Indira Gandhi Domestic</span><span class="badge">22.5 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Indira Gandhi International</span><span class="badge">25.8 km</span></a></li>
+												</ul>
+							      		</div>
+							    		</div>
+							  		</div>
+							  		<div class="panel panel-default p-h-xxs">
+							    		<div class="panel-heading no-s bg-n no-b" role="tab" id="mh4">
+							      		<h3 class="panel-title">
+							        		<a role="button" data-toggle="collapse" data-parent="#maptab" href="#mapc4" aria-expanded="true" aria-controls="mapc4">
+								          		<i class="fa fa-plus-square-o fa-fw"></i>
+								          		<i class="fa fa-minus-square-o fa-fw"></i>
+								          		Schools
+							        		</a>
+							      		</h3>
+							    		</div>
+							    		<div id="mapc4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mh4">
+							      		<div class="panel-body no-s">
+							        			<ul class="clearfix clist row no-s">
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">St Gasper School</span><span class="badge">1.9 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">ACTS School</span><span class="badge">1.4 km</span></a></li>
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Delhi Puplic School</span><span class="badge">2.5 km</span></a></li>
+												</ul>
+							      		</div>
+							    		</div>
+							  		</div>
+							  		<div class="panel panel-default p-h-xxs">
+							    		<div class="panel-heading no-s bg-n no-b" role="tab" id="mh5">
+							      		<h3 class="panel-title">
+							        		<a role="button" data-toggle="collapse" data-parent="#maptab" href="#mapc5" aria-expanded="true" aria-controls="mapc5">
+								          		<i class="fa fa-plus-square-o fa-fw"></i>
+								          		<i class="fa fa-minus-square-o fa-fw"></i>
+								          		Grocery Stores
+							        		</a>
+							      		</h3>
+							    		</div>
+							    		<div id="mapc5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="mh5">
+							      		<div class="panel-body no-s">
+							        			<ul class="clearfix clist row no-s">
+												  	<li><a href="" class="p-v-xxs"><span class="textwrap">Shabari Bakery & Provision</span><span class="badge">1.7 km</span></a></li>
+												</ul>
+							      		</div>
+							    		</div>
+							  		</div>
+						  		</div>
+							</div>
+							<div class="map-container" style="background-color: rgb(229, 227, 223);"></div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>

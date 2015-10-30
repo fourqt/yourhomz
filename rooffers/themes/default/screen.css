@@ -183,25 +183,48 @@ section#project-head ul li:first-child span{ display: none;}
 #proarticle .npcl ul.onenav li a{ padding: 5px 10px; font-weight: 500;}
 #proarticle .npcl ul.onenav li > a:hover, #proarticle .npcl ul.onenav li > a:active, #proarticle .npcl ul.onenav li > a:focus{ background: transparent; color: #18bbc2; border-bottom: #18bbc2 solid 2px;}
 #proarticle .npcl ul.onenav li.active > a, #proarticle .npcl ul.onenav li.active > a:hover, #proarticle .npcl ul.onenav li.active > a:active, #proarticle .npcl ul.onenav li.active > a:focus{ background: transparent; color: #18bbc2; border-bottom: #18bbc2 solid 2px;}
-#proarticle .npcl .twonav{}
-#proarticle .npcl .twonav{ margin-bottom: 0;}
-#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0;}
-#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
-#proarticle .npcl .twonav a.list-group-item.active{ background-color: transparent; border-left: #18bbc2 solid 3px;}
-#proarticle .npcl .twonav a.list-group-item:hover, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #f1f1f1;}
 
 #proarticle .npcr{ margin-left: -1px; padding-top: 10px;}
 #configtab{}
-#configtab .fa-plus-square-o{ display: none;}
-#configtab .fa-minus-square-o{ display: inline-block;}
-#configtab .collapsed .fa-plus-square-o{ display: inline-block;}
-#configtab .collapsed .fa-minus-square-o{ display: none;}
-#configtab .panel{ box-shadow: none; border-radius: 0; border-bottom: 1px solid #ebebeb;}
-#configtab .panel .panel-heading{}
-#configtab .panel .panel-heading .panel-title{}
-#configtab .panel .panel-heading .panel-title a{ display: block; padding: 10px 10px 10px 0; font-weight: 400; font-size: 18px;}
-#configtab .panel .panel-heading .panel-title a i{ color: #18bbc2;}
+.panel-group .fa-plus-square-o{ display: none;}
+.panel-group .fa-minus-square-o{ display: inline-block;}
+.panel-group .collapsed .fa-plus-square-o{ display: inline-block;}
+.panel-group .collapsed .fa-minus-square-o{ display: none;}
+.panel-group .panel{ box-shadow: none; border-radius: 0; border-bottom: 1px solid #ebebeb;}
+.panel-group .panel .panel-heading{}
+.panel-group .panel .panel-heading .panel-title{}
+.panel-group .panel .panel-heading .panel-title a{ display: block; padding: 10px 10px 10px 0; font-weight: 400; font-size: 18px;}
+.panel-group .panel .panel-heading .panel-title a i{ color: #18bbc2;}
 #configtab .panel .panel-body{ padding: 15px 0;}
+#configtab .panel .panel-body .imgd{ position: relative; height: 250px; width: 100%; text-align: center; line-height: 250px; font-size: 0; border: 1px solid #ebebeb;}
+#configtab .panel .panel-body .imgd img{ max-width: 100%; max-height: 100%;}
+#configtab .panel .panel-body .imgd .btn-group{ position: absolute; right: 10px; top: 10px; z-index: 2;}
+
+#configtab .panel .panel-body .clist{ list-style: none;}
+
+.npmapbox{ margin-bottom: 20px; position: relative;}
+.npmapbox .map-controls{ border-width: 1px; clear: both; color: #fff; display: inline-block; overflow: hidden; position: absolute; right: 20px; top: 10px; z-index: 1;}
+.npmapbox .map-controls .map-btn{ cursor: pointer; display: block; height: 28px; line-height: 28px; text-align: center; width: 29px; background-color: #22baa0;}
+.npmapbox .map-controls .plus{ margin-bottom: 1px;}
+.npmapbox .map-controls .minus{}
+.npmapbox .map-list{ background-color: #fff; border-radius: 2px; bottom: 20px; box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3); left: 20px; overflow-x: hidden; overflow-y: scroll; position: absolute; top: 20px; width: 240px; z-index: 1;}
+.npmapbox .map-list .panel-group .panel{}
+.npmapbox .map-list .panel-group .panel .panel-heading .panel-title a{ display: block; padding: 10px 10px 10px 0; font-weight: 400; font-size: 14px;}
+.npmapbox .map-list .panel-group .panel .panel-body .clist{ list-style: none;}
+.npmapbox .map-list .panel-group .panel .panel-body .clist li a{ display: block; color: #4e5e6a;}
+.npmapbox .map-list .panel-group .panel .panel-body .clist li a .textwrap{ display: inline-block; max-width: 145px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.npmapbox .map-list .panel-group .panel .panel-body .clist li a:hover{ display: block; color: #00959b; text-decoration: none;}
+.npmapbox .map-list .panel-group .panel .panel-body .clist li a:hover .badge{background-color: #22baa0;}
+.npmapbox .map-list .panel-group .panel .panel-body .clist li a .badge{ float: right;}
+.npmapbox .map-container{ height: 450px;}
+
+
+i.ico{ display: inline-block; vertical-align: top; margin: 0 5px; background-size: contain; background-position: 0 0; background-repeat: no-repeat;}
+i.sm{ width: 20px; height: 20px;}
+i.room{ background-image: url(../../assets/images/icons/iconRoom.png);}
+i.kitchen{ background-image: url(../../assets/images/icons/iconKitchen.png);}
+i.balcony{ background-image: url(../../assets/images/icons/iconBalcony.png);}
+i.toilet{ background-image: url(../../assets/images/icons/iconToilet.png);}
 
 .iefall-show{ display: none;}
 .no-placeholder .iefall-show{ display: block;}
@@ -227,6 +250,14 @@ section#project-head ul li:first-child span{ display: none;}
 	#proarticle .swipe-gallery figure.size1{ width: 100%; height: auto;}
 	#proarticle .swipe-gallery figure.size1 a{ width: 100%; height: auto; line-height: 100%;}
 	#proarticle .swipe-gallery figure .moreimg{ padding-top: 18px;}
+
+	#proarticle .npcl .twonav{ margin-bottom: 0; display: block;}
+	#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0; display: inline-block;}
+	#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
+	#proarticle .npcl .twonav a.list-group-item.active, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #18bbc2; border-bottom: 0;}
+	#proarticle .npcl .twonav a.list-group-item:hover{ background-color: #f1f1f1;}
+
+	#proaside .project-contact-form{ margin-top: 15px;}
 }
 
 @media(min-width:768px){
@@ -239,6 +270,14 @@ section#project-head ul li:first-child span{ display: none;}
 	#proarticle .swipe-gallery figure.size1 a{ width: 226px; height: 127px; line-height: 127px;}
 	#proarticle .swipe-gallery figure.size2 a{ width: 168px; height: 94px; line-height: 94px;}
 	#proarticle .swipe-gallery figure .moreimg{ padding-top: 18px;}
+
+	#proarticle .npcl .twonav{ margin-bottom: 0; display: block;}
+	#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0; display: inline-block;}
+	#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
+	#proarticle .npcl .twonav a.list-group-item.active, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #18bbc2; border-bottom: 0;}
+	#proarticle .npcl .twonav a.list-group-item:hover{ background-color: #f1f1f1;}
+
+	#proaside .project-contact-form{ margin-top: 15px;}
 }
 @media(min-width:992px){
 	#proarticle .swipe-gallery figure.size1{ width: 218px; height: 122px;}
@@ -246,6 +285,8 @@ section#project-head ul li:first-child span{ display: none;}
 	#proarticle .swipe-gallery figure.size1 a{ width: 218px; height: 122px; line-height: 122px;}
 	#proarticle .swipe-gallery figure.size2 a{ width: 162px; height: 91px; line-height: 91px;}
 	#proarticle .swipe-gallery figure .moreimg{ padding-top: 18px;}
+
+	#proaside .project-contact-form{ margin-top: 0;}
 }
 @media(min-width:1200px){
 	ul.nav-pills-banner{ margin: 380px 0 10px;}
@@ -255,4 +296,10 @@ section#project-head ul li:first-child span{ display: none;}
 	#proarticle .swipe-gallery figure.size1 a{ width: 268px; height: 151px; line-height: 151px;}
 	#proarticle .swipe-gallery figure.size2 a{ width: 200px; height: 112px; line-height: 112px;}
 	#proarticle .swipe-gallery figure .moreimg{ padding-top: 34px;}
+
+	#proarticle .npcl .twonav{ margin-bottom: 0;}
+	#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0; display: block;}
+	#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
+	#proarticle .npcl .twonav a.list-group-item.active{ background-color: transparent; border-left: #18bbc2 solid 3px;}
+	#proarticle .npcl .twonav a.list-group-item:hover, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #f1f1f1;}
 }
