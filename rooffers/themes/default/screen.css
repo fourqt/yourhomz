@@ -190,7 +190,18 @@ section#project-head ul li:first-child span{ display: none;}
 #proarticle .npcl .twonav a.list-group-item.active{ background-color: transparent; border-left: #18bbc2 solid 3px;}
 #proarticle .npcl .twonav a.list-group-item:hover, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #f1f1f1;}
 
-#proarticle .npcr{ margin-left: -1px;}
+#proarticle .npcr{ margin-left: -1px; padding-top: 10px;}
+#configtab{}
+#configtab .fa-plus-square-o{ display: none;}
+#configtab .fa-minus-square-o{ display: inline-block;}
+#configtab .collapsed .fa-plus-square-o{ display: inline-block;}
+#configtab .collapsed .fa-minus-square-o{ display: none;}
+#configtab .panel{ box-shadow: none; border-radius: 0; border-bottom: 1px solid #ebebeb;}
+#configtab .panel .panel-heading{}
+#configtab .panel .panel-heading .panel-title{}
+#configtab .panel .panel-heading .panel-title a{ display: block; padding: 10px 10px 10px 0; font-weight: 400; font-size: 18px;}
+#configtab .panel .panel-heading .panel-title a i{ color: #18bbc2;}
+#configtab .panel .panel-body{ padding: 15px 0;}
 
 .iefall-show{ display: none;}
 .no-placeholder .iefall-show{ display: block;}
