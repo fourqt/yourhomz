@@ -46,50 +46,103 @@
 <div class="container m-t-lg">
 	<div class="row">
 		<div class="col-lg-9 col-md-9">
-			<div id="proarticle" class="bgwhite p">
+			<div id="proarticle">
+				<div class="bgwhite p clearfix">
 				<div class="swipe-gallery">
-					<figure class="size1 m-r-xxs m-b-xxs">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size1 m-r-xxs m-b-xxs morebig">
+						<a href="<?=base_url();?>assets/images/projectgallery/img1.jpg" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img1.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  1</figcaption>
+						<div class="moreimg hidden-sm hidden-md hidden-lg">10+<span>More</span></div>
 					</figure>
-					<figure class="size1 m-r-xxs m-b-xxs">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size1 m-r-xxs m-b-xxs hidden-xs">
+						<a href="<?=base_url();?>assets/images/projectgallery/img2.jpg" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img2.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  2</figcaption>
 					</figure>
-					<figure class="size1 m-b-xxs">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size1 m-b-xxs hidden-xs">
+						<a href="<?=base_url();?>assets/images/projectgallery/img3.jpg" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img3.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  3</figcaption>
 					</figure>
-					<figure class="size2 m-r-xxs">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size2 m-r-xxs hidden-xs">
+						<a href="<?=base_url();?>assets/images/projectgallery/img4.jpg" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img4.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  4</figcaption>
 					</figure>
-					<figure class="size2 m-r-xxs">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size2 m-r-xxs hidden-xs">
+						<a href="<?=base_url();?>assets/images/projectgallery/img1.jpg" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img1.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  5</figcaption>
 					</figure>
-					<figure class="size2 m-r-xxs">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size2 m-r-xxs hidden-xs">
+						<a href="<?=base_url();?>assets/images/projectgallery/img2.jpg" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img2.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  6</figcaption>
 					</figure>
-					<figure class="size2">
-						<a href="https://farm3.staticflickr.com/2567/5697107145_a4c2eaa0cd_o.jpg" data-size="1024x1024">
-							<img src="https://farm3.staticflickr.com/2567/5697107145_3c27ff3cd1_m.jpg" alt="Image description" />
+					<figure class="size2 moresmall hidden-xs">
+						<a href="<?=base_url();?>assets/images/projectgallery/img3.jpg" class="more" data-size="1547x870">
+							<img src="<?=base_url();?>assets/images/projectgallery/small/img3.jpg" alt="Image description" />
 						</a>
 						<figcaption>Image caption  7</figcaption>
+						<div class="moreimg">4+<span>More</span></div>
 					</figure>
+				</div>
+				</div>
+				<div class="overview bgwhite p m-t-md">
+					<h2 class="no-s">Overview</h2>
+					<hr class="m-t-sm m-b-sm">
+					<ul class="fa-ul clearfix">
+					  <li><i class="fa-li fa fa-2x fa-building-o"></i>Ownership Type<b>Freehold</b></li>
+					  <li><i class="fa-li fa fa-2x fa-calendar"></i>Year of Construction<b>2015</b></li>
+					  <li><i class="fa-li fa fa-2x fa-arrows-alt"></i>Project Size<b>16 Buildings - 1632 units</b></li>
+					  <li><i class="fa-li fa fa-2x fa-calendar-plus-o"></i>Completed<b>15 January 2017</b></li>
+					  <li><i class="fa-li fa fa-2x fa-square-o"></i>Project Area<b>10 Acres ( 20% open)</b></li>
+					  <li><i class="fa-li fa fa-2x fa-calendar-check-o"></i>Possession Starts<b>15 March 2017</b></li>
+					  <li><i class="fa-li fa fa-2x fa-th"></i>Configurations<b>2 BHK Apartment</b></li>
+					  <li><i class="fa-li fa fa-2x fa-object-group"></i>Total Apartments<b>130</b></li>
+					</ul>
+					<p>An exclusively designed residential haven, Manjiri Greenwoods, offers a new perspective to lifestyle living. The project comprises of exquisite buildings, each of 12 storeys and finely crafted to offer you with a royal living. It is the ideal combination of intelligent planning and a design that invokes a sense of community. Each apartment here is a pool of fresh ideas molded into living spaces. From leisure to entertainment to daily activities, it will bring you a splendid array of services.</p>
+					<ul>
+						<li>Convenient Store within the Premises</li>
+						<li>Transition Plaza with Water Feature</li>
+						<li>Grand Entrance Plaza with Focal Water Feature</li>
+						<li>85% Landscaped Arena</li>
+						<li>Fire Security Sprinklers</li>
+					</ul>
+				</div>
+				<div class="npconfig bgwhite p m-t-md">
+					<h2 class="no-s">Configuration</h2>
+					<hr class="m-t-sm no-m">
+					<div class="row">
+						<div class="col-lg-3 no-p-h npcl b-r">
+							<ul class="nav nav-pills onenav m-l-sm m-r-sm">
+							  <li class="active"><a href="">1 BHK</a></li>
+							  <li><a href="">2 BHK</a></li>
+							  <li><a href="">3 BHK</a></li>
+							</ul>
+							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small>7 Apartments</small></div>
+							<div class="list-group twonav">
+							  <a href="#" class="list-group-item active">1181 sq. ft.<br><i class="fa fa-inr"></i><b>65.44 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1184 sq. ft.<br><i class="fa fa-inr"></i><b>63.65 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1192 sq. ft.<br><i class="fa fa-inr"></i><b>64.05 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1193 sq. ft.<br><i class="fa fa-inr"></i><b>64.10 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1211 sq. ft.<br><i class="fa fa-inr"></i><b>70.29 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1214 sq. ft.<br><i class="fa fa-inr"></i><b>69.79 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1222 sq. ft.<br><i class="fa fa-inr"></i><b>70.21 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1226 sq. ft.<br><i class="fa fa-inr"></i><b>71.10 Lacs</b> <small>onwards</small></a>
+							</div>
+						</div>
+						<div class="col-lg-9 npcr b-l">
+							<h1>test</h1><br><h1>test</h1><br><h1>test</h1><br><h1>test</h1><br><h1>test</h1><br><h1>test</h1><br>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

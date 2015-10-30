@@ -502,19 +502,19 @@ h5 {
     border: 0!important;
 }
 .b {
-    border: 1px solid #f1f1f1;
+    border: 1px solid #ebebeb;
 }
 .b-t {
-    border-top: 1px solid #f1f1f1;
+    border-top: 1px solid #ebebeb;
 }
 .b-r {
-    border-right: 1px solid #f1f1f1;
+    border-right: 1px solid #ebebeb;
 }
 .b-b {
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #ebebeb;
 }
 .b-l {
-    border-left: 1px solid #f1f1f1;
+    border-left: 1px solid #ebebeb;
 }
 .b-default {
     border-color: #f1f1f1;
@@ -680,6 +680,9 @@ h5 {
 }
 .bg-gray.light {
     background-color: #d7d7d7;
+}
+.bg-gray.body {
+    background-color: #f4f4f4;
 }
 .btn {
     font-size: 13px;
