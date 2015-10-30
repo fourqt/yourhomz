@@ -3,9 +3,6 @@
 Assets::add_js(array(
 					'bootstrap.min.js', 
 					'jwerty.js',
-					'/plugins/uniform/jquery.uniform.min.js',
-					'/plugins/classie/classie.js',
-					'/plugins/waves/waves.min.js',
 					'/plugins/3d-bold-navigation/js/main.js',
 					'/plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js',
             		'/plugins/jquery-validation/jquery.validate.min.js'

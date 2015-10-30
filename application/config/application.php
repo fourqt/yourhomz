@@ -298,9 +298,24 @@ $config['commonmark.driver'] = 'MarkdownExtended';
 // Here Users roles ID will be stored so can be referenced within the site
 
 $config['role.builder'] = 7;
-$config['projects.types'] = array(
+$config['project.types'] = array(
 	0=> array('name'=>'Apartment', 'id'=>'0'),
-	1=> array('name'=>'Penthouse', 'id'=>'0'),
-	2=> array('name'=>'Free Hold Plots', 'id'=>'0'),
-	3=> array('name'=>'Row House', 'id'=>'0')
+	2=> array('name'=>'Free Hold Plots', 'id'=>'1'),
+	3=> array('name'=>'Row House', 'id'=>'2')
+	);
+
+$config['unit.types'] = array(
+	0=> array('name'=>'1 BHK', 'id'=>'0'),
+	1=> array('name'=>'1.5 BHK', 'id'=>'1'),
+	2=> array('name'=>'2 BHK', 'id'=>'2'),
+	3=> array('name'=>'3 BHK', 'id'=>'3'),
+	4=> array('name'=>'3.5 BHK', 'id'=>'4'),
+	5=> array('name'=>'4 BHK', 'id'=>'5'),
+	6=> array('name'=>'4.5 BHK', 'id'=>'6'),
+	7=> array('name'=>'5 BHK', 'id'=>'7'),
+	8=> array('name'=>'6 BHK', 'id'=>'8'),
+	9=> array('name'=>'7 BHK', 'id'=>'9'),
+	10=> array('name'=>'8 BHK', 'id'=>'10'),
+	11=> array('name'=>'9 BHK', 'id'=>'11'),
+	12=> array('name'=>'10 BHK', 'id'=>'12')
 	);

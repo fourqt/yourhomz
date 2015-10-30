@@ -1,6 +1,6 @@
 <?php
 
-Assets::add_css(array('bootstrap.css','bootstrap-responsive.css','font-awesome.css','modern.css','uniform.default.min.css','switchery.min.css','summernote.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css'));
+Assets::add_css(array('bootstrap.css','bootstrap-responsive.css', 'jquery-ui-1.8.16.custom.css','font-awesome.css','modern.css','uniform.default.min.css','switchery.min.css','summernote.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css'));
 Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','bootstrap.min.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','classie.js','navmain.js','summernote.min.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern.js'));
 
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
