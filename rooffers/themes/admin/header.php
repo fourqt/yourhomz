@@ -1,7 +1,7 @@
 <?php
 
 Assets::add_css(array('pace-theme-flash.css','uniform.default.min.css','bootstrap.css','font-awesome.css','simple-line-icons.css', 'switchery.min.css','boldnavigation.css','slidepushmenu.css','summernote.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css','modern.css'));
-Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','bootstrap.min.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','classie.js','navmain.js','summernote.min.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern-min.js','form-elements.js'));
+Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','bootstrap.min.js','classie.js','navmain.js','summernote.min.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern.js','form-elements.js','plugins/jquery-validation/jquery.validate.min.js','jwerty.js','plugins/jquery-validation/jquery.validate.min.js'));
 
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     Assets::add_js($this->load->view('ui/shortcut_keys', $shortcut_data, true), 'inline');
@@ -44,14 +44,14 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s1">
         <h3><span class="pull-left">Chat</span><a href="javascript:void(0);" class="pull-right" id="closeRight"><i class="fa fa-times"></i></a></h3>
         <div class="slimscroll">
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
-            <a href="javascript:void(0);" class="showRight2"><img src="assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar2.png" alt=""><span>Sandra smith<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar3.png" alt=""><span>Amily Lee<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar4.png" alt=""><span>Christopher Palmer<small>Hi! How're you?</small></span></a>
+            <a href="javascript:void(0);" class="showRight2"><img src="<?=base_url();?>assets/images/avatar5.png" alt=""><span>Nick Doe<small>Hi! How're you?</small></span></a>
         </div>
     </nav>
     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
@@ -59,7 +59,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
         <div class="slimscroll chat">
             <div class="chat-item chat-item-left">
                 <div class="chat-image">
-                    <img src="assets/images/avatar2.png" alt="">
+                    <img src="<?=base_url();?>assets/images/avatar2.png" alt="">
                 </div>
                 <div class="chat-message">
                     Hi There!
@@ -72,7 +72,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
             </div>
             <div class="chat-item chat-item-left">
                 <div class="chat-image">
-                    <img src="assets/images/avatar2.png" alt="">
+                    <img src="<?=base_url();?>assets/images/avatar2.png" alt="">
                 </div>
                 <div class="chat-message">
                     Fine! do you like my project?
@@ -85,7 +85,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
             </div>
             <div class="chat-item chat-item-left">
                 <div class="chat-image">
-                    <img src="assets/images/avatar2.png" alt="">
+                    <img src="<?=base_url();?>assets/images/avatar2.png" alt="">
                 </div>
                 <div class="chat-message">
                     Thanks, I tried!
@@ -107,7 +107,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
         <div class="input-group">
             <input type="text" name="search" class="form-control search-input" placeholder="Search...">
             <span class="input-group-btn">
-                <button class="btn btn-default close-search waves-effect waves-button waves-classic" type="button"><i class="fa fa-times"></i></button>
+                <button class="btn btn-default close-search " type="button"><i class="fa fa-times"></i></button>
             </span>
         </div><!-- Input Group -->
     </form><!-- Search Form -->
@@ -115,7 +115,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
         <div class="navbar">
             <div class="navbar-inner container">
                 <div class="sidebar-pusher">
-                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic push-sidebar">
+                    <a href="javascript:void(0);" class=" push-sidebar">
                         <i class="fa fa-bars"></i>
                     </a>
                 </div>
@@ -123,22 +123,22 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                     <?php echo anchor('/', '<span>'.html_escape($this->settings_lib->item('site.title')).'</span>', 'class="logo-text"'); ?>
                 </div><!-- Logo Box -->
                 <div class="search-button">
-                    <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+                    <a href="javascript:void(0);" class=" show-search"><i class="fa fa-search"></i></a>
                 </div>
                 <div class="topmenu-outer">
                     <div class="top-menu">
                         <ul class="nav navbar-nav navbar-left">
                             <li>        
-                                <a href="javascript:void(0);" class="waves-effect waves-button waves-classic sidebar-toggle"><i class="fa fa-bars"></i></a>
+                                <a href="javascript:void(0);" class=" sidebar-toggle"><i class="fa fa-bars"></i></a>
                             </li>
                             <li>
-                                <a href="#cd-nav" class="waves-effect waves-button waves-classic cd-nav-trigger"><i class="fa fa-diamond"></i></a>
+                                <a href="#cd-nav" class=" cd-nav-trigger"><i class="fa fa-diamond"></i></a>
                             </li>
                             <li>        
-                                <a href="javascript:void(0);" class="waves-effect waves-button waves-classic toggle-fullscreen"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:void(0);" class=" toggle-fullscreen"><i class="fa fa-expand"></i></a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown">
                                     <i class="fa fa-cogs"></i>
                                 </a>
                                 <ul class="dropdown-menu dropdown-md dropdown-list theme-settings" role="menu">
@@ -180,17 +180,17 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>    
-                                <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search"><i class="fa fa-search"></i></a>
+                                <a href="javascript:void(0);" class=" show-search"><i class="fa fa-search"></i></a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success pull-right">4</span></a>
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-primary pull-right">4</span></a>
                                 <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
                                     <li><p class="drop-title">You have 4 new  messages !</p></li>
                                     <li class="dropdown-menu-list slimscroll messages">
                                         <ul class="list-unstyled">
                                             <li>
                                                 <a href="#">
-                                                    <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets/images/avatar2.png" alt=""></div>
+                                                    <div class="msg-img"><div class="online on"></div><img class="img-circle" src="<?=base_url();?>assets/images/avatar2.png" alt=""></div>
                                                     <p class="msg-name">Sandra Smith</p>
                                                     <p class="msg-text">Hey ! I'm working on your project</p>
                                                     <p class="msg-time">3 minutes ago</p>
@@ -198,7 +198,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <div class="msg-img"><div class="online off"></div><img class="img-circle" src="assets/images/avatar4.png" alt=""></div>
+                                                    <div class="msg-img"><div class="online off"></div><img class="img-circle" src="<?=base_url();?>assets/images/avatar4.png" alt=""></div>
                                                     <p class="msg-name">Amily Lee</p>
                                                     <p class="msg-text">Hi David !</p>
                                                     <p class="msg-time">8 minutes ago</p>
@@ -206,7 +206,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <div class="msg-img"><div class="online off"></div><img class="img-circle" src="assets/images/avatar3.png" alt=""></div>
+                                                    <div class="msg-img"><div class="online off"></div><img class="img-circle" src="<?=base_url();?>assets/images/avatar3.png" alt=""></div>
                                                     <p class="msg-name">Christopher Palmer</p>
                                                     <p class="msg-text">See you soon !</p>
                                                     <p class="msg-time">56 minutes ago</p>
@@ -214,7 +214,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets/images/avatar5.png" alt=""></div>
+                                                    <div class="msg-img"><div class="online on"></div><img class="img-circle" src="<?=base_url();?>assets/images/avatar5.png" alt=""></div>
                                                     <p class="msg-name">Nick Doe</p>
                                                     <p class="msg-text">Nice to meet you</p>
                                                     <p class="msg-time">2 hours ago</p>
@@ -222,7 +222,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <div class="msg-img"><div class="online on"></div><img class="img-circle" src="assets/images/avatar2.png" alt=""></div>
+                                                    <div class="msg-img"><div class="online on"></div><img class="img-circle" src="<?=base_url();?>assets/images/avatar2.png" alt=""></div>
                                                     <p class="msg-name">Sandra Smith</p>
                                                     <p class="msg-text">Hey ! I'm working on your project</p>
                                                     <p class="msg-time">5 hours ago</p>
@@ -230,7 +230,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                             </li>
                                             <li>
                                                 <a href="#">
-                                                    <div class="msg-img"><div class="online off"></div><img class="img-circle" src="assets/images/avatar4.png" alt=""></div>
+                                                    <div class="msg-img"><div class="online off"></div><img class="img-circle" src="<?=base_url();?>assets/images/avatar4.png" alt=""></div>
                                                     <p class="msg-name">Amily Lee</p>
                                                     <p class="msg-text">Hi David !</p>
                                                     <p class="msg-time">9 hours ago</p>
@@ -242,7 +242,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-success pull-right">3</span></a>
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown"><i class="fa fa-bell"></i><span class="badge badge-primary pull-right">3</span></a>
                                 <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
                                     <li><p class="drop-title">You have 3 pending tasks !</p></li>
                                     <li class="dropdown-menu-list slimscroll tasks">
@@ -277,7 +277,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                 <?php
                                 $userDisplayName = isset($current_user->display_name) && ! empty($current_user->display_name) ? $current_user->display_name : ($this->settings_lib->item('auth.use_usernames') ? $current_user->username : $current_user->email);
                                 ?>
-                                <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown">
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown">
                                     <span class="user-name"><?php echo $userDisplayName; ?><i class="fa fa-angle-down"></i></span>
                                     <?php echo gravatar_link($current_user->email, 40, null, $userDisplayName, 'img-circle avatar'); ?>
                                 </a>
@@ -289,7 +289,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="waves-effect waves-button waves-classic" id="showRight">
+                                <a href="javascript:void(0);" class="" id="showRight">
                                     <i class="fa fa-comments"></i>
                                 </a>
                             </li>
@@ -417,7 +417,9 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
             </div><!-- Page Sidebar Inner -->
         </div><!-- Page Sidebar -->
         <div class="page-inner">
-            <?php echo Contexts::render_menu('text', 'normal'); ?>
+            <div class="container">
+                <?php echo Contexts::render_menu('text', 'normal'); ?>
+            </div>
             <div class="page-breadcrumb">
                 <div class="container">
                     <?php Template::block('sub_nav', ''); ?>

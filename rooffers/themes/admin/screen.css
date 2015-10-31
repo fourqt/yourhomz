@@ -4,44 +4,12 @@ body {
 	font-family: Ubuntu,sans-serif;
 }
 
-/* Helpers */
-.auto-width {
-	width: auto !important;
-}
-p.intro {
-	margin: 0 0 2em 0;
-	font-size: 125%;
-	color: #777;
-	text-align: center;
-}
-.text-left {
-	text-align: left !important;
-}
-.text-center {
-	text-align: center !important;
-}
-.text-right {
-	text-align: right !important;
-}
-.text-justify {
-	text-align: justify !important;
-}
-.small {
-	font-size: 90%;
-	font-weight: lighter;
-	line-height: 1.2em;
-	color: #999;
-}
-.big-text {
-	font-size: 2.4em;
-}
-pre {
-	margin-top: 18px;
-}
-.pagination {
-	margin-right: 20px;
-	margin-top: 0;
-}
+.navbar{ background-color: #22baa0;}
+.topmenu-outer{ background-color: #22baa0;}
+.small-sidebar .navbar .logo-box{ width: 121px;}
+.navbar .logo-box a{ background: url(images/logo.png) 50% 50% no-repeat; width: 121px; text-indent: -9999px;}
+.top-menu .navbar-nav > li > a{ color: #FFF;}
+.top-menu .nav .open > a, .top-menu .nav .open > a:focus, .top-menu .nav .open > a:hover{ color: #ebebeb;}
 /* Page Structure */
 .container-fluid,.fluid-container {
 	margin: 0 auto;
@@ -203,15 +171,7 @@ footer.footer {
 	width: 80px;
 }
 /* Grids */
-.row,
-.last-column {
-	overflow: hidden;
-	*overflow: visible;
-	*zoom: 1;
-}
-.row {
-	margin-left: 0;
-}
+
 .column {
 	float: left;
 }
