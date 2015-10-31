@@ -1,7 +1,7 @@
 <?php
 
-Assets::add_css(array('bootstrap.css','bootstrap-responsive.css', 'jquery-ui-1.8.16.custom.css','font-awesome.css','modern.css','uniform.default.min.css','switchery.min.css','summernote.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css'));
-Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','bootstrap.min.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','classie.js','navmain.js','summernote.min.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern.js'));
+Assets::add_css(array('pace-theme-flash.css','uniform.default.min.css','bootstrap.css','font-awesome.css','simple-line-icons.css', 'switchery.min.css','boldnavigation.css','slidepushmenu.css','summernote.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css','modern.css'));
+Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','bootstrap.min.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','classie.js','navmain.js','summernote.min.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern-min.js','form-elements.js'));
 
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     Assets::add_js($this->load->view('ui/shortcut_keys', $shortcut_data, true), 'inline');
@@ -21,10 +21,16 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     <?php
     /* Modernizr is loaded before CSS so CSS can utilize its features */
     ?>
-	<script src="<?php echo Template::theme_url('js/modernizr-2.5.3.js'); ?>"></script>
+	<script src="<?php echo Template::theme_url('js/modernizr.js'); ?>"></script>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />
 	<?php echo Assets::css(null, true); ?>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body class="desktop">
     <!--[if lt IE 7]>
