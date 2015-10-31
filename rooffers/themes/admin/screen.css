@@ -1,13 +1,9 @@
 /* Basic Typography */
 body {
 	background-color: #d9dde8;
-	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Ubuntu,sans-serif;
 }
-h1,h2,h3 {
-	font-weight: normal;
-	line-height: 2.0;
-	font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-}
+
 /* Helpers */
 .auto-width {
 	width: auto !important;
@@ -65,12 +61,6 @@ pre {
 }
 .navbar {
 	font-size: 10pt;
-}
-.nav .dropdown img {
-	display: none;
-}
-.navbar .dropdown img {
-	display: none;
 }
 .dropdown-menu > li > ul {
 	display: none;
