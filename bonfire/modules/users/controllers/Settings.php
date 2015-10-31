@@ -521,7 +521,7 @@ class Settings extends Admin_Controller
             // No activation method
             if ($activationMethod == 0) {
                 // Activate the user automatically
-                $data['active'] = 1;
+                $data['active'] = true;
             }
 
             $id = $this->user_model->insert($data);
