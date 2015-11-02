@@ -6,16 +6,11 @@ foreach ($role_counts as $r) {
 }
 
 ?>
-<style>
-th.type {
-    width: 10em;
-}
-th.users {
-    width: 5em;
-}
-</style>
-<div class="admin-box">
-	<p class="intro"><?php e(lang('role_intro')); ?></p>
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h3 class="panel-title"><?php e(lang('role_intro')); ?></h3>
+	</div>
+	<div class="panel-body">
     <?php if (isset($role_counts) && is_array($role_counts) && count($role_counts)) : ?>
 	<table class="table table-striped">
 		<thead>
@@ -38,4 +33,5 @@ th.users {
     <?php else : ?>
     <p><?php echo lang('role_no_roles'); ?></p>
     <?php endif; ?>
+    </div>
 </div>
