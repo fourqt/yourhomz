@@ -158,12 +158,34 @@ $('#sel_city_select').change( function(){
 });
 }
 
+function toggle_property_form(){
+    $('#project_type_0').change(function(){
+        if($('#project_type_0').val()>0){
+            $('#rootwizard').bootstrapWizard('display', $(this).attr('data-id'));
+        }else{
+            $('#rootwizard').bootstrapWizard('display', $(this).attr('data-id'));
+        }
+    });
+    $("input.property_type").click(function(){
+        if(this.checked){
+            $('#rootwizard').bootstrapWizard('display', $(this).attr('data-id'));
+        }else{
+            $('#rootwizard').bootstrapWizard('hide', $(this).attr('data-id'));
+        }
+    });
+}
+
 $(document).ready(function() {
     
     if( $('#sel_city_select').length  ) {
         $('#sel_city_select').select2();
     }
-    
+
+     $(".js-example-tokenizer").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+        });
+   
     if( $('#gmaps-canvas').length  ) {
         gmaps_init();
         autocomplete_init();
@@ -222,14 +244,16 @@ $(document).ready(function() {
             $('#rootwizard').find('.progress-bar').css({width:$percent+'%'});
         },
         'onNext': function(tab, navigation, index) {
-            var $valid = $("#wizardForm").valid();
+            //var $valid = $("#wizardForm").valid();
+            var $valid = true;
             if(!$valid) {
                 $validator.focusInvalid();
                 return false;
             }
         },
         'onTabClick': function(tab, navigation, index) {
-            var $valid = $("#wizardForm").valid();
+            //var $valid = $("#wizardForm").valid();
+            var $valid = true;
             if(!$valid) {
                 $validator.focusInvalid();
                 return false;
@@ -237,23 +261,14 @@ $(document).ready(function() {
         },
     });
     
+    for(i=1;i<12;i++){
+        $('#rootwizard').bootstrapWizard('hide', i);
+    }
+
     $('.date-picker').datepicker({
         orientation: "top auto",
         autoclose: true
     });
-
-$('#project_type_0').change( function(){
-    var i = $(this).val();
-    var j = 0;
-    $('div#detail_0').html('');
-    while( j < i ){
-        $('div#detail_0').append($('div#template_apartment_0').html().replace('{$i}', j)).removeClass('hidden');
-        j++;
-    }
-    $("div#detail_0 .js-example-tokenizer").select2({
-            tags: true,
-            tokenSeparators: [',', ' ']
-        });
-});
 update_map_city_select();
+toggle_property_form();
 });
