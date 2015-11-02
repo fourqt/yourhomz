@@ -51,7 +51,7 @@ $defaultTimezone = isset($user->timezone) ? $user->timezone : strtoupper(setting
 </div>
 <?php if ($editSettings) : ?>
 <div class="form-group<?php echo form_error('force_password_reset') ? $errorClass : ''; ?>">
-    <div class="col-sm-10">
+    <div class="col-sm-10 col-sm-offset-2">
         <label class="checkbox" for="force_password_reset">
             <input type="checkbox" id="force_password_reset" name="force_password_reset" value="1" <?php echo set_checkbox('force_password_reset', empty($user->force_password_reset)); ?> />
             <?php echo lang('us_force_password_reset'); ?>

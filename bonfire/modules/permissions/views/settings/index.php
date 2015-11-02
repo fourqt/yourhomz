@@ -3,8 +3,11 @@
 $num_columns = 5;
 
 ?>
-<div class="admin-box">
-	<p class="intro"><?php e(lang('permissions_intro')); ?></p>
+<div class="panel panel-white">
+	<div class="panel-heading">
+		<h3 class="panel-title"><?php e(lang('permissions_intro')); ?></h3>
+	</div>
+	<div class="panel-body">
     <?php
     if (isset($results) && is_array($results) && count($results)) :
         echo form_open($this->uri->uri_string());
@@ -46,6 +49,8 @@ $num_columns = 5;
     <p><?php echo lang('permissions_no_records'); ?></p>
     <?php
     endif;
-	echo $this->pagination->create_links();
-	?>
-</div>
+    ?>
+   </div>
+   </div>
+   <?php echo $this->pagination->create_links();	?>
+	

@@ -23,7 +23,8 @@
  * @link    http://cibonfire.com/docs/developer/keyboard_shortcuts
  */
 
-$lang['ui_keyboard_shortcuts'] = "Keyboard shortcuts are setup in the application config (the 'ui.current_shortcuts' key in /application/config/application.php).<br />The currently available shortcuts are:";
+//$lang['ui_keyboard_shortcuts'] = "Keyboard shortcuts are setup in the application config (the 'ui.current_shortcuts' key in /application/config/application.php).<br />The currently available shortcuts are: ";
+$lang['ui_keyboard_shortcuts'] = "The currently available shortcuts are: ";
 $lang['ui_add_shortcut']       = 'Add Shortcut';
 $lang['ui_remove_shortcut']    = 'Remove';
 $lang['ui_no_shortcuts']       = 'There are no shortcut options setup in the application config.';
@@ -33,7 +34,8 @@ $lang['ui_action']  = 'Action';
 $lang['ui_actions'] = 'Actions';
 
 $lang['ui_shortcut']          = 'Shortcut Key';
-$lang['ui_shortcut_help']     = 'Enter your preferred keys in the field below, e.g. alt+j - see more examples on the <a href="http://keithamus.github.io/jwerty/" target="_blank">Jwerty project page</a>';
+//$lang['ui_shortcut_help']     = 'Enter your preferred keys in the field below, e.g. alt+j - see more examples on the <a href="http://keithamus.github.io/jwerty/" target="_blank">Jwerty project page</a>';
+$lang['ui_shortcut_help']     = ': More examples <a href="http://keithamus.github.io/jwerty/" target="_blank">Here</a>';
 $lang['ui_shortcuts']         = 'Shortcut Keys';
 $lang['ui_current_shortcuts'] = 'Current Shortcuts';
 

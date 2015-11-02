@@ -142,10 +142,12 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
         <?php endif; ?>
     </fieldset>
     <?php endif; ?>
-    <fieldset class="form-actions">
-        <input type="submit" name="save" class="btn btn-primary" value="<?php echo lang('bf_action_save') . ' ' . lang('bf_user'); ?>" />
-        <?php echo lang('bf_or') . ' ' . anchor(SITE_AREA . '/settings/users', lang('bf_action_cancel')); ?>
-    </fieldset>
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <input type="submit" name="save" class="btn btn-primary" value="<?php echo lang('bf_action_save') . ' ' . lang('bf_user'); ?>" />
+            <?php echo lang('bf_or') . ' ' . anchor(SITE_AREA . '/settings/users', lang('bf_action_cancel')); ?>
+        </div>
+    </div>
     </div>
 <?php
 echo form_close();
