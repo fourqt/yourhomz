@@ -357,7 +357,7 @@ if (! function_exists('form_dropdown')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_dropdown($data, $options = array(), $selected = array(), $label = '', $extra = '', $tooltip = '')
+    function form_dropdown($data, $options = array(), $selected = array(), $label = '', $extra = '', $tooltip = '', $label_class = '', $select_box_class = '')
     {
         if (! is_array($data)) {
             $data = array('name' => $data);
@@ -405,9 +405,9 @@ if (! function_exists('form_dropdown')) {
         }
 
         return "
-<div class='control-group{$error}'>
-    <label class='control-label' for='{$data['id']}'>{$label}</label>
-    <div class='controls'>
+<div class='form-group{$error}'>
+    <label class='{$label_class}' for='{$data['id']}'>{$label}</label>
+    <div class='{$select_box_class}'>
          <select {$output} {$extra}>
             {$options_vals}
         </select>

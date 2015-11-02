@@ -1,7 +1,7 @@
 <?php
 
-$errorClass = ' error';
-$controlClass = 'span6';
+$errorClass = ' has-error';
+$controlClass = 'form-control';
 $fieldData = array(
     'errorClass'    => $errorClass,
     'controlClass'  => $controlClass,
@@ -48,13 +48,18 @@ if (isset($password_hints)) :
 </div>
 <?php
 endif;
-
+?>
+<div class="panel panel-white">
+<?php
 echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'autocomplete' => 'off'));
 ?>
-    <fieldset>
-        <legend><?php echo lang('us_account_details'); ?></legend>
-        <?php Template::block('user_fields', 'user_fields', $fieldData); ?>
-    </fieldset>
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <?php echo lang('us_account_details'); ?>
+        </h3>
+    </div>
+    <div class="panel-body">
+    <?php Template::block('user_fields', 'user_fields', $fieldData); ?>
     <?php
     $canManageUser = false;
     if (! isset($user)) {
@@ -64,35 +69,33 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
     }
     if ($canManageUser && $this->auth->has_permission('Bonfire.Roles.Manage')) :
     ?>
-    <fieldset>
-        <legend><?php echo lang('us_role'); ?></legend>
-        <div class="control-group">
-            <label for="role_id" class="control-label"><?php echo lang('us_role'); ?></label>
-            <div class="controls">
-                <select name="role_id" id="role_id" class="chzn-select <?php echo $controlClass; ?>">
-                    <?php
-                    if (! empty($roles) && is_array($roles)) :
-                        foreach ($roles as $role) :
-                            if ($this->auth->has_permission('Permissions.' . ucfirst($role->role_name) . '.Manage')) :
-                                // The selected role is the role assigned to the
-                                // user or the site's default role.
-                                $selectedRole = isset($user) ? ($user->role_id == $role->role_id)
-                                    : ($role->default == 1);
-                    ?>
-                    <option value="<?php echo $role->role_id; ?>" <?php echo set_select('role_id', $role->role_id, $selectedRole); ?>>
-                        <?php e(ucfirst($role->role_name)); ?>
-                    </option>
-                    <?php
-                            endif;
-                        endforeach;
-                    endif;
-                    ?>
-                </select>
-            </div>
+    <h3 class="panel-title"><?php echo lang('us_role'); ?></h3>
+    <hr class="no-m m-b-md m-t-xxs">
+    <div class="form-group">
+        <label for="role_id" class="col-sm-2 control-label"><?php echo lang('us_role'); ?></label>
+        <div class="col-sm-10">
+            <select name="role_id" id="role_id" class="chzn-select <?php echo $controlClass; ?>">
+                <?php
+                if (! empty($roles) && is_array($roles)) :
+                    foreach ($roles as $role) :
+                        if ($this->auth->has_permission('Permissions.' . ucfirst($role->role_name) . '.Manage')) :
+                            // The selected role is the role assigned to the
+                            // user or the site's default role.
+                            $selectedRole = isset($user) ? ($user->role_id == $role->role_id)
+                                : ($role->default == 1);
+                ?>
+                <option value="<?php echo $role->role_id; ?>" <?php echo set_select('role_id', $role->role_id, $selectedRole); ?>>
+                    <?php e(ucfirst($role->role_name)); ?>
+                </option>
+                <?php
+                        endif;
+                    endforeach;
+                endif;
+                ?>
+            </select>
         </div>
-    </fieldset>
+    </div>
     <?php endif; ?>
-    <fieldset>
         <?php
         // Allow modules to render custom fields.
         Events::trigger('render_user_form', $renderPayload);
@@ -100,7 +103,6 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
         <!-- Start of User Meta -->
         <?php $this->load->view('users/user_meta');?>
         <!-- End of User Meta -->
-    </fieldset>
     <?php
     if (isset($user)
         && $this->auth->has_permission('Permissions.' . ucfirst($user->role_name) . '.Manage')
@@ -111,7 +113,7 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
     ?>
     <fieldset>
         <legend><?php echo lang('us_account_status'); ?></legend>
-        <div class="control-group">
+        <div class="form-group">
             <div class="controls">
                 <label for="<?php echo $field; ?>">
                     <input type="checkbox" name="<?php echo $field; ?>" id="<?php echo $field; ?>" value="1" />
@@ -120,7 +122,7 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
             </div>
         </div>
         <?php if ($user->deleted) : ?>
-        <div class="control-group">
+        <div class="form-group">
             <div class="controls">
                 <label for="restore">
                     <input type="checkbox" name="restore" id="restore" value="1" />
@@ -129,7 +131,7 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
             </div>
         </div>
         <?php elseif ($user->banned) : ?>
-        <div class="control-group">
+        <div class="form-group">
             <div class="controls">
                 <label for="unban">
                     <input type="checkbox" name="unban" id="unban" value="1" />
@@ -144,5 +146,8 @@ echo form_open($this->uri->uri_string(), array('class' => 'form-horizontal', 'au
         <input type="submit" name="save" class="btn btn-primary" value="<?php echo lang('bf_action_save') . ' ' . lang('bf_user'); ?>" />
         <?php echo lang('bf_or') . ' ' . anchor(SITE_AREA . '/settings/users', lang('bf_action_cancel')); ?>
     </fieldset>
+    </div>
 <?php
 echo form_close();
+?>
+</div>
