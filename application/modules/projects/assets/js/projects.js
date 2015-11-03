@@ -1,6 +1,8 @@
 var geocoder;
 var map;
 var marker;
+//ToDo Make it availabe by key like aptUnit
+var project_types = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 // initialise the google maps objects, and add listeners
 function gmaps_init(){
@@ -174,6 +176,30 @@ function toggle_property_form(){
         }
     });
 }
+//$('#rootwizard').bootstrapWizard('show', 2);
+function populate_apartment_form(tab, navigation, index){
+    if(index == project_types[0]){
+        var apt_unit_type = [];
+        var cls = 'active';
+        $('#apt_unit_type :selected').each(function(i, selected){
+
+          if(i!=0) cls = '';
+
+            $('#tabsleft ul').append('<li class="'+cls+'"><a data-toggle="tab" href="#tabsleft-tab'+i+'">' + $( this ).text() + '</a></li>');
+            $('#tabsleft div.tab-content').append('<div id="tabsleft-tab'+i+'" class="tab-pane '+cls+' fade in">' + $('div.apt_unit_frm').html() +'</div>');
+
+          apt_unit_type[i] = $(selected).text();
+        });
+    $('.date-picker').datepicker({
+        orientation: "top auto",
+        autoclose: true
+      }); 
+    $('.dynCheckbox').uniform();
+    $("div.dropZoneDyn").dropzone({ url: "/file/post" });
+    }
+}
+
+
 
 $(document).ready(function() {
     
@@ -187,8 +213,8 @@ $(document).ready(function() {
         });
    
     if( $('#gmaps-canvas').length  ) {
-        gmaps_init();
-        autocomplete_init();
+        //gmaps_init();
+        //autocomplete_init();
     };
     
 
@@ -250,6 +276,7 @@ $(document).ready(function() {
                 $validator.focusInvalid();
                 return false;
             }
+            populate_apartment_form(tab, navigation, index);
         },
         'onTabClick': function(tab, navigation, index) {
             //var $valid = $("#wizardForm").valid();
