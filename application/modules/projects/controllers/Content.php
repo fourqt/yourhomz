@@ -27,9 +27,8 @@ class Content extends Admin_Controller
         
         Template::set_block('sub_nav', 'content/_sub_nav');
 
-        Assets::add_css('plugins/select2/css/select2.min.css');
-        Assets::add_css('plugins/line-icons/simple-line-icons.css');
-        Assets::add_js(array('http://maps.google.com/maps/api/js?sensor=false', 'plugins/select2/js/select2.min.js'));
+        Assets::add_css(array('plugins/select2/css/select2.min.css', 'plugins/line-icons/simple-line-icons.css', 'plugins/dropzone/dropzone.min.css'));
+        Assets::add_js(array('http://maps.google.com/maps/api/js?sensor=false', 'plugins/select2/js/select2.min.js', 'plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js', 'plugins/dropzone/dropzone.min.js'));
         Assets::add_module_js('projects', 'projects.js');
     }
 
@@ -93,6 +92,105 @@ class Content extends Admin_Controller
      * @return void
      */
     public function create()
+    {
+        $this->auth->restrict($this->permissionCreate);
+        
+        if (isset($_POST['save'])) {
+            if ($insert_id = $this->save_projects()) {
+                log_activity($this->auth->user_id(), lang('projects_act_create_record') . ': ' . $insert_id . ' : ' . $this->input->ip_address(), 'projects');
+                Template::set_message(lang('projects_create_success'), 'success');
+
+                redirect(SITE_AREA . '/content/projects');
+            }
+
+            // Not validation error
+            if ( ! empty($this->projects_model->error)) {
+                Template::set_message(lang('projects_create_failure') . $this->projects_model->error, 'error');
+            }
+        }
+        
+        // Filter Builders
+        $where['users.role_id'] = $this->config->item('role.builder');
+        
+        //Select Builders    
+        $this->user_model->where($where)
+                                 ->select(
+                                     array(
+                                        'users.id',
+                                        'display_name'
+                                     )
+                                 );
+        
+        Template::set('builders', $this->user_model->find_all());
+        
+        $this->cities_model->where(array('cities.active' => true))
+                                 ->select(
+                                     array(
+                                        'cities.id',
+                                        'city_name',
+                                        'city_state',
+                                        'latitude',
+                                        'longitude'
+                                     )
+                                 );
+        
+        Template::set('cities', $this->cities_model->find_all());
+
+        Template::set('toolbar_title', lang('projects_action_create'));
+        Template::render();
+    }
+
+
+    public function create_form_configuration()
+    {
+        $this->auth->restrict($this->permissionCreate);
+        
+        if (isset($_POST['save'])) {
+            if ($insert_id = $this->save_projects()) {
+                log_activity($this->auth->user_id(), lang('projects_act_create_record') . ': ' . $insert_id . ' : ' . $this->input->ip_address(), 'projects');
+                Template::set_message(lang('projects_create_success'), 'success');
+
+                redirect(SITE_AREA . '/content/projects');
+            }
+
+            // Not validation error
+            if ( ! empty($this->projects_model->error)) {
+                Template::set_message(lang('projects_create_failure') . $this->projects_model->error, 'error');
+            }
+        }
+        
+        // Filter Builders
+        $where['users.role_id'] = $this->config->item('role.builder');
+        
+        //Select Builders    
+        $this->user_model->where($where)
+                                 ->select(
+                                     array(
+                                        'users.id',
+                                        'display_name'
+                                     )
+                                 );
+        
+        Template::set('builders', $this->user_model->find_all());
+        
+        $this->cities_model->where(array('cities.active' => true))
+                                 ->select(
+                                     array(
+                                        'cities.id',
+                                        'city_name',
+                                        'city_state',
+                                        'latitude',
+                                        'longitude'
+                                     )
+                                 );
+        
+        Template::set('cities', $this->cities_model->find_all());
+
+        Template::set('toolbar_title', lang('projects_action_create'));
+        Template::render();
+    }
+
+    public function create_form_Images()
     {
         $this->auth->restrict($this->permissionCreate);
         

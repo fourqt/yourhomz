@@ -299,9 +299,17 @@ $config['commonmark.driver'] = 'MarkdownExtended';
 
 $config['role.builder'] = 7;
 $config['project.types'] = array(
-	0=> array('name'=>'Apartment', 'id'=>'0'),
-	2=> array('name'=>'Free Hold Plots', 'id'=>'1'),
-	3=> array('name'=>'Row House', 'id'=>'2')
+	0=> array('name'=>'Apartments', 'id'=>'0', 'input_type' => 'select'),
+	1=> array('name'=>'Residential Plot', 'id'=>'1', 'input_type' => 'select', 'input_type' => 'checkbox'),
+	2=> array('name'=>'Row Houses', 'id'=>'2', 'input_type' => 'checkbox'),
+	3=> array('name'=>'Villa', 'id'=>'3', 'input_type' => 'checkbox'),
+	4=> array('name'=>'Farm House', 'id'=>'4', 'input_type' => 'checkbox'),
+	5=> array('name'=>'Studio Apartment', 'id'=>'5', 'input_type' => 'checkbox'),
+	6=> array('name'=>'Office Space', 'id'=>'6', 'input_type' => 'checkbox'),
+	7=> array('name'=>'Commercial Shop', 'id'=>'7', 'input_type' => 'checkbox'),
+	8=> array('name'=>'Showroom', 'id'=>'8', 'input_type' => 'checkbox'),
+	9=> array('name'=>'Warehouse/ Godown', 'id'=>'9', 'input_type' => 'checkbox'),
+	10=> array('name'=>'Agricultural Land', 'id'=>'10', 'input_type' => 'checkbox')
 	);
 
 $config['unit.types'] = array(
@@ -317,5 +325,6 @@ $config['unit.types'] = array(
 	9=> array('name'=>'7 BHK', 'id'=>'9'),
 	10=> array('name'=>'8 BHK', 'id'=>'10'),
 	11=> array('name'=>'9 BHK', 'id'=>'11'),
-	12=> array('name'=>'10 BHK', 'id'=>'12')
+	12=> array('name'=>'10 BHK', 'id'=>'12'),
+	12=> array('name'=>'Penthouses', 'id'=>'13')
 	);
