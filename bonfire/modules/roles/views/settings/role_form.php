@@ -40,7 +40,7 @@ if (validation_errors()) :
         <div class="form-group">
             <label class="control-label col-sm-2" for="default_context"><?php echo lang('role_default_context'); ?></label>
             <div class="col-sm-10">
-                <select name="default_context" id="form-control">
+                <select name="default_context" class="form-control" id="default_context">
                     <?php
                     if (! empty($contexts) && is_array($contexts)) :
                         foreach ($contexts as $context) :
@@ -71,14 +71,14 @@ if (validation_errors()) :
         <div class="form-group">
             <label class="control-label col-sm-2" id="can_delete_label"><?php echo lang('role_can_delete_role'); ?></label>
             <div class="col-sm-10" aria-labelledby="can_delete_label" role="group">
-                <div class="radio">
-                    <label for="can_delete_yes">
+                <div class="radio-inline">
+                    <label for="can_delete_yes" class="no-m">
                         <input type="radio" name="can_delete" id="can_delete_yes" value="1" <?php echo set_radio('can_delete', 1, isset($role) && $role->can_delete == 1); ?> />
                         <?php echo lang('bf_yes'); ?>
                     </label>
                 </div>
-                <div class="radio">
-                    <label for="can_delete_no">
+                <div class="radio-inline">
+                    <label for="can_delete_no" class="no-m">
                         <input type="radio" name="can_delete" id="can_delete_no" value="0" <?php echo set_radio('can_delete', 0, isset($role) && $role->can_delete == 0); ?> />
                         <?php echo lang('bf_no'); ?>
                     </label>
@@ -88,24 +88,26 @@ if (validation_errors()) :
         </div>
         <!-- Permissions -->
         <?php if (has_permission('Bonfire.Permissions.Manage')) : ?>
-        <fieldset>
-            <legend><?php echo lang('role_permissions'); ?></legend>
-            <p class="intro"><?php echo lang('role_permissions_check_note'); ?></p>
-            <?php echo Modules::run('roles/settings/matrix'); ?>
-        </fieldset>
+        <h3><?php echo lang('role_permissions'); ?></h3>
+        <hr class="m-t-sm m-b-xxs">
+        <p class="intro"><?php echo lang('role_permissions_check_note'); ?></p>
+        <?php echo Modules::run('roles/settings/matrix'); ?>
+
         <?php endif; ?>
-        <fieldset class="form-actions">
-            <input type="submit" name="save" class="btn btn-primary" value="<?php echo lang('role_save_role'); ?>" />
-            <?php
-            echo lang('bf_or') . ' ' . anchor(SITE_AREA . '/settings/roles', lang('bf_action_cancel'));
-            if (isset($role)
-                && $role->can_delete == 1
-                && has_permission('Bonfire.Roles.Delete')
-            ) :
-            ?>
-            <button type="submit" name="delete" class="btn btn-danger" onclick="return confirm('<?php e(js_escape(lang('role_delete_confirm') . ' ' . lang('role_delete_note'))); ?>')"><span class="icon-trash icon-white"></span>&nbsp;<?php echo lang('role_delete_role'); ?></button>
-            <?php endif;?>
-        </fieldset>
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <input type="submit" name="save" class="btn btn-primary" value="<?php echo lang('role_save_role'); ?>" />
+                <?php
+                echo lang('bf_or') . ' ' . anchor(SITE_AREA . '/settings/roles', lang('bf_action_cancel'));
+                if (isset($role)
+                    && $role->can_delete == 1
+                    && has_permission('Bonfire.Roles.Delete')
+                ) :
+                ?>
+                <button type="submit" name="delete" class="btn btn-danger" onclick="return confirm('<?php e(js_escape(lang('role_delete_confirm') . ' ' . lang('role_delete_note'))); ?>')"><span class="icon-trash icon-white"></span>&nbsp;<?php echo lang('role_delete_role'); ?></button>
+                <?php endif;?>
+            </div>
+        </div>
     <?php echo form_close(); ?>
     </div>
 </div>

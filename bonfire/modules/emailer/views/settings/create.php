@@ -1,9 +1,3 @@
-<style>
-#email_content { width: 90%; }
-.id_column { width: 3em; }
-.login_column { width: 11em; }
-.status_column { width: 10em; }
-</style>
 <?php if (validation_errors()) : ?>
 <div class="alert alert-block alert-error fade in">
     <a class="close" data-dismiss="alert">&times;</a>
@@ -11,27 +5,27 @@
     <?php echo validation_errors(); ?>
 </div>
 <?php endif; ?>
-<div class="admin-box">
+<div class="panel panel-white">
+    <div class="panel-body">
     <?php echo form_open($this->uri->uri_string(), 'class="form-horizontal"'); ?>
-        <fieldset>
-            <div class='control-group'>
-                <label class='control-label' for='email_subject'><?php echo lang('emailer_email_subject'); ?></label>
-                <div class='controls'>
-                    <input type="text" size="50" name="email_subject" id="email_subject" value="<?php if (isset($email_subject)) { e($email_subject); } ?>" />
-                </div>
+        <div class='form-group'>
+            <label class='col-sm-2 control-label' for='email_subject'><?php echo lang('emailer_email_subject'); ?></label>
+            <div class='col-sm-10'>
+                <input type="text" size="50" name="email_subject" id="email_subject" class="form-control" value="<?php if (isset($email_subject)) { e($email_subject); } ?>" />
             </div>
-            <div class='control-group'>
-                <label class='control-label' for='email_content'><?php echo lang('emailer_email_content'); ?></label>
-                <div class='controls'>
-                    <textarea name="email_content" id="email_content" rows="15"><?php
-                        if (isset($email_content)) {
-                            e($email_content);
-                        }
-                    ?></textarea>
-                </div>
+        </div>
+        <div class='form-group'>
+            <label class='col-sm-2 control-label' for='email_content'><?php echo lang('emailer_email_content'); ?></label>
+            <div class='col-sm-10'>
+                <textarea name="email_content" id="email_content" class="form-control" rows="15"><?php
+                    if (isset($email_content)) {
+                        e($email_content);
+                    }
+                ?></textarea>
             </div>
-        </fieldset>
-        <h3><?php echo lang('bf_users'); ?></h3>
+        </div>
+        <h3 class="m-t-lg m-b-xxs"><?php echo lang('bf_users'); ?></h3>
+        <hr class="m-t-xxs">
         <?php if (empty($users) || ! is_array($users)) : ?>
         <p><?php echo lang('emailer_no_users_found'); ?></p>
         <?php
@@ -39,7 +33,7 @@
             $hasChecked = ! empty($checked) && is_array($checked);
             $numColumnsUsers = 7;
         ?>
-        <table class="table table-striped">
+        <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th class="column-check"><input class="check-all" type="checkbox" /></th>
@@ -51,12 +45,6 @@
                     <th class="status_column"><?php echo lang('us_status'); ?></th>
                 </tr>
             </thead>
-            <tfoot>
-                <tr>
-                    <td colspan="<?php echo $numColumnsUsers; ?>">
-                    </td>
-                </tr>
-            </tfoot>
             <tbody>
                 <?php foreach ($users as $user) : ?>
                 <tr>
@@ -81,11 +69,14 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
-        <fieldset class="form-actions">
-            <?php echo lang('bf_with_selected') . '&nbsp;'; ?>
-            <input type="submit" name="create" class="btn btn-primary" value="<?php echo lang('emailer_create_email'); ?>" />
-            <?php echo ' ' . lang('bf_or') . ' ' . anchor(SITE_AREA . '/settings/emailer/queue', lang('bf_action_cancel'), 'class="btn btn-warning"'); ?>
-        </fieldset>
+        <div class='form-group'>
+            <label class='col-sm-2 control-label'><?php echo lang('bf_with_selected'); ?></label>
+            <div class="col-sm-10">
+                <input type="submit" name="create" class="btn btn-primary" value="<?php echo lang('emailer_create_email'); ?>" />
+                <?php echo '&nbsp;&nbsp;&nbsp;' . lang('bf_or') . '&nbsp;&nbsp;&nbsp;' . anchor(SITE_AREA . '/settings/emailer/queue', lang('bf_action_cancel'), 'class="btn btn-warning"'); ?>
+            </div>
+        </div>
         <?php endif; ?>
     <?php echo form_close(); ?>
+    </div>
 </div>

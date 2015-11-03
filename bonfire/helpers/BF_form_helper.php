@@ -48,7 +48,7 @@ if (! function_exists('_form_common')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function _form_common($type = 'text', $data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function _form_common($type = 'text', $data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
         $defaults = array(
             'name' => (is_array($data) ? '' : $data),
@@ -88,15 +88,15 @@ if (! function_exists('_form_common')) {
         $error = '';
         if (function_exists('form_error') && form_error($defaults['name'])) {
             $error   = ' error';
-            $tooltip = '<span class="help-inline">' . form_error($defaults['name']) . '</span>';
+            $tooltip = '<p class="help-block">' . form_error($defaults['name']) . '</p>';
         }
 
         $output = _parse_form_attributes($data, $defaults);
 
         return "
-<div class='control-group{$error}'>
-    <label class='control-label' for='{$defaults['id']}'>{$label}</label>
-    <div class='controls'>
+<div class='form-group{$error}'>
+    <label class='{$label_class}' for='{$defaults['id']}'>{$label}</label>
+    <div class='{$input_box_class}'>
          <input {$output} {$extra} />
         {$tooltip}
     </div>
@@ -117,9 +117,9 @@ if (! function_exists('form_input')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_input($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_input($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('text', $data, $value, $label, $extra, $tooltip);
+        return _form_common('text', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -136,9 +136,9 @@ if (! function_exists('form_email')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_email($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_email($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('email', $data, $value, $label, $extra, $tooltip);
+        return _form_common('email', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -155,9 +155,9 @@ if (! function_exists('form_password')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_password($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_password($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('password', $data, $value, $label, $extra, $tooltip);
+        return _form_common('password', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -174,9 +174,9 @@ if (! function_exists('form_url')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_url($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_url($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('url', $data, $value, $label, $extra, $tooltip);
+        return _form_common('url', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -193,9 +193,9 @@ if (! function_exists('form_telephone')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_telephone($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_telephone($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('tel', $data, $value, $label, $extra, $tooltip);
+        return _form_common('tel', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -212,9 +212,9 @@ if (! function_exists('form_number')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_number($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_number($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('number', $data, $value, $label, $extra, $tooltip);
+        return _form_common('number', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -235,7 +235,7 @@ if (! function_exists('form_range')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_range($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_range($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
         if (is_string($data)) {
             $data = array('name' => $data);
@@ -244,7 +244,7 @@ if (! function_exists('form_range')) {
         $data['min'] = isset($data['min']) ? $data['min'] : 1;
         $data['max'] = isset($data['max']) ? $data['max'] : 10;
 
-        return _form_common('range', $data, $value, $label, $extra, $tooltip);
+        return _form_common('range', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -261,9 +261,9 @@ if (! function_exists('form_color')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_color($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_color($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('color', $data, $value, $label, $extra, $tooltip);
+        return _form_common('color', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -280,9 +280,9 @@ if (! function_exists('form_search')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_search($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_search($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('search', $data, $value, $label, $extra, $tooltip);
+        return _form_common('search', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -299,9 +299,9 @@ if (! function_exists('form_date')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_date($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_date($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('date', $data, $value, $label, $extra, $tooltip);
+        return _form_common('date', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -318,9 +318,9 @@ if (! function_exists('form_datetime')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_datetime($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_datetime($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('datetime', $data, $value, $label, $extra, $tooltip);
+        return _form_common('datetime', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -337,9 +337,9 @@ if (! function_exists('form_month')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_month($data = '', $value = '', $label = '', $extra = '', $tooltip = '')
+    function form_month($data = '', $value = '', $label = '', $extra = '', $tooltip = '', $label_class = '', $input_box_class = '')
     {
-        return _form_common('month', $data, $value, $label, $extra, $tooltip);
+        return _form_common('month', $data, $value, $label, $extra, $tooltip, $label_class, $input_box_class);
     }
 }
 
@@ -431,13 +431,13 @@ if (! function_exists('form_multiselect')) {
      *
      * @return string The formatted input element, label tag and wrapping divs.
      */
-    function form_multiselect($name = '', $options = array(), $selected = array(), $label = '', $extra = '', $tooltip = '')
+    function form_multiselect($name = '', $options = array(), $selected = array(), $label = '', $extra = '', $tooltip = '', $label_class = '', $select_box_class = '')
     {
         if (stripos($extra, 'multiple') === false) {
             $extra .= ' multiple="multiple"';
         }
 
-        return form_dropdown($name, $options, $selected, $label, $extra, $tooltip);
+        return form_dropdown($name, $options, $selected, $label, $extra, $tooltip, $label_class, $select_box_class);
     }
 }
 
