@@ -3,7 +3,8 @@
 	<p><?php echo lang('mb_not_writable_note'); ?></p>
 </div>
 <?php endif;?>
-<div class="admin-box">
+<div class="panel panel-white">
+<div class="panel-body">
 	<?php if (isset($modules) && is_array($modules) && count($modules)) : ?>
 	<table class="table table-striped">
 		<thead>
@@ -34,7 +35,8 @@
 	</table>
 	<?php else: ?>
 	<div class="alert alert-warning">
-		<p><?php e(lang('mb_no_modules')); ?> <a href="<?php echo site_url(SITE_AREA .'/developer/builder/create_module') ?>"><?php e(lang('mb_create_link')); ?></a></p>
+		<?php e(lang('mb_no_modules')); ?> <a href="<?php echo site_url(SITE_AREA .'/developer/builder/create_module') ?>" class="alert-link"><?php e(lang('mb_create_link')); ?></a>
 	</div>
 	<?php endif; ?>
+</div>
 </div>

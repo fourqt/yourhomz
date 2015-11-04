@@ -98,7 +98,7 @@ class Developer extends Admin_Controller
         Template::set('modules', $configs);
         Template::set('toolbar_title', lang('mb_toolbar_title_index'));
 
-        Template::render('two_left');
+        Template::render();
     }
 
     //--------------------------------------------------------------------
