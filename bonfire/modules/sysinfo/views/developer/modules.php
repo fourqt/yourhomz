@@ -1,5 +1,8 @@
-<div class="admin-box">
-    <h3><?php echo lang('sysinfo_installed_mods'); ?></h3>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"><?php echo lang('sysinfo_installed_mods'); ?></h3>
+    </div>
+
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -20,4 +23,5 @@
             <?php endforeach; ?>
         </tbody>
     </table>
+
 </div>

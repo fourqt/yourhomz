@@ -1,5 +1,5 @@
-<div class="admin-box">
-    <table class="table table-striped table-bordered">
+<div class="panel panel-white">
+    <table class="table table-bordered">
         <tbody>
             <?php foreach ($info as $key => $val) : ?>
             <tr>

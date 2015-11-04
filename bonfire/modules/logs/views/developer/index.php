@@ -12,7 +12,8 @@ if (empty($logs) || ! is_array($logs)) :
     <?php echo lang('logs_no_logs'); ?>
 </div>
 <?php else : ?>
-<div class="admin-box">
+<div class="panel panel-white">
+    <div class="panel-body">
     <?php echo form_open(); ?>
         <table class="table table-striped logs">
             <thead>
@@ -58,10 +59,14 @@ if (empty($logs) || ! is_array($logs)) :
         echo form_close();
         echo $this->pagination->create_links();
     ?>
+    </div>
 </div>
 <!-- Purge? -->
-<div class="admin-box">
-    <h3><?php echo lang('logs_delete_button'); ?></h3>
+<div class="panel panel-white">
+    <div class="panel-heading">
+        <h3 class="panel-title"><?php echo lang('logs_delete_button'); ?></h3>
+    </div>
+    <div class="panel-body">
     <?php echo form_open(); ?>
         <div class="alert alert-warning alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -73,6 +78,7 @@ if (empty($logs) || ! is_array($logs)) :
             </button>
         </fieldset>
     <?php echo form_close(); ?>
+    </div>
 </div>
 <?php
 endif;
