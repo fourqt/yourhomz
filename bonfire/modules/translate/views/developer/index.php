@@ -73,8 +73,8 @@
         endif;
     else :
     ?>
-    <div class="alert alert-info fade in">
-        <a class="close" data-dismiss="alert">&times;</a>
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <?php echo lang('translate_no_modules'); ?>
     </div>
     <?php endif; ?>

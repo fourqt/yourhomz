@@ -1,8 +1,8 @@
 <div class="admin-box">
     <h3><span><?php echo lang('logs_viewing'); ?></span> <?php echo $log_file_pretty; ?></h3>
     <?php if (empty($log_content)) : ?>
-    <div class="alert alert-warning fade in">
-        <a class="close" data-dismiss="alert">&times;</a>
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <?php echo lang('logs_not_found'); ?>
     </div>
     <?php else : ?>
@@ -47,8 +47,8 @@
 <div class="admin-box">
     <h3><?php echo lang('logs_delete1_button') ?></h3>
     <?php echo form_open(site_url(SITE_AREA . '/developer/logs'), array('class' => 'form-horizontal')); ?>
-        <div class="alert alert-warning fade in">
-            <a class="close" data-dismiss="alert">&times;</a>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <?php echo lang('logs_delete1_note'); ?>
         </div>
         <fieldset class="form-actions">

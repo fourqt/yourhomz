@@ -2,8 +2,8 @@
 <p class='intro'><?php echo lang('mb_context_create_intro_note'); ?></p>
 <div class="admin-box">
     <?php if (validation_errors()) : ?>
-	<div class="alert alert-error">
-        <a data-dismiss="alert" class="close">&times;</a>
+	<div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="alert-heading"><?php echo lang('mb_form_errors'); ?></h4>
 		<?php echo validation_errors(); ?>
 	</div>

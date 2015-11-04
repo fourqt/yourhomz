@@ -1,6 +1,6 @@
-<div class="alert alert-info fade in">
-	<a class="close" data-dismiss="alert">&times;</a>
-	<p><?php echo lang('migrations_migrate_note'); ?></p>
+<div class="alert alert-info alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<?php echo lang('migrations_migrate_note'); ?>
 </div>
 <!-- Migration Confirmation -->
 <h2><?php echo lang('migrations_migrate_to'); ?> <?php echo $latest_version; ?>?</h2>

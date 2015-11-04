@@ -8,8 +8,8 @@ $validationErrors = validation_errors();
 ?>
 <div class='module-builder'>
     <p class="intro"><?php e(lang('mb_create_note')); ?></p>
-    <div class="alert alert-info fade in">
-        <a class="close" data-dismiss="alert">&times;</a>
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <?php echo lang('mb_form_note'); ?>
     </div>
     <?php
@@ -18,17 +18,17 @@ $validationErrors = validation_errors();
     //--------------------------------------------------------------------------
     if (! $writable) :
     ?>
-    <div class="alert alert-error fade in">
-        <a class="close" data-dismiss="alert">&times;</a>
-        <p><?php echo lang('mb_not_writable_note'); ?></p>
+    <div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <?php echo lang('mb_not_writable_note'); ?>
     </div>
     <?php
     endif;
 
     if ($validationErrors) :
     ?>
-    <div class="alert alert-error fade in">
-        <a data-dismiss="alert" class="close">&times;</a>
+    <div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="alert-heading"><?php echo lang('mb_form_errors'); ?></h4>
         <?php echo $validationErrors; ?>
     </div>
@@ -37,8 +37,8 @@ $validationErrors = validation_errors();
 
     if ($sessionError):
     ?>
-    <div class="alert alert-error fade in">
-        <a data-dismiss="alert" class="close">&times;</a>
+    <div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <?php echo $sessionError; ?>
     </div>
     <?php
@@ -46,8 +46,8 @@ $validationErrors = validation_errors();
 
     if (isset($error_message)) :
     ?>
-    <div class="alert alert-error fade in">
-        <a data-dismiss="alert" class="close">&times;</a>
+    <div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <?php echo $error_message; ?>
     </div>
     <?php
@@ -303,8 +303,8 @@ $validationErrors = validation_errors();
                 // End of Table Details - Advanced Options
                 //--------------------------------------------------------------
                 ?>
-                <div class="alert alert-info fade in mb_new_table">
-                    <a class="close" data-dismiss="alert">&times;</a>
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <?php echo lang('mb_table_note'); ?>
                 </div>
                 <div class="control-group mb_new_table<?php echo form_error('primary_key_field') ? ' error' : ''; ?>">
@@ -349,8 +349,8 @@ $validationErrors = validation_errors();
                 <fieldset id="field<?php echo $count; ?>_details">
                     <legend><?php echo lang('mb_form_field_details') . " {$count}"; ?></legend>
                     <?php if ($count == 1) : ?>
-                    <div class="alert alert-info fade in">
-                        <a class="close" data-dismiss="alert">&times;</a>
+                    <div class="alert alert-info alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <?php echo lang('mb_field_note'); ?>
                     </div>
                     <?php endif; ?>

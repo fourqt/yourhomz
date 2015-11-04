@@ -34,16 +34,17 @@ endif;
 
 if (isset($user) && $user->banned == 't') :
 ?>
-<div class="alert alert-warning fade in">
-    <h4 class="alert-heading"><?php echo lang('us_banned_admin_note'); ?></h4>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?php echo lang('us_banned_admin_note'); ?>
 </div>
 <?php
 endif;
 
 if (isset($password_hints)) :
 ?>
-<div class="alert alert-info fade in">
-    <a data-dismiss="alert" class="close">&times;</a>
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <?php echo $password_hints; ?>
 </div>
 <?php

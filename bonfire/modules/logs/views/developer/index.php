@@ -1,15 +1,15 @@
 <?php if ($log_threshold == 0) : ?>
-<div class="alert alert-warning fade in">
-    <a class="close" data-dismiss="alert">&times;</a>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <?php e(lang('logs_not_enabled')); ?>
 </div>
 <?php
 endif;
 if (empty($logs) || ! is_array($logs)) :
 ?>
-<div class="alert alert-info fade in notification">
-    <a class="close" data-dismiss="alert">&times;</a>
-    <p><?php echo lang('logs_no_logs'); ?></p>
+<div class="alert alert-info alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <?php echo lang('logs_no_logs'); ?>
 </div>
 <?php else : ?>
 <div class="admin-box">
@@ -63,8 +63,8 @@ if (empty($logs) || ! is_array($logs)) :
 <div class="admin-box">
     <h3><?php echo lang('logs_delete_button'); ?></h3>
     <?php echo form_open(); ?>
-        <div class="alert alert-warning fade in">
-            <a class="close" data-dismiss="alert">&times;</a>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <?php echo lang('logs_delete_note'); ?>
         </div>
         <fieldset class="form-actions">

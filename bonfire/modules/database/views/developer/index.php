@@ -1,4 +1,4 @@
-<div class="admin-box database">
+<div class="panel panel-white">
     <?php if (empty($tables) || ! is_array($tables)) : ?>
     <div class="notification info">
         <p><?php echo lang('database_no_tables'); ?></p>
@@ -22,15 +22,19 @@
 			<tfoot>
 				<tr>
 					<td colspan="7">
-                        <label for='database-action'><?php echo lang('bf_with_selected'); ?>:</label>
-                        <select name="action" id='database-action' class="span2">
-                            <option value="backup"><?php echo lang('database_backup'); ?></option>
-                            <option value="repair"><?php echo lang('database_repair'); ?></option>
-                            <option value="optimize"><?php echo lang('database_optimize'); ?></option>
-							<option>------</option>
-                            <option value="drop"><?php echo lang('database_drop'); ?></option>
-						</select>
-                        <input type="submit" value="<?php echo lang('database_apply')?>" class="btn btn-primary" />
+						<div class="form-inline">
+							<div class="form-group">
+								<label for='database-action'><?php echo lang('bf_with_selected'); ?>:</label>
+								<select name="action" id='database-action' class="form-control">
+									<option value="backup"><?php echo lang('database_backup'); ?></option>
+									<option value="repair"><?php echo lang('database_repair'); ?></option>
+									<option value="optimize"><?php echo lang('database_optimize'); ?></option>
+									<option>------</option>
+									<option value="drop"><?php echo lang('database_drop'); ?></option>
+								</select>
+							</div>
+							<input type="submit" value="<?php echo lang('database_apply')?>" class="btn btn-primary" />
+						</div>  
 					</td>
 				</tr>
 			</tfoot>

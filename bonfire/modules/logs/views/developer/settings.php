@@ -1,6 +1,6 @@
 <?php if ($log_threshold == 0) : ?>
-<div class="alert alert-warning fade in">
-    <a class="close" data-dismiss="alert">&times;</a>
+<div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <?php echo lang('logs_not_enabled'); ?>
 </div>
 <?php endif; ?>
@@ -21,8 +21,8 @@
                 </div>
             </div>
         </fieldset>
-        <div class="alert alert-info fade in">
-            <a class="close" data-dismiss="alert">&times;</a>
+        <div class="alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <?php echo lang('logs_big_file_note'); ?>
         </div>
         <fieldset class="form-actions">

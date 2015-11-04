@@ -66,9 +66,9 @@ $hasPermissionDeleteUser   = isset($hasPermissionDeleteUser) ? $hasPermissionDel
     </div>
     <div class="panel-body">
         <?php if (empty($activity_content)) : ?>
-        <div class="alert alert-error fade in">
-            <a class="close" data-dismiss="alert">&times;</a>
-            <h4 class="alert-heading"><?php echo lang('activities_not_found'); ?></h4>
+        <div class="alert alert-error alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <?php echo lang('activities_not_found'); ?>
         </div>
         <?php else : ?>
         <div id="user_activities">

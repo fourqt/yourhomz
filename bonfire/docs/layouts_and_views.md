@@ -386,9 +386,9 @@ The code is wrapped within HTML that you can define in the `application.php` con
 It defaults to a Bootstrap compatible alert message.
 
     $config['template.message_template'] =<<<EOD
-     <div class="alert alert-block alert-{type} fade in notification">
-            <a data-dismiss="alert" class="close" href="#">&times;</a>
-            <div>{message}</div>
+        <div class="alert alert-{type} alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            {message}
         </div>
     EOD;
 

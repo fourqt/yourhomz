@@ -5,8 +5,8 @@
 <?php if (validation_errors()) { ?>
 <div class="row-fluid">
 	<div class="span8 offset2">
-		<div class="alert alert-error fade in">
-		  <a data-dismiss="alert" class="close">&times;</a>
+		<div class="alert alert-error alert-dismissible" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			<?php echo validation_errors(); ?>
 		</div>
 	</div>

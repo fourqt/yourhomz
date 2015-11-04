@@ -4,11 +4,10 @@ $databaseUrl = site_url(SITE_AREA . '/developer/database');
 $numColumns = 4;
 
 ?>
-<div class="admin-box backups">
+<div class="panel panel-white">
+<div class="panel-body">
     <?php if (empty($backups) || ! is_array($backups)) : ?>
-    <div class="alert alert-info">
-        <p><?php echo lang('database_no_backups'); ?></p>
-    </div>
+    <div class="alert alert-info"><?php echo lang('database_no_backups'); ?></div>
     <?php
     else :
         echo form_open($this->uri->uri_string());
@@ -51,4 +50,5 @@ $numColumns = 4;
         echo form_close();
     endif;
     ?>
+</div>
 </div>

@@ -16,11 +16,13 @@ $fieldData = array(
 <section id="register">
     <h1 class="page-header"><?php echo lang('us_sign_up'); ?></h1>
     <?php if (validation_errors()) : ?>
-    <div class="alert alert-error fade in">
+    <div class="alert alert-error alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <?php echo validation_errors(); ?>
     </div>
     <?php endif; ?>
-    <div class="alert alert-info fade in">
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="alert-heading"><?php echo lang('bf_required_note'); ?></h4>
         <?php
         if (isset($password_hints)) {

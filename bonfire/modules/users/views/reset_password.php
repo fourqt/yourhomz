@@ -2,13 +2,15 @@
 		<h1>Reset Your Password</h1>
 	</div>
 
-	<div class="alert alert-info fade in">
-		<h4 class="alert-heading"><?php echo lang('us_reset_password_note'); ?></h4>
+	<div class="alert alert-info alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<?php echo lang('us_reset_password_note'); ?>
 	</div>
 
 
 <?php if (validation_errors()) : ?>
-	<div class="alert alert-error fade in">
+	<div class="alert alert-error alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<?php echo validation_errors(); ?>
 	</div>
 <?php endif; ?>
