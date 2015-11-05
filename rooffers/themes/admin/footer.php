@@ -64,6 +64,10 @@
    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline 
    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
    <script>window.jQuery || document.write('<script src="<?php echo js_path(); ?>jquery-2.1.4.min.js"><\/script>');</script>
+   	<script>
+	var js_base_url = '<?php echo base_url()?>';
+	var csrf_token_name = $('input[name="csrf_token"]').val();
+	</script>
 	<?php echo Assets::js(); ?>
 </body>
 </html>

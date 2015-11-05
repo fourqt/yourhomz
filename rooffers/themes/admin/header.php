@@ -6,7 +6,6 @@ Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','jquer
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     Assets::add_js($this->load->view('ui/shortcut_keys', $shortcut_data, true), 'inline');
 }
-
 ?>
 <!doctype html>
 <html lang="en">

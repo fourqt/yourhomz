@@ -1,3 +1,4 @@
+                    <a href="#" onclick="submit_proj_form();">test</a>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-white">
@@ -19,12 +20,13 @@
                                         </div>
                                             <div class="tab-content">
                                                 <div class="tab-pane active fade in" id="tab1">
+                                                    <div id="tabone">
                                                     <div class="row m-b-lg">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Select Builder</label>
-                                                                    <select class="form-control m-b-sm" name="builder">
+                                                                    <select class="form-control m-b-sm" name="builder" id="builderId">
                                                                     <?php foreach($builders as $builder){ ?>
                                                                         <option value="<?=$builder->id?>"><?=$builder->display_name?></option>
                                                                     <?php } ?>
@@ -35,13 +37,13 @@
                                                                     <input type="texttext" class="form-control" name="ProjectName" id="InputProjectName" placeholder="Project name" >
                                                                 </div>
 
-                                                                <div class="form-group col-md-12">
+                                                                <div class="form-group col-md-12" id="project_types">
                                                                     <?php foreach($this->config->item('project.types') as $project_type){ ?>
                                                                            <?php if($project_type['input_type'] == 'select'){ ?>
                                                                            <div class="row">
                                                                            <div class="form-group col-md-6">
                                                                            <label><?=$project_type['name']?></label>
-                                                                            <select class="form-control m-b-sm" name="project_type_<?=$project_type['id']?>" id="project_type_<?=$project_type['id']?>" data-id="<?=$project_type['id']+1?>">
+                                                                            <select class="form-control m-b-sm selprojtype" name="project_type_<?=$project_type['id']?>" id="project_type_<?=$project_type['id']?>" data-id="<?=$project_type['id']+1?>">
                                                                             <?php for($i=0;$i<10;$i++){ ?>
                                                                                 <option value="<?=$i?>"><?=$i?></option>
                                                                             <?php } ?>
@@ -49,10 +51,10 @@
                                                                             </div>
                                                                             <div class="form-group col-md-6">
                                                                                 <label for="exampleInputProductName">Have</label>
-                                                                                <select class="js-example-tokenizer js-states form-control" multiple="multiple">
+                                                                                <select class="js-example-tokenizer js-states form-control" multiple="multiple" id="apt_unit_type">
                                                                                 <?php foreach($this->config->item('unit.types') as $unit_type){ ?>
                                                                                   <option value="<?=$unit_type['id']?>"><?=$unit_type['name']?></option>
-                                                                                  <?php } ?>
+                                                                                <?php } ?>
                                                                                 </select>
                                                                             </div>
                                                                             </div>
@@ -93,75 +95,20 @@
 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputEmail">Overview</label>
-                                                                    <textarea class="form-control" placeholder="Enter project detail here."></textarea>
+                                                                    <textarea class="form-control" placeholder="Enter project detail here." id="project_overview"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                </div>
 <!-- Tab 2 Start-->
                                             <?php foreach($this->config->item('project.types') as $project_type){ ?>
-                                                <?php if( $project_type['id']==0 ){ ?>
-                                                <div class="tab-pane fade" id="tab<?php echo $project_type['id']+2; ?>">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="tabbable tabs-left" id="tabsleft">
-                                                                <ul class="nav nav-tabs">
-                                                                    <li class="active"><a data-toggle="tab" href="#tabsleft-tab1">2 BHK</a></li>
-                                                                    <li class=""><a data-toggle="tab" href="#tabsleft-tab2">3 BHK</a></li>
-                                                                    <li class=""><a data-toggle="tab" href="#tabsleft-tab3">Penthouse</a></li>
-                                                                </ul>
-                                                                <div class="progress progress-info progress-striped">
-                                                                    <div class="bar" style="width: 14.2857%;"></div>
-                                                                </div>
-                                                                <div class="tab-content">
-                                                                    <div id="tabsleft-tab1" class="tab-pane active">
-                                                                        <div class="row">
-                                                                            <div class="col-md-4"></div>
-                                                                            <div class="col-md-3">
-                                                                                <div class="panel panel-white">
-                                                                                    <div class="panel-heading">
-                                                                                        <h3 class="panel-title">2 D</h3>
-                                                                                    </div>
-                                                                                    <div class="panel-body">
-                                                                                        <form action="http://lambdathemes.in/file-upload" class="dropzone">
-                                                                                            <div class="fallback">
-                                                                                                <input name="file" type="file" multiple />
-                                                                                            </div>
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-3">
-                                                                                <div class="panel panel-white">
-                                                                                    <div class="panel-heading">
-                                                                                        <h3 class="panel-title">3 D</h3>
-                                                                                    </div>
-                                                                                    <div class="panel-body">
-                                                                                        <form action="http://lambdathemes.in/file-upload" class="dropzone">
-                                                                                            <div class="fallback">
-                                                                                                <input name="file" type="file" multiple />
-                                                                                            </div>
-                                                                                        </form>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div id="tabsleft-tab2" class="tab-pane">
-                                                                        <p>Howdy, I'm in Section 2.</p>
-                                                                    </div>
-                                                                    <div id="tabsleft-tab3" class="tab-pane">
-                                                                        3
-                                                                    </div>
-                                                                    </div>  
-                                                                </div>
-                                                            </div>
-                                                    </div>
-                                                </div>
-                                                <?php }else{ ?>
-                                                <div class="tab-pane fade" id="tab<?php echo $project_type['id']+2; ?>"></div>
-                                                <?php } ?>
+                                                <?php if( $project_type['id']==0 ){ 
+                                                $this->load->view('content/partials/proj_type_'.$project_type['id'], array('project_type'=>$project_type));
+                                                 }else{ 
+                                                $this->load->view('content/partials/proj_type_1', array('project_type'=>$project_type));
+                                                 } ?>
                                             <?php } ?>
                                                 <div class="tab-pane fade" id="tab13">
                                                     <div class="row">

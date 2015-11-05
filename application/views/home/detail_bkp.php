@@ -2,11 +2,12 @@
 $id = $this->uri->segment(3);
 
 $rawData = json_decode($this->db->query("select raw_data from rf_projects where id=".$id)->row()->raw_data);
-$builder = $this->db->query("select username from rf_users where id=".$rawData->builder_id)->row()->username;
-$img2d = $this->db->query("select image_name from rf_images_uploaded where project_id=".$id." and img_for=0")->row()->image_name;
-$img3d = $this->db->query("select image_name from rf_images_uploaded where project_id=".$id." and img_for=1")->row()->image_name;
+echo "<pre>";
 
-$unit_types = $this->config->item('unit.types');
+print_r($rawData);
+
+echo "</pre>";
+
 ?>
 <header id="big-detail">
 <div id="innerhead">
@@ -28,14 +29,14 @@ $unit_types = $this->config->item('unit.types');
 			<div class="col-lg-9 col-md-9 col-sm-9">
 				<div class="row">
 					<div class="col-lg-8 project-headline">
-						<h2><?=$rawData->project_name?></h2>
-						<h4>by <?=$builder?></h4>
-						<p><?=$rawData->address?></p>
+						<h2>Project Name</h2>
+						<h4>by Project Group</h4>
+						<p>Sr. No. 73A/1+2+75/2P, Near Manjri Stud Farm, Pune-Solapur Road, Pune</p>
 					</div>
 					<div class="col-lg-4">
-						<h2><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs +</h2>
+						<h2>50.13 Lacs +</h2>
 						<ul class="fa-ul">
-							<li><span>&bull;</span><?=$rawData->projectsUnits->{'0'}->builtupArea?>/sq.ft+</li>
+							<li><span>&bull;</span>4.45k/sq.ft+</li>
 							<li><span>&bull;</span>EMI starting 34.9 k</li>
 						</ul>
 					</div>
@@ -115,8 +116,8 @@ $unit_types = $this->config->item('unit.types');
 					  <li><i class="fa-li fa fa-2x fa-calendar-plus-o"></i>Completed<b>15 January 2017</b></li>
 					  <li><i class="fa-li fa fa-2x fa-square-o"></i>Project Area<b>10 Acres ( 20% open)</b></li>
 					  <li><i class="fa-li fa fa-2x fa-calendar-check-o"></i>Possession Starts<b>15 March 2017</b></li>
-					  <li><i class="fa-li fa fa-2x fa-th"></i>Configurations<b><?php foreach($rawData->apt_unit_type as $utype){ echo $unit_types[$utype]['name'].',';  } ?> Apartment</b></li>
-					  <li><i class="fa-li fa fa-2x fa-object-group"></i>Total Apartments<b><?=$rawData->project_types->{'1'}?></b></li>
+					  <li><i class="fa-li fa fa-2x fa-th"></i>Configurations<b>2 BHK Apartment</b></li>
+					  <li><i class="fa-li fa fa-2x fa-object-group"></i>Total Apartments<b>130</b></li>
 					</ul>
 					<p>An exclusively designed residential haven, Manjiri Greenwoods, offers a new perspective to lifestyle living. The project comprises of exquisite buildings, each of 12 storeys and finely crafted to offer you with a royal living. It is the ideal combination of intelligent planning and a design that invokes a sense of community. Each apartment here is a pool of fresh ideas molded into living spaces. From leisure to entertainment to daily activities, it will bring you a splendid array of services.</p>
 					<ul>
@@ -133,14 +134,20 @@ $unit_types = $this->config->item('unit.types');
 					<div class="row">
 						<div class="col-lg-3 no-p-h npcl b-r">
 							<ul class="nav nav-pills onenav m-l-sm m-r-sm">
-							<?php foreach($rawData->apt_unit_type as $utype){ 
-								echo '<li class=""><a href="">'.$unit_types[$utype]['name'].'</a></li>';  
-									} 
-							?>
+							  <li class="active"><a href="">1 BHK</a></li>
+							  <li><a href="">2 BHK</a></li>
+							  <li><a href="">3 BHK</a></li>
 							</ul>
-							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small><?=$rawData->project_types->{'1'}?> Apartments</small></div>
+							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small>7 Apartments</small></div>
 							<div class="list-group twonav">
-							  <a href="#" class="list-group-item active"><?=$rawData->projectsUnits->{'0'}->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item active">1181 sq. ft.<br><i class="fa fa-inr"></i><b>65.44 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1184 sq. ft.<br><i class="fa fa-inr"></i><b>63.65 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1192 sq. ft.<br><i class="fa fa-inr"></i><b>64.05 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1193 sq. ft.<br><i class="fa fa-inr"></i><b>64.10 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1211 sq. ft.<br><i class="fa fa-inr"></i><b>70.29 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1214 sq. ft.<br><i class="fa fa-inr"></i><b>69.79 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1222 sq. ft.<br><i class="fa fa-inr"></i><b>70.21 Lacs</b> <small>onwards</small></a>
+							  <a href="#" class="list-group-item">1226 sq. ft.<br><i class="fa fa-inr"></i><b>71.10 Lacs</b> <small>onwards</small></a>
 							</div>
 						</div>
 						<div class="col-lg-9 npcr b-l">
@@ -158,8 +165,8 @@ $unit_types = $this->config->item('unit.types');
 						    		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 						      		<div class="panel-body">
 						        		<div class="imgd">
-						        			<a class="magnific-imgpop 3d" href="<?=base_url();?>assets/images/projectgallery/img1.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img2d?>"></a>
-						        			<a class="magnific-imgpop 2d hidden" href="<?=base_url();?>assets/images/projectgallery/img2.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img3d?>"></a>
+						        			<a class="magnific-imgpop 3d" href="<?=base_url();?>assets/images/projectgallery/img1.jpg"><img src="<?=base_url();?>assets/images/projectgallery/small/img1.jpg"></a>
+						        			<a class="magnific-imgpop 2d hidden" href="<?=base_url();?>assets/images/projectgallery/img2.jpg"><img src="<?=base_url();?>assets/images/projectgallery/small/img2.jpg"></a>
 						        			<div class="btn-group" role="group" aria-label="apartment-image-button">
 						        				<button type="button" class="btn btn-default active">3D</button>
 						        				<button type="button" class="btn btn-default">2D</button>
@@ -195,7 +202,6 @@ $unit_types = $this->config->item('unit.types');
 						    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 						      <div class="panel-body">
 						        <ul class="clearfix clist row no-s">
-
 									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm room"></i>Living Room</li>
 									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm kitchen"></i>Kitchen</li>
 									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm balcony"></i>2 Balconies</li>
@@ -490,14 +496,4 @@ $unit_types = $this->config->item('unit.types');
             </div>
         </div>
 	</div>
-</div>
-<div onclick="$(this).find('div').toggle()">
-Show debug
-<div  style="display:none;">
-<?php
-echo "<pre>";
-print_r($rawData);
-echo "</pre>";
-?>
-</div>
 </div>
