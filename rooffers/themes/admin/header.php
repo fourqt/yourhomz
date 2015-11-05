@@ -415,8 +415,9 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
                 </ul>
             </div><!-- Page Sidebar Inner -->
         </div><!-- Page Sidebar -->
+        <?=theme_view('admin_menu'); ?>
         <div class="page-inner">
-            <div class="container">
+            <div class="container" style="display:none;">
                 <?php echo Contexts::render_menu('text', 'normal'); ?>
             </div>
             <div class="page-breadcrumb">

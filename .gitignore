@@ -63,3 +63,5 @@ vendor/*
 sparks/*
 .htaccess
 rooffers/.htaccess
+rooffers/assets/uploads/*
+rooffers/assets/cache/*
