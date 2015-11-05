@@ -141,6 +141,58 @@ class Content extends Admin_Controller
     }
 
 
+    public function imageUpload($data_unit_type, $imgFor){
+
+        echo $data_unit_type.' '.$imgFor.' '; echo '#'.realpath(FCPATH).'#';
+        print_r($_POST);
+        $config = array(
+            'upload_path' => FCPATH . '/assets/uploads/0/',
+            'file_name' => uniqid($imgFor.'_', false).'.'.pathinfo($_POST['file']['name'], PATHINFO_EXTENSION),
+            'allowed_types' => "*",
+            'overwrite' => TRUE,
+            'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
+            'max_height' => "768",
+            'max_width' => "1024"
+            );
+        
+        $this->load->library('upload', $config);
+        if($this->upload->do_upload('file'))
+        {
+            $upload_data = $this->upload->data();
+            $data = array(
+               'image_name' => $upload_data['file_name'],
+               'img_for' => $imgFor ,
+               'bhkType' => $this->input->post('bhkType')
+            );
+
+            $this->db->insert('images_uploaded', $data);
+            echo 1;
+        }else{
+            echo $this->upload->display_errors();
+        }
+
+    }
+    
+    public function submitProject(){
+        //echo "<pre>"; print_r($_POST); echo "</pre>";
+        
+        $data = array(
+               'created_by' => 1,
+               'raw_data' => json_encode($_POST)
+            );
+
+        $this->db->insert('projects', $data);
+
+        $id = $this->db->insert_id();
+        
+        $data = array(
+               'project_id' => $id
+            );
+
+        $this->db->where('project_id', NULL);
+        $this->db->update('images_uploaded', $data); 
+    }
+    
     public function create_form_configuration()
     {
         $this->auth->restrict($this->permissionCreate);

@@ -1,3 +1,4 @@
+                    <a href="#" onclick="submit_proj_form();">test</a>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-white">
@@ -19,12 +20,13 @@
                                         </div>
                                             <div class="tab-content">
                                                 <div class="tab-pane active fade in" id="tab1">
+                                                    <div id="tabone">
                                                     <div class="row m-b-lg">
                                                         <div class="col-md-6">
                                                             <div class="row">
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputName">Select Builder</label>
-                                                                    <select class="form-control m-b-sm" name="builder">
+                                                                    <select class="form-control m-b-sm" name="builder" id="builderId">
                                                                     <?php foreach($builders as $builder){ ?>
                                                                         <option value="<?=$builder->id?>"><?=$builder->display_name?></option>
                                                                     <?php } ?>
@@ -35,13 +37,13 @@
                                                                     <input type="texttext" class="form-control" name="ProjectName" id="InputProjectName" placeholder="Project name" >
                                                                 </div>
 
-                                                                <div class="form-group col-md-12">
+                                                                <div class="form-group col-md-12" id="project_types">
                                                                     <?php foreach($this->config->item('project.types') as $project_type){ ?>
                                                                            <?php if($project_type['input_type'] == 'select'){ ?>
                                                                            <div class="row">
                                                                            <div class="form-group col-md-6">
                                                                            <label><?=$project_type['name']?></label>
-                                                                            <select class="form-control m-b-sm" name="project_type_<?=$project_type['id']?>" id="project_type_<?=$project_type['id']?>" data-id="<?=$project_type['id']+1?>">
+                                                                            <select class="form-control m-b-sm selprojtype" name="project_type_<?=$project_type['id']?>" id="project_type_<?=$project_type['id']?>" data-id="<?=$project_type['id']+1?>">
                                                                             <?php for($i=0;$i<10;$i++){ ?>
                                                                                 <option value="<?=$i?>"><?=$i?></option>
                                                                             <?php } ?>
@@ -93,11 +95,12 @@
 
                                                                 <div class="form-group col-md-12">
                                                                     <label for="exampleInputEmail">Overview</label>
-                                                                    <textarea class="form-control" placeholder="Enter project detail here."></textarea>
+                                                                    <textarea class="form-control" placeholder="Enter project detail here." id="project_overview"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 </div>
 <!-- Tab 2 Start-->
                                             <?php foreach($this->config->item('project.types') as $project_type){ ?>
