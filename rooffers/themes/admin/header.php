@@ -299,7 +299,9 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
         </div><!-- Navbar -->
         <div class="page-sidebar sidebar horizontal-bar">
             <div class="page-sidebar-inner">
-                <?=theme_view('admin_menu'); ?>
+                <div class="container">
+                    <?=theme_view('admin_menu'); ?>
+                </div>
             </div><!-- Page Sidebar Inner -->
         </div><!-- Page Sidebar -->
         <div class="page-inner">

@@ -2245,6 +2245,11 @@ tr.group, tr.group:hover {
 .page-sidebar .page-sidebar-inner {
     height: 100%!important;
 }
+@media (max-width: 767px) {
+.page-sidebar .page-sidebar-inner .container{
+    padding: 0 !important;
+}
+}
 .small-sidebar .page-sidebar {
     width: 65px;
 }
@@ -2332,7 +2337,7 @@ body:not(.small-sidebar) .horizontal-bar .accordion-menu>li>a>.menu-icon {
     border-right: 0;
 }
 .horizontal-bar .accordion-menu {
-    text-align: center;
+    text-align: left;
     font-size: 0;
     width: 100%!important;
     overflow: visible!important;

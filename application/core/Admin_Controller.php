@@ -35,10 +35,10 @@ class Admin_Controller extends Authenticated_Controller
 
         // Pagination config
         $this->pager = array(
-            'full_tag_open'     => '<div class="pagination pagination-right"><ul>',
-            'full_tag_close'    => '</ul></div>',
-            'next_link'         => '&rarr;',
-            'prev_link'         => '&larr;',
+            'full_tag_open'     => '<nav><ul class="pagination">',
+            'full_tag_close'    => '</ul></nav>',
+            'next_link'         => '<span aria-hidden="true">&raquo;</span>',
+            'prev_link'         => '<span aria-hidden="true">&laquo;</span>',
             'next_tag_open'     => '<li>',
             'next_tag_close'    => '</li>',
             'prev_tag_open'     => '<li>',

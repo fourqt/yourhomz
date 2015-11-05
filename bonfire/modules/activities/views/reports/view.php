@@ -93,8 +93,8 @@ $hasPermissionDeleteUser   = isset($hasPermissionDeleteUser) ? $hasPermissionDel
                 </tbody>
             </table>
         </div>
+    <?php echo $this->pagination->create_links();?>
     </div>
 </div>
 <?php
-    echo $this->pagination->create_links();
 endif;
