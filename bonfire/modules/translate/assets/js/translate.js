@@ -39,12 +39,12 @@ $(document).ready(function(e){
 			return message;
 		});
 
-		$("button.gobottom").on('click', function(e) {
+		$("button.gobottom, a.gobottom").on('click', function(e) {
 			e.preventDefault();
 			$("html, body").animate({ scrollTop: $(document).height() }, 1000);
 		});
 
-		$("button.gotop").on('click', function(e) {
+		$("button.gotop, a.gotop").on('click', function(e) {
 			e.preventDefault();
 			$("html, body").animate({ scrollTop: 0 }, 1000);
 		});
