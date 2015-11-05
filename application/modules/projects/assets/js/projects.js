@@ -406,10 +406,6 @@ $(document).ready(function() {
         },
     });
     
-    for(i=1;i<12;i++){
-        $('#rootwizard').bootstrapWizard('hide', i);
-    }
-
     $('.date-picker').datepicker({
         orientation: "top auto",
         autoclose: true
