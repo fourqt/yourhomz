@@ -6,8 +6,8 @@ body {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('bsfont/glyphicons-halflings-regular.eot');
-  src: url('bsfont/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('bsfont/glyphicons-halflings-regular.woff2') format('woff2'), url('bsfont/glyphicons-halflings-regular.woff') format('woff'), url('bsfont/glyphicons-halflings-regular.ttf') format('truetype'), url('bsfont/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../bsfont/glyphicons-halflings-regular.eot');
+  src: url('../bsfont/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../bsfont/glyphicons-halflings-regular.woff2') format('woff2'), url('../bsfont/glyphicons-halflings-regular.woff') format('woff'), url('../bsfont/glyphicons-halflings-regular.ttf') format('truetype'), url('../bsfont/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 .glyphicon {
@@ -26,12 +26,12 @@ h1, h2, h3, h4, h5, h6{ color: #393939;}
 
 .bgwhite{ background-color: #FFF; border: #ebebeb solid 1px;}
 
-header#big-detail{ background: #009999 url(images/project/image3.jpg) 50% 0 no-repeat;}
+header#big-detail{ background: #009999 url(../images/project/image3.jpg) 50% 0 no-repeat;}
 header#big-detail #innerhead{ background: -webkit-linear-gradient(top,rgba(0,0,0,0), rgba(0,0,0,0.7)); background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7)); background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); height: 425px; position: relative;}
 
 /* - Top Right Menu - */
 nav.topnav{ background: rgba(0,0,0,0.5); color: #FFF; padding: 10px 0; position: absolute; left: 0; top: 0; right: 0; z-index: 1005;}
-nav.topnav a.logo{ display: block; width: 121px; height: 40px; background: url(images/logo.png) 0 0 no-repeat;}
+nav.topnav a.logo{ display: block; width: 121px; height: 40px; background: url(../images/logo.png) 0 0 no-repeat;}
 ul.nav-pills-top{}
 ul.nav-pills-top li{}
 ul.nav-pills-top li a{ color: #FFF; transition: color 0.1s linear ;}
@@ -185,10 +185,10 @@ section#project-head ul li:first-child span{ display: none;}
 
 i.ico{ display: inline-block; vertical-align: top; margin: 0 5px; background-size: contain; background-position: 0 0; background-repeat: no-repeat;}
 i.sm{ width: 20px; height: 20px;}
-i.room{ background-image: url(../../assets/images/icons/iconRoom.png);}
-i.kitchen{ background-image: url(../../assets/images/icons/iconKitchen.png);}
-i.balcony{ background-image: url(../../assets/images/icons/iconBalcony.png);}
-i.toilet{ background-image: url(../../assets/images/icons/iconToilet.png);}
+i.room{ background-image: url(../../../assets/images/icons/iconRoom.png);}
+i.kitchen{ background-image: url(../../../assets/images/icons/iconKitchen.png);}
+i.balcony{ background-image: url(../../../assets/images/icons/iconBalcony.png);}
+i.toilet{ background-image: url(../../../assets/images/icons/iconToilet.png);}
 
 .iefall-show{ display: none;}
 .no-placeholder .iefall-show{ display: block;}
