@@ -27,8 +27,20 @@ class Content extends Admin_Controller
         
         Template::set_block('sub_nav', 'content/_sub_nav');
 
-        Assets::add_css(array('plugins/select2/css/select2.min.css', 'plugins/line-icons/simple-line-icons.css', 'plugins/dropzone/dropzone.min.css'));
-        Assets::add_js(array('http://maps.google.com/maps/api/js?sensor=false', 'plugins/select2/js/select2.min.js', 'plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js', 'plugins/dropzone/dropzone.min.js'));
+        Assets::add_css(array(
+                            'plugins/select2/css/select2.min.css',
+                            'plugins/line-icons/simple-line-icons.css', 
+                            'plugins/dropzone/dropzone.min.css',
+                        ));
+        
+        Assets::add_js(array(
+                            'http://maps.google.com/maps/api/js?sensor=false', 
+                            'plugins/select2/js/select2.min.js', 
+                            'plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js', 
+                            'plugins/dropzone/dropzone.min.js',
+                            'plugins/jquery-gmap3/gmap3.js',
+                            ));
+        
         Assets::add_module_js('projects', 'projects.js');
     }
 
