@@ -1864,14 +1864,14 @@ tr.group, tr.group:hover {
     background: #fff;
 }
 .pace .pace-progress {
-    background: #22BAA0;
+    background: #7a6fbe;
 }
 .pace .pace-progress-inner {
-    box-shadow: 0 0 10px #22BAA0, 0 0 5px #22BAA0;
+    box-shadow: 0 0 10px #7a6fbe, 0 0 5px #7a6fbe;
 }
 .pace .pace-activity {
-    border-top-color: #22BAA0;
-    border-left-color: #22BAA0;
+    border-top-color: #7a6fbe;
+    border-left-color: #7a6fbe;
     margin-top: 60px;
 }
 .navbar .logo-box {
