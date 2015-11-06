@@ -1,0 +1,15 @@
+/* Basic Typography */
+body {
+	background-color: #d9dde8;
+	font-family: Ubuntu,sans-serif;
+}
+
+.navbar{ background-color: #22baa0;}
+.topmenu-outer{ background-color: #22baa0;}
+.small-sidebar .navbar .logo-box{ width: 121px;}
+.navbar .logo-box a{ background: url(../images/logo.png) 50% 50% no-repeat; width: 121px; text-indent: -9999px;}
+.top-menu .navbar-nav > li > a{ color: #FFF;}
+.top-menu .nav .open > a, .top-menu .nav .open > a:focus, .top-menu .nav .open > a:hover{ color: #ebebeb;}
+/* Link Lists */
+.filter-link-list a { display: inline-block; margin:0 3px; line-height: 2.0;}
+/* Page Structure */
