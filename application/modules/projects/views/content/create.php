@@ -3,8 +3,14 @@
       <div id="rootwizard">
          <ul class="nav nav-tabs" role="tablist">
              <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-building m-r-xs"></i>Project Info</a></li>
-             <?php foreach($this->config->item('project.types') as $project_type){ ?>
+             <?php foreach($this->config->item('project.types') as $project_type){ 
+                    if($project_type['id'] == 0){
+              ?>
              <li style="display:none;"><a href="#tab<?php echo $project_type['id']+2; ?>" data-toggle="tab"><span class="icon-settings m-r-xs"></span><?php echo $project_type['name']; ?></a></li>
+             <?php foreach($this->config->item('unit.types') as $unit_type){ ?>
+             <li style="display:none;"><a href="#tab<?php echo $unit_type['id']+3; ?>" data-toggle="tab"><span class="icon-settings m-r-xs"></span><?php echo $unit_type['name']; ?></a></li>
+             <?php } ?>
+             <?php } ?>
              <?php } ?>
              <li><a href="#tab13" data-toggle="tab"><i class="fa fa-credit-card m-r-xs"></i>Payment</a></li>
              <li><a href="#tab14" data-toggle="tab"><i class="fa fa-check m-r-xs"></i>Finish</a></li>
@@ -34,32 +40,11 @@
 
                   <div class="form-group" id="project_types">
                   <?php foreach($this->config->item('project.types') as $project_type){ ?>
-                      <?php if($project_type['input_type'] == 'select'){ ?>
-                      <div class="row">
-                      <div class="form-group col-md-6">
-                      <label><?=$project_type['name']?></label>
-                       <select class="form-control m-b-sm selprojtype" name="project_type_<?=$project_type['id']?>" id="project_type_<?=$project_type['id']?>" data-id="<?=$project_type['id']+1?>">
-                       <?php for($i=0;$i<10;$i++){ ?>
-                           <option value="<?=$i?>"><?=$i?></option>
-                       <?php } ?>
-                       </select>
-                       </div>
-                       <div class="form-group col-md-6">
-                           <label for="exampleInputProductName">Have</label>
-                           <select class="js-example-tokenizer js-states form-control" multiple="multiple" id="apt_unit_type">
-                           <?php foreach($this->config->item('unit.types') as $unit_type){ ?>
-                             <option value="<?=$unit_type['id']?>"><?=$unit_type['name']?></option>
-                           <?php } ?>
-                           </select>
-                       </div>
-                       </div>
-                       <?php }else{ ?>
                        <div class="checkbox col-md-6" style="margin-top:5px;">
                            <label>
                                <input type="checkbox" id="property_type_<?php echo $project_type['id']; ?>" class="property_type" data-id="<?php echo $project_type['id']+1; ?>" /><?=$project_type['name']?>
                            </label>
                        </div>
-                       <?php } ?>
                   <?php } ?>
                   </div>
 
@@ -81,28 +66,28 @@
                               </select>   
                           </div>
                           <div class="form-group col-md-12">
+                              <label for="exampleInputPassword2">Address</label>
+                              <input type="text" class="form-control" name="exampleInputPassword2" id="gmaps-input-address" placeholder="Location" />
                               <label for="exampleInputPassword2">Click and move the marker to exact project location</label>
                               <div id='gmaps-canvas' style="width:100%; height:200px;"></div>
-                              <label for="exampleInputPassword2">Address</label>
-                              <input type="text" class="form-control" name="exampleInputPassword2" id="gmaps-input-address" placeholder="Location" disabled="disabled" />
 
                           </div>
 
-                          <div class="form-group col-md-12">
-                              <label for="exampleInputEmail">Overview</label>
-                              <textarea class="form-control" placeholder="Enter project detail here." id="project_overview"></textarea>
-                          </div>
                       </div>
                   </div>
                </div>
             </div>
       <!-- Tab 2 Start-->
          <?php foreach($this->config->item('project.types') as $project_type){ ?>
-             <?php if( $project_type['id']==0 ){ 
-             $this->load->view('content/partials/proj_type_'.$project_type['id'], array('project_type'=>$project_type));
-              }else{ 
-             $this->load->view('content/partials/proj_type_1', array('project_type'=>$project_type));
-              } ?>
+             <?php if( $project_type['id'] == 0 ){ 
+                     $this->load->view('content/partials/proj_type_'.$project_type['id'], array('project_type'=>$project_type));
+                        foreach($this->config->item('unit.types') as $unit_type){
+                          $this->load->view('content/partials/proj_type_'.$project_type['id'].'_1', array('unit_type'=>$unit_type));
+                        }
+                    }else{ 
+                      //$this->load->view('content/partials/proj_type_1', array('project_type'=>$project_type));
+                    } 
+              ?>
          <?php } ?>
              <div class="tab-pane fade" id="tab13">
                  <div class="row">

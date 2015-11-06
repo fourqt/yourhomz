@@ -169,11 +169,15 @@ function toggle_property_form(){
         }
     });
     $("input.property_type").click(function(){
+      if($(this).attr('data-id') == '1'){
         if(this.checked){
             $('#rootwizard').bootstrapWizard('display', $(this).attr('data-id'));
         }else{
             $('#rootwizard').bootstrapWizard('hide', $(this).attr('data-id'));
         }
+      }else{
+        alert('Coming soon! fir kabhi click kar lena bhai! Apt Only!');        
+      }
     });
 }
 //$('#rootwizard').bootstrapWizard('show', 2);
@@ -301,15 +305,15 @@ function populate_apartment_form(tab, navigation, index){
                '" data-text="' + $( this ).text() + '">' + 
                $('div.apt_unit_frm').html() +'</div>'
                );
-
-            init_dropzone($('#tabsleft div.tab-content div#tabsleft-tab' + i + ' div.dropZoneDyn'), project_types[0], $( this ).text());
-
+          init_dropzone($('#tabsleft div.tab-content div#tabsleft-tab' + i + ' div.dropZoneDyn'), project_types[0], $( this ).text());
           apt_unit_type[i] = $(selected).text();
         });
     $('.date-picker').datepicker({
         orientation: "top auto",
-        autoclose: true
-      }); 
+        autoclose: true,
+        setDate: new Date()
+      });
+    // Initialize checkboxes
     $('.dynCheckbox').uniform();
     
     }else if(index == project_types[1]){
@@ -318,17 +322,13 @@ function populate_apartment_form(tab, navigation, index){
 }
 
 
-
 $(document).ready(function() {
     
     if( $('#sel_city_select').length  ) {
         $('#sel_city_select').select2();
     }
 
-     $(".js-example-tokenizer").select2({
-            tags: true,
-            tokenSeparators: [',', ' ']
-        });
+     
    
     if( $('#gmaps-canvas').length  ) {
         gmaps_init();
@@ -384,8 +384,16 @@ $(document).ready(function() {
         onTabShow: function(tab, navigation, index) {
             var $total = navigation.find('li').length;
             var $current = index+1;
-            var $percent = ($current/$total) * 100;
+            var $percent = ( $current/$total ) * 100;
             $('#rootwizard').find('.progress-bar').css({width:$percent+'%'});
+            if(index == 1){
+                $("#apt_unit_type").select2({
+                  tags: true,
+                  tokenSeparators: [',', ' ']
+                });
+              }else if( index == 2 && $('input.unit_type_tab ul.nav-tab li').length ){
+                populate_apartment_form( tab, navigation, index );
+              }
         },
         'onNext': function(tab, navigation, index) {
             //var $valid = $("#wizardForm").valid();
@@ -393,8 +401,7 @@ $(document).ready(function() {
             if(!$valid) {
                 $validator.focusInvalid();
                 return false;
-            }
-            populate_apartment_form(tab, navigation, index);
+            }            
         },
         'onTabClick': function(tab, navigation, index) {
             //var $valid = $("#wizardForm").valid();
@@ -407,9 +414,10 @@ $(document).ready(function() {
     });
     
     $('.date-picker').datepicker({
-        orientation: "top auto",
-        autoclose: true
+      orientation: "top auto",
+      autoclose: true
     });
+
 update_map_city_select();
 toggle_property_form();
 });
