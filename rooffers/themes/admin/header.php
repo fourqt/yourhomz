@@ -1,22 +1,7 @@
 <?php
 
-Assets::add_css(array(
-                        '../plugins/jquery-ui/jquery-ui-1.8.16.custom.css',
-                        'pace-theme-flash.css',
-                        'uniform.default.css',
-                        'bootstrap.css',
-                        'font-awesome.css',
-                        'simple-line-icons.css', 
-                        'switchery.min.css',
-                        'boldnavigation.css',
-                        'slidepushmenu.css',
-                        'datepicker3.css',
-                        'colorpicker.css',
-                        'bootstrap-tagsinput.css',
-                        'bootstrap-timepicker.min.css',
-                        'modern.css'
-                ));
-Assets::add_js(array('../plugins/jquery-ui/jquery-ui.min.js','pace.min.js','jquery.blockui.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','bootstrap.min.js','classie.js','navmain.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern.js','form-elements.js','plugins/jquery-validation/jquery.validate.min.js','jwerty.js','plugins/jquery-validation/jquery.validate.min.js'));
+Assets::add_css(array('uniform.default.css','bootstrap.css','font-awesome.css','simple-line-icons.css', 'switchery.min.css','boldnavigation.css','slidepushmenu.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css','modern-admin.css','screen-admin.css'));
+Assets::add_js(array('jquery-ui.min.js','pace.min.js','modern-admin.js','jquery.blockui.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','bootstrap.min.js','classie.js','navmain.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','form-elements.js','jwerty.js','plugins/jquery-validation/jquery.validate.min.js'));
 
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     Assets::add_js($this->load->view('ui/shortcut_keys', $shortcut_data, true), 'inline');
@@ -37,6 +22,7 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     ?>
 	<script src="<?php echo Template::theme_url('js/modernizr.js'); ?>"></script>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<?php echo base_url()."themes/admin/css/pace-theme-flash-admin.css"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />
 	<?php echo Assets::css(null, true); ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -314,7 +300,9 @@ if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
         </div><!-- Navbar -->
         <div class="page-sidebar sidebar horizontal-bar">
             <div class="page-sidebar-inner">
-                <?=theme_view('admin_menu'); ?>
+                <div class="container">
+                    <?=theme_view('admin_menu'); ?>
+                </div>
             </div><!-- Page Sidebar Inner -->
         </div><!-- Page Sidebar -->
         <div class="page-inner">

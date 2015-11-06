@@ -1532,11 +1532,12 @@ ol.linenums {
     border: 1px solid #ccc!important;
 }
 .select2-container--default .select2-selection--multiple .select2-selection__rendered, .select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: inherit!important;
     border: 1px solid #dce1e4 !important;
+    min-height: 34px;
 }
+.select2-container--default .select2-selection--single .select2-selection__rendered{ line-height: 34px;}
 .select2-container .select2-search--inline .select2-search__field, .select2-container--default .select2-selection--multiple .select2-selection__choice {
-
+    line-height: 20px;
 }
 .select2-container--default .select2-selection--multiple .select2-selection__rendered{ padding: 3px;}
 .select2-container--default .select2-selection--multiple .select2-selection__choice{ margin:2px;}
@@ -2246,6 +2247,11 @@ tr.group, tr.group:hover {
 .page-sidebar .page-sidebar-inner {
     height: 100%!important;
 }
+@media (max-width: 767px) {
+.page-sidebar .page-sidebar-inner .container{
+    padding: 0 !important;
+}
+}
 .small-sidebar .page-sidebar {
     width: 65px;
 }
@@ -2333,7 +2339,7 @@ body:not(.small-sidebar) .horizontal-bar .accordion-menu>li>a>.menu-icon {
     border-right: 0;
 }
 .horizontal-bar .accordion-menu {
-    text-align: center;
+    text-align: left;
     font-size: 0;
     width: 100%!important;
     overflow: visible!important;

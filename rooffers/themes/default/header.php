@@ -1,6 +1,6 @@
 <?php
-Assets::add_css(array('font-awesome.css','modern.css','uniform.default.css','switchery.min.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css','photoswipe.css','photoswipe-skin/default-skin.css'));
-Assets::add_js(array('jquery-ui.min.js','pace.min.js','jquery.blockui.js','bootstrap.min.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','classie.js','navmain.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','modern.js','photoswipe.js','photoswipe-ui-default.js','photoswipe-read.js','magnificpop.js'));
+Assets::add_css(array('font-awesome.css','modern.css','screen-front.css','uniform.default.css','photoswipe.css','photoswipe-skin/default-skin.css'));
+Assets::add_js(array('pace.min.js','bootstrap.min.js','jquery.slimscroll.min.js','jquery.uniform.min.js','modern.js','photoswipe.js','photoswipe-ui-default.js','photoswipe-read.js','magnificpop.js'));
 
 $inline  = '$(".dropdown-toggle").dropdown();';
 $inline .= '$(".tooltips").tooltip();';
@@ -22,7 +22,7 @@ Assets::add_js($inline, 'inline');
     echo Assets::js('modernizr-custom.js');
     ?>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700,500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="<?php echo base_url()."assets/css/pace-theme-flash.css"; ?>" />
+    <link rel="stylesheet" href="<?php echo base_url()."themes/default/css/pace-theme-flash.css"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_bootstrap.scss"; ?>" />
     <link rel="stylesheet" href="<?php echo base_url()."style.php/_psstyle.scss"; ?>" />
 	<?php echo Assets::css(); ?>
