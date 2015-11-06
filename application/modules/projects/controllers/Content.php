@@ -95,7 +95,6 @@ class Content extends Admin_Controller
     public function create()
     {
         $this->auth->restrict($this->permissionCreate);
-        
         if (isset($_POST['save'])) {
             if ($insert_id = $this->save_projects()) {
                 log_activity($this->auth->user_id(), lang('projects_act_create_record') . ': ' . $insert_id . ' : ' . $this->input->ip_address(), 'projects');
@@ -123,7 +122,6 @@ class Content extends Admin_Controller
                                  );
         
         Template::set('builders', $this->user_model->find_all());
-        
         $this->cities_model->where(array('cities.active' => true))
                                  ->select(
                                      array(
