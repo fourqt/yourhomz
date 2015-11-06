@@ -3,12 +3,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 	background: #f4f4f4;
 }
+
 @font-face {
   font-family: 'Glyphicons Halflings';
-
   src: url('bsfont/glyphicons-halflings-regular.eot');
   src: url('bsfont/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('bsfont/glyphicons-halflings-regular.woff2') format('woff2'), url('bsfont/glyphicons-halflings-regular.woff') format('woff'), url('bsfont/glyphicons-halflings-regular.ttf') format('truetype'), url('bsfont/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -17,68 +18,31 @@ body {
   font-style: normal;
   font-weight: normal;
   line-height: 1;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 h1, h2, h3, h4, h5, h6{ color: #393939;}
+
 .bgwhite{ background-color: #FFF; border: #ebebeb solid 1px;}
-header#big-detail{
-	background: #009999 url(images/project/image3.jpg) 50% 0 no-repeat;
-}
 
-header#big-detail #innerhead{
-	background: -webkit-linear-gradient(top,rgba(0,0,0,0), rgba(0,0,0,0.7));
-	background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7));
-	background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
-}
+header#big-detail{ background: #009999 url(images/project/image3.jpg) 50% 0 no-repeat;}
+header#big-detail #innerhead{ background: -webkit-linear-gradient(top,rgba(0,0,0,0), rgba(0,0,0,0.7)); background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.7)); background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7)); height: 425px; position: relative;}
 
-nav.topnav{
-	background: rgba(0,0,0,0.5);
-	color: #FFF;
-	padding: 10px 0;
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	z-index: 1005;
-}
-
-nav.topnav a.logo{
-	display: block;
-	width: 121px;
-	height: 40px;
-	background: url(images/logo.png) 0 0 no-repeat;
-}
-
+/* - Top Right Menu - */
+nav.topnav{ background: rgba(0,0,0,0.5); color: #FFF; padding: 10px 0; position: absolute; left: 0; top: 0; right: 0; z-index: 1005;}
+nav.topnav a.logo{ display: block; width: 121px; height: 40px; background: url(images/logo.png) 0 0 no-repeat;}
 ul.nav-pills-top{}
 ul.nav-pills-top li{}
-ul.nav-pills-top li a{
-	color: #FFF;
-	transition: color 0.1s linear ;
-}
-ul.nav-pills-top > li > a:hover, ul.nav-pills-top > li > a:focus, ul.nav-pills-top > li > a:active{
-	background-color: transparent;
-	color: #17bbc1;
-}
-
+ul.nav-pills-top li a{ color: #FFF; transition: color 0.1s linear ;}
+ul.nav-pills-top > li > a:hover, ul.nav-pills-top > li > a:focus, ul.nav-pills-top > li > a:active{ background-color: transparent; color: #17bbc1;}
+/* - Banner Menu - */
+#project-nav{ min-height: 44px; padding-top: 5px; position: absolute; left: 0; bottom: 2px; right: 0;}
+#project-nav.sticky{ position: fixed; top: 0; bottom: auto; z-index: 1009; background-color: rgba(0,0,0,0.7);}
 ul.nav-pills-banner{}
 ul.nav-pills-banner li{}
-ul.nav-pills-banner li a{
-	color: #FFF;
-	border-bottom: 3px solid transparent;
-	font-weight: bold;
-	font-size: 15px;
-	transition-property: color, border-color;
-	transition-duration: 0.1s;
-	transition-timing-function: linear;
-}
-
-ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-banner li a:active{
-	background-color: transparent;
-	color: #17bbc1;
-	border-bottom-color: #17bbc1;
-}
+ul.nav-pills-banner li a{ color: #FFF; border-bottom: 3px solid transparent; font-weight: 500; font-size: 15px; transition-property: color, border-color; transition-duration: 0.1s; transition-timing-function: linear;}
+ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-banner li a:active{ background-color: transparent; color: #17bbc1; border-bottom-color: #17bbc1;}
 
 /* - sidebar menu - */
 body.sidenav{
@@ -230,18 +194,11 @@ i.toilet{ background-image: url(../../assets/images/icons/iconToilet.png);}
 .no-placeholder .iefall-show{ display: block;}
 
 @media (max-width:767px) {
-	ul.nav-pills-banner{ margin: 100px 0 10px;}
-	ul.nav-pills-banner li{}
-	ul.nav-pills-banner li a{
-		border-bottom: 0;
-		transition-property: color, background-color;
-		transition-duration: 0.1s;
-		transition-timing-function: linear;
-	}
-	ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-banner li a:active{
-	background-color: rgba(0,149,155,0.5);
-	color: #FFF;
-	}
+	ul.nav-pills-banner{ text-align: center;}
+   ul.nav-pills-banner li{ display: inline-block;}
+	ul.nav-pills-banner li a{ border-bottom: 0; transition-property: color, background-color; transition-duration: 0.1s; transition-timing-function: linear; background-color: rgba(0,149,155,0.4); font-size: 14px; font-weight: 400;}
+	ul.nav-pills-banner li a:hover, ul.nav-pills-banner li a:focus, ul.nav-pills-banner li a:active{ background-color: rgba(0,149,155,0.7); color: #FFF;}
+   ul.nav-pills-banner > li > a { padding: 5px 10px;}
 	section#project-head .btn-right{ text-align: left;}
 	section#project-head .btns{ padding: 10px 0;}
 
@@ -261,7 +218,6 @@ i.toilet{ background-image: url(../../assets/images/icons/iconToilet.png);}
 }
 
 @media(min-width:768px){
-	ul.nav-pills-banner{ margin: 350px 0 10px;}
 	section#project-head .btn-right{ text-align: right;}
 	section#project-head .btns{ padding: 30px 0;}
 
@@ -289,8 +245,6 @@ i.toilet{ background-image: url(../../assets/images/icons/iconToilet.png);}
 	#proaside .project-contact-form{ margin-top: 0;}
 }
 @media(min-width:1200px){
-	ul.nav-pills-banner{ margin: 380px 0 10px;}
-
 	#proarticle .swipe-gallery figure.size1{ width: 268px; height: 151px;}
 	#proarticle .swipe-gallery figure.size2{ width: 200px; height: 112px;}
 	#proarticle .swipe-gallery figure.size1 a{ width: 268px; height: 151px; line-height: 151px;}

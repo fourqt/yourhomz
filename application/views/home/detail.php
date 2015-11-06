@@ -10,16 +10,19 @@ $unit_types = $this->config->item('unit.types');
 ?>
 <header id="big-detail">
 <div id="innerhead">
-    <div class="container">
-        <ul class="nav nav-pills nav-pills-banner nav-justified">
-            <li><a href="javascript:void(0);">Overview</a></li>
-            <li><a href="javascript:void(0);">Configuration</a></li>
-            <li><a href="javascript:void(0);">Payment Plans</a></li>
-            <li><a href="javascript:void(0);">Project Amenities</a></li>
-            <li><a href="javascript:void(0);">Construction Updates</a></li>
-            <li><a href="javascript:void(0);">Discussion</a></li>
-        </ul>
-    </div>
+	<div id="project-nav">
+		<div class="container">
+			<ul class="nav nav-pills nav-pills-banner nav-justified">
+			   <li><a href="#pdoverview" class="scrollhash">Overview</a></li>
+			   <li><a href="#pdconfig" class="scrollhash">Configuration</a></li>
+			   <li><a href="javascript:void(0);">Payment Plans</a></li>
+			   <li><a href="#pdlocal" class="scrollhash">Locality</a></li>
+			   <li><a href="javascript:void(0);">Construction Updates</a></li>
+			   <li><a href="javascript:void(0);">Discussion</a></li>
+			</ul>
+		</div>
+	</div>
+    
 </div>
 </header>
 <section id="project-head">
@@ -105,7 +108,7 @@ $unit_types = $this->config->item('unit.types');
 					</figure>
 				</div>
 				</div>
-				<div class="overview bgwhite p m-t-md">
+				<div id="pdoverview" class="overview bgwhite p m-t-md">
 					<h2 class="no-s">Overview</h2>
 					<hr class="m-t-sm m-b-sm">
 					<ul class="fa-ul clearfix">
@@ -127,7 +130,7 @@ $unit_types = $this->config->item('unit.types');
 						<li>Fire Security Sprinklers</li>
 					</ul>
 				</div>
-				<div class="npconfig bgwhite p m-t-md">
+				<div id="pdconfig" class="npconfig bgwhite p m-t-md">
 					<h2 class="no-s">Configuration</h2>
 					<hr class="m-t-sm no-m">
 					<div class="row">
@@ -284,7 +287,7 @@ $unit_types = $this->config->item('unit.types');
 						</div>
 					</div>
 				</div>
-				<div class="locality bgwhite p m-t-md">
+				<div id="pdlocal" class="locality bgwhite p m-t-md">
 					<h2 class="no-s">Locality</h2>
 					<hr class="m-t-sm no-m">
 					<h4>Insights into Electronic City</h4>
