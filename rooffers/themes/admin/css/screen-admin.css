@@ -12,4 +12,7 @@ body {
 .top-menu .nav .open > a, .top-menu .nav .open > a:focus, .top-menu .nav .open > a:hover{ color: #ebebeb;}
 /* Link Lists */
 .filter-link-list a { display: inline-block; margin:0 3px; line-height: 2.0;}
-/* Page Structure */
+/* - sticky project tab menu - */
+#stickypnav-outer{ min-height: 95px;}
+#stickypnav-outer .stickypnav{ background-color: #FFF; border-bottom: 1px solid #FFF; position: relative; z-index: 1010;}
+#stickypnav-outer .stickypnav.sticky{ position: fixed; left: 0; right: 0; top: 0; border-bottom-color: #ddd; padding: 10px 35px 5px;}

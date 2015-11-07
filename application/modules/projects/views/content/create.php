@@ -1,25 +1,30 @@
 <div class="panel panel-white">
-   <div class="panel-body">
+   <div class="panel-body no-p-t">
       <div id="rootwizard">
-         <ul class="nav nav-tabs" role="tablist">
-             <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-building m-r-xs"></i>Project Info</a></li>
-             <?php foreach($this->config->item('project.types') as $project_type){ 
-                    if($project_type['id'] == 0){
-              ?>
-             <li style="display:none;"><a href="#tab<?php echo $project_type['id']+2; ?>" data-toggle="tab"><span class="icon-settings m-r-xs"></span><?php echo $project_type['name']; ?></a></li>
-             <?php foreach($this->config->item('unit.types') as $unit_type){ ?>
-             <li style="display:none;"><a href="#tab<?php echo $unit_type['id']+3; ?>" data-toggle="tab"><span class="icon-settings m-r-xs"></span><?php echo $unit_type['name']; ?></a></li>
-             <?php } ?>
-             <?php } ?>
-             <?php } ?>
-             <li><a href="#tab13" data-toggle="tab"><i class="fa fa-credit-card m-r-xs"></i>Payment</a></li>
-             <li><a href="#tab14" data-toggle="tab"><i class="fa fa-check m-r-xs"></i>Finish</a></li>
-         </ul>
+         <div id="stickypnav-outer" class="clearfix">
+            <div class="stickypnav p-v-sm m-l-n-md m-r-n-md p-h-md">
+               <ul class="nav nav-tabs" role="tablist">
+                  <li class="active"><a href="#tab1" data-toggle="tab"><i class="fa fa-building m-r-xs"></i>Project Info</a></li>
+                  <?php foreach($this->config->item('project.types') as $project_type){ 
+                       if($project_type['id'] == 0){
+                  ?>
+                  <li style="display:none;"><a href="#tab<?php echo $project_type['id']+2; ?>" data-toggle="tab"><span class="icon-settings m-r-xs"></span><?php echo $project_type['name']; ?></a></li>
+                  <?php foreach($this->config->item('unit.types') as $unit_type){ ?>
+                  <li style="display:none;"><a href="#tab<?php echo $unit_type['id']+3; ?>" data-toggle="tab"><span class="icon-settings m-r-xs"></span><?php echo $unit_type['name']; ?></a></li>
+                  <?php } ?>
+                  <?php } ?>
+                  <?php } ?>
+                  <li><a href="#tab13" data-toggle="tab"><i class="fa fa-credit-card m-r-xs"></i>Payment</a></li>
+                  <li><a href="#tab14" data-toggle="tab"><i class="fa fa-check m-r-xs"></i>Finish</a></li>
+               </ul>
 
-         <div class="progress progress-sm m-t-sm">
-             <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-             </div>
+               <div class="progress progress-sm m-t-xs m-b-xxs">
+                  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                  </div>
+               </div>
+            </div>
          </div>
+         
          
          <div class="tab-content">
             <div class="tab-pane active fade in" id="tab1">

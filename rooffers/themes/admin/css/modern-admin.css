@@ -482,6 +482,7 @@ h5 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.no-p-t{ padding-top: 0 !important;}
 .p-v-sm {
     padding-top: 15px;
     padding-bottom: 15px;

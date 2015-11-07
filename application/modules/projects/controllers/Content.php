@@ -43,6 +43,7 @@ class Content extends Admin_Controller
         
         Assets::add_module_js('projects', 'projects.js');
         Assets::add_module_css('projects', 'project.css');
+        Assets::add_module_js('projects', 'stickynav.js');
     }
 
     /**
