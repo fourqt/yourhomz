@@ -1,7 +1,40 @@
 <?php
 
-Assets::add_css(array('uniform.default.css','bootstrap.css','font-awesome.css','simple-line-icons.css', 'switchery.min.css','boldnavigation.css','slidepushmenu.css','datepicker3.css','colorpicker.css','bootstrap-tagsinput.css','bootstrap-timepicker.min.css','modern-admin.css','screen-admin.css'));
-Assets::add_js(array('jquery-ui.min.js','pace.min.js','modern-admin.js','jquery.blockui.js','jquery.slimscroll.min.js','switchery.min.js','jquery.uniform.min.js','bootstrap.min.js','classie.js','navmain.js','bootstrap-datepicker.js','bootstrap-colorpicker.js','bootstrap-tagsinput.min.js','bootstrap-timepicker.min.js','form-elements.js','jwerty.js','plugins/jquery-validation/jquery.validate.min.js'));
+Assets::add_css(array(
+                    'uniform.default.css',
+                    'bootstrap.css',
+                    'font-awesome.css',
+                    'simple-line-icons.css',
+                    'switchery.min.css',
+                    'boldnavigation.css',
+                    'slidepushmenu.css',
+                    'datepicker3.css',
+                    'colorpicker.css',
+                    'bootstrap-tagsinput.css',
+                    'bootstrap-timepicker.min.css',
+                    'modern-admin.css',
+                    'screen-admin.css',
+                    'jquery-ui-1.8.16.custom'
+                    ));
+Assets::add_js(array(
+                    'jquery-ui.min.js',
+                    'pace.min.js',
+                    'modern-admin.js',
+                    'jquery.blockui.js',
+                    'jquery.slimscroll.min.js',
+                    'switchery.min.js',
+                    'jquery.uniform.min.js',
+                    'bootstrap.min.js',
+                    'classie.js',
+                    'navmain.js',
+                    'bootstrap-datepicker.js',
+                    'bootstrap-colorpicker.js',
+                    'bootstrap-tagsinput.min.js',
+                    'bootstrap-timepicker.min.js',
+                    'form-elements.js',
+                    'jwerty.js',
+                    'plugins/jquery-validation/jquery.validate.min.js'
+                    ));
 
 if (isset($shortcut_data) && is_array($shortcut_data['shortcut_keys'])) {
     Assets::add_js($this->load->view('ui/shortcut_keys', $shortcut_data, true), 'inline');

@@ -1,4 +1,4 @@
-<div class="tab-pane fade unit_type_tab" id="tab<?php echo $unit_type['id']+3; ?>">
+<div class="tab-pane fade unit_type_tab" id="tab3">
     <div class="row">
         <div class="col-md-12">
             <div class="tabbable tabs-left" id="tabsleft">
