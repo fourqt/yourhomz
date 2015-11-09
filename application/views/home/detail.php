@@ -4,7 +4,7 @@ $id = $this->uri->segment(3);
 $rawData = json_decode($this->db->query("select raw_data from rf_projects where id=".$id)->row()->raw_data);
 $builder = $this->db->query("select username from rf_users where id=".$rawData->builder_id)->row()->username;
 $img2d = $this->db->query("select image_name from rf_images_uploaded where project_id=".$id." and img_for=0")->row()->image_name;
-$img3d = $this->db->query("select image_name from rf_images_uploaded where project_id=".$id." and img_for=1")->row()->image_name;
+$img3d = $this->db->query("select image_name from rf_images_uploaded where project_id=".$id." and img_for=0 limit 1,2")->row()->image_name;
 
 $unit_types = $this->config->item('unit.types');
 ?>

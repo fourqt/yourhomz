@@ -2,22 +2,34 @@
 <form id="tabtwov">
     <div class="row">
         <div class="form-group col-md-6">
-            <div class="form-group col-md-4">
+            <div class="form-group col-md-3">
                 <label><?=$project_type['name']?></label>
                 <select class="form-control m-b-sm selprojtype" name="project_type_<?=$project_type['id']?>" id="project_type_<?=$project_type['id']?>" data-id="<?=$project_type['id']+1?>">
                 <option></option>
-                   <?php for($i=0;$i<10;$i++){ ?>
-                       <option value="<?=$i?>"><?=$i?></option>
-                   <?php } ?>
+                <?php for($i=0;$i<10;$i++){ ?>
+                   <option value="<?=$i?>"><?=$i?></option>
+                <?php } ?>
                 </select>
             </div>
-            <div class="form-group col-md-8 clearfix" style="height:90px;">
+            <div class="form-group col-md-3 clearfix" style="height:90px;">
                 <label for="apt_unit_type">Have</label>
-                <select name="apt_unit_type" multiple="multiple" class="form-control m-b-sm" id="apt_unit_type">
+                <select name="apt_unit_type" class="form-control m-b-sm" id="apt_unit_type">
                    <?php foreach($this->config->item('unit.types') as $unit_type){ ?>
                         <option value="<?=$unit_type['id']?>"><?=$unit_type['name']?></option>
                    <?php } ?>
                 </select>
+            </div>
+            <div class="form-group col-md-4 clearfix" style="height:90px;">
+                <label for="apt_unit_type">Area</label>
+                <input type="text" class="form-control" name="unit_area" id="unit_area" placeholder="Project Area Sq. Ft." />
+            </div>
+            <div class="form-group col-md-2 clearfix" style="height:90px;">
+                <label for="apt_unit_type">&nbsp;</label>
+                <input type="button" class="form-control" name="unit_type_area" id="unit_type_area" value="Add"  />
+            </div>
+            <div class="form-group col-md-12">
+            <ul id="listUnitsWithArea">
+            </ul>
             </div>
             <div class="form-group col-md-6">
                 <label for="">Total Units</label>
@@ -30,6 +42,7 @@
                     <option value="Full Ownership">Full Ownership</option>
                 </select>
             </div>
+
             <div class="form-group col-md-6">
                 <label for="">Project Area</label>
                 <input type="text" class="form-control" name="proj_area" id="proj_area" placeholder="Project Area Sq. Ft." />

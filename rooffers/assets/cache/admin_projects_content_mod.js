@@ -208,13 +208,13 @@ function init_dropzone(div, data_unit_type, bhkType, multi){
     if(multi>1) uploadMultiple = true;
     imgFor = div.attr('imgFor');
     div.dropzone({ 
-        url: js_base_url+"admin/content/projects/imageUpload/"+data_unit_type+'/'+imgFor,
-        uploadMultiple: uploadMultiple,
-        maxFilesize: 4,
-        maxFiles: multi,
-        params: {
-                    bhkType: bhkType
-                }
+      url: js_base_url+"admin/content/projects/imageUpload/"+data_unit_type+'/'+imgFor,
+      uploadMultiple: uploadMultiple,
+      maxFilesize: 4,
+      maxFiles: multi,
+      params: {
+                bhkType: bhkType
+              }
      }).on('sending', function(file, xhr, formData){
             formData.append('project_id', $('input#proj_id').val());
         });
@@ -323,28 +323,36 @@ submit_proj_form();
 }
 
 function populate_apartment_form(tab, navigation, index){
-    if(index == 2){
-        var apt_unit_type = [];
-        var cls = 'active';
-        $('#apt_unit_type :selected').each(function(i, selected){
 
-          if(i!=0) cls = '';
-
-            $('#tabsleft ul').append('<li class="' + cls +
-                '"><a data-toggle="tab" href="#tabsleft-tab' + i + 
-                '">' + $( this ).text() + 
-                '</a></li>');
-            
-            $('#tabsleft div.tab-content').append(
-               '<div id="tabsleft-tab' + i + 
-               '" class="tab-pane ' + cls + 
-               ' fade in apt_units" data-id="' + $( this ).val() + 
-               '" data-text="' + $( this ).text() + '">' + 
-               $('div.apt_unit_frm').html() +'</div>'
-              );
-          init_dropzone($('#tabsleft div.tab-content div#tabsleft-tab' + i + ' div.dropZoneDyn'), project_types[0], $( this ).text(), 1);
-          apt_unit_type[i] = $(selected).text();
-        });
+  if(index == 2){
+    var apt_unit_type = [];
+    var cls = 'active';
+    $('#listUnitsWithArea li').each(function(i, selected){
+      if(!$('#tabsleft ul li#'+$( this ).attr('data-unit_type') + $( this ).attr('data-area')).length){
+        if(i!=0) cls = '';
+        $('#tabsleft ul').append(
+          '<li class="' + cls +
+          '" id="' + $( this ).attr('data-unit_type') + $( this ).attr('data-area') + 
+          '"><a data-toggle="tab" href="#tabsleft-tab' + i + 
+          '">' + 
+          $( this ).attr('data-unit_type_text') + 
+          '(' + 
+          $( this ).attr('data-area') +
+          ')' + 
+          '</a></li>');
+        
+        $('#tabsleft div.tab-content').append(
+           '<div id="tabsleft-tab' + i + 
+           '" class="tab-pane ' + cls + 
+           ' fade in apt_units" data-id="' + $( this ).attr('data-unit_type') + 
+           ' data-area="' + $( this ).attr('data-area') + 
+           '" data-text="' + $( this ).attr('data-unit_type_text') + '">' + 
+           $('div.apt_unit_frm').html() +'</div>'
+          );
+        init_dropzone($('#tabsleft div.tab-content div#tabsleft-tab' + i + ' div.dropZoneDyn'), project_types[0], $( this ).attr('data-unit_type_text'), 1);
+        apt_unit_type[i] = $(selected).text();
+      }
+    });
     var setDate = new Date();
     $('.date-picker').val(setDate.getDate()+'/'+setDate.getMonth()+'/'+setDate.getFullYear()).datepicker({
         orientation: "top auto",
@@ -353,10 +361,128 @@ function populate_apartment_form(tab, navigation, index){
       });
     // Initialize checkboxes
     $('.dynCheckbox').uniform();
-    
-    }else if(index == 4){
-        submit_proj_form();
+  }else if(index == 4){
+      submit_proj_form();
+  }
+
+}
+
+function add_unit_type_area(){
+  $('input#unit_type_area').click(function(){
+    if( $.isNumeric($('input#unit_area').val()) ){
+      if(!$('ul#listUnitsWithArea li[data-area="' + $('input#unit_area').val() +'"][data-unit_type="' + $('select#apt_unit_type').val() +'"]').length){
+      $('ul#listUnitsWithArea').append(
+          '<li data-area="' + 
+          $('input#unit_area').val() +
+          '" ' +
+          'data-unit_type="' +
+          $('select#apt_unit_type').val() +
+          '" data-unit_type_text="' +
+          $('select#apt_unit_type option:selected').text() +
+          '""><a href="javascript:void(0);" class="">' + 
+          $('select#apt_unit_type option:selected').text() + 
+          '(' + 
+          $('input#unit_area').val() + ')' + 
+          '</a></li>'
+        );
+      }else{
+      toaster_init('error', 'Error', 'Unit Type already added.');
+      }
+    }else{
+      toaster_init('error', 'Error', 'Enter the area. Area must be numeric.');
     }
+  });
+}
+
+function validate_project_form_tabwise(index){
+  var $validator_tab1 = $("#tabonev").validate({
+      rules: {
+          ProjectName: {
+              required: true
+          },
+          gmaps_input_address: {
+              required: true
+          },
+          property_type_0: {
+              required: true
+          }
+      },
+      messages: {
+        property_type_0: "*"
+      }
+  });
+  var $validator_tab2 = $("#tabtwov").validate({
+
+      rules: {
+          project_type_0: {
+              required: true
+          },
+          apt_unit_type: {
+              required: true
+          },
+          total_units: {
+              required: true,
+              number: true
+          },
+          ownership_type: {
+              required: true
+          },
+          proj_area: {
+              required: true,
+              number: true
+          },
+          proj_started: {
+              required: true
+          },
+          completes_on: {
+              required: true
+          },
+          possession_starts: {
+              required: true
+          },
+          project_overview: {
+              required: true
+          },
+          project_locality: {
+              required: true
+          }
+      },
+      messages: {
+        property_type_0: "*"
+      }
+  });
+
+  if(index == 1){
+  
+    var $valid_tab1 = $("#tabonev").valid();
+    
+    if(!$valid_tab1) {
+
+        toaster_init('error', 'Error', 'Please fill the required fields.');
+        $validator_tab1.focusInvalid();
+        return false;
+    
+    }else{
+      insert_project();
+    }
+
+  }else if(index == 2){
+
+    var $valid_tab2 = $("#tabtwov").valid();
+    if(!$valid_tab2) {
+
+      toaster_init('error', 'Error', 'Please fill the required fields.');
+      $validator_tab2.focusInvalid();
+      return false;
+
+  }else{
+  insert_project();
+  }
+
+}else{
+  insert_project();
+  return true;
+}
 }
 
 
@@ -372,101 +498,6 @@ $(document).ready(function() {
         gmaps_init();
         autocomplete_init();
     };
-    /*
-    var $validator_tpl = {
-            exampleInputName2: {
-                required: true
-            },
-            exampleInputEmail: {
-                required: true,
-                email: true
-            },
-            exampleInputProductName: {
-                required: true
-            },
-            exampleInputProductId: {
-                required: true
-            },
-            exampleInputQuantity: {
-                required: true
-            },
-            exampleInputCard: {
-                required: true,
-                number: true
-            },
-            exampleInputSecurity: {
-                required: true,
-                number: true
-            },
-            exampleInputHolder: {
-                required: true
-            },
-            exampleInputExpiration: {
-                required: true,
-                date: true
-            },
-            exampleInputCsv: {
-                required: true,
-                number: true
-            }
-          };
-*/
-    var $validator_tab1 = $("#tabonev").validate({
-        rules: {
-            ProjectName: {
-                required: true
-            },
-            gmaps_input_address: {
-                required: true
-            },
-            property_type_0: {
-                required: true
-            }
-        },
-        messages: {
-          property_type_0: "*"
-        }
-    });
-
-    var $validator_tab2 = $("#tabtwov").validate({
-        rules: {
-            project_type_0: {
-                required: true
-            },
-            apt_unit_type: {
-                required: true
-            },
-            total_units: {
-                required: true,
-                number: true
-            },
-            ownership_type: {
-                required: true
-            },
-            proj_area: {
-                required: true,
-                number: true
-            },
-            proj_started: {
-                required: true
-            },
-            completes_on: {
-                required: true
-            },
-            possession_starts: {
-                required: true
-            },
-            project_overview: {
-                required: true
-            },
-            project_locality: {
-                required: true
-            }
-        },
-        messages: {
-          property_type_0: "*"
-        }
-    });
 
     $('#rootwizard').bootstrapWizard({
         'tabClass': 'nav nav-tabs',
@@ -476,54 +507,16 @@ $(document).ready(function() {
             var $percent = ( $current/$total ) * 100;
             $('#rootwizard').find('.progress-bar').css({width:$percent+'%'});
             if(index == 1){
-                $("#apt_unit_type").select2({
-                  tags: true,
-                  tokenSeparators: [',', ' ']
-                });
+                //$("#apt_unit_type").select2();
               }else if( index == 2 ){
                 populate_apartment_form( tab, navigation, index );
               }
         },
         'onNext': function(tab, navigation, index) {
-
-          if(index == 1){
-            
-              var $valid_tab1 = $("#tabonev").valid();
-              
-              if(!$valid_tab1) {
-                  
-                  toaster_init('error', 'Error', 'Please fill the required fields.')
-                  $validator_tab1.focusInvalid();
-                  return false;
-              
-              }else{
-                insert_project();
-              }
-
-          }else if(index == 2){
-
-              var $valid_tab2 = $("#tabtwov").valid();
-              if(!$valid_tab2) {
-
-                toaster_init('error', 'Error', 'Please fill the required fields.')
-                $validator_tab2.focusInvalid();
-                return false;
-
-              }else{
-              insert_project();
-              }
-
-          }else{
-            insert_project();
-          }
+          return validate_project_form_tabwise(index);          
         },
         'onTabClick': function(tab, navigation, index) {
-            //var $valid = $("#wizardForm").valid();
-            var $valid = true;
-            if(!$valid) {
-                $validator_tab1.focusInvalid();
-                return false;
-            }
+         return false;
         },
     });
     var setDate = new Date();
@@ -538,6 +531,7 @@ $(document).ready(function() {
 
 update_map_city_select();
 toggle_property_form();
+add_unit_type_area(); //Adds unit types with area
 });
 $(document).ready( function() {
    // create project page fix menu on scroll
