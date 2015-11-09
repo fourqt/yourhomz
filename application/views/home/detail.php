@@ -57,6 +57,7 @@ $unit_types = $this->config->item('unit.types');
 		</div>
 	</div>
 </section>
+
 <div class="container m-t-lg">
 	<div class="row">
 		<div class="col-lg-9 col-md-9">
@@ -144,7 +145,7 @@ $unit_types = $this->config->item('unit.types');
 							</ul>
 							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small><?=$rawData->project_types->{'1'}?> Apartments</small></div>
 							<div class="list-group twonav">
-							  <a href="#" class="list-group-item active"><?=$rawData->projectsUnits->{'0'}->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs</b> <small>onwards</small></a>
+							  <a href="javascript:void(0);" class="list-group-item active"><?=$rawData->projectsUnits->{'0'}->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs</b> <small>onwards</small></a>
 							</div>
 						</div>
 						<div class="col-lg-9 npcr b-l">

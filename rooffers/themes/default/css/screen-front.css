@@ -211,8 +211,9 @@ i.toilet{ background-image: url(../../../assets/images/icons/iconToilet.png);}
 	#proarticle .npcl .twonav{ margin-bottom: 0; display: block;}
 	#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0; display: inline-block;}
 	#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
-	#proarticle .npcl .twonav a.list-group-item.active, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #18bbc2; border-bottom: 0;}
+	#proarticle .npcl .twonav a.list-group-item.active, #proarticle .npcl .twonav a.list-group-item.active:hover, #proarticle .npcl .twonav a.list-group-item.active:focus{ background-color: #18bbc2; border-bottom: 0; color: #333;}
 	#proarticle .npcl .twonav a.list-group-item:hover{ background-color: #f1f1f1;}
+  
 
 	#proaside .project-contact-form{ margin-top: 15px;}
 }
@@ -230,7 +231,7 @@ i.toilet{ background-image: url(../../../assets/images/icons/iconToilet.png);}
 	#proarticle .npcl .twonav{ margin-bottom: 0; display: block;}
 	#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0; display: inline-block;}
 	#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
-	#proarticle .npcl .twonav a.list-group-item.active, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #18bbc2; border-bottom: 0;}
+	#proarticle .npcl .twonav a.list-group-item.active, #proarticle .npcl .twonav a.list-group-item.active:hover, #proarticle .npcl .twonav a.list-group-item.active:focus{ background-color: #18bbc2; border-bottom: 0; color: #333;}
 	#proarticle .npcl .twonav a.list-group-item:hover{ background-color: #f1f1f1;}
 
 	#proaside .project-contact-form{ margin-top: 15px;}
@@ -255,5 +256,5 @@ i.toilet{ background-image: url(../../../assets/images/icons/iconToilet.png);}
 	#proarticle .npcl .twonav a.list-group-item{ border-left: 0; border-right: 0; display: block;}
 	#proarticle .npcl .twonav a:first-child, #proarticle .npcl .twonav a:last-child{ border-radius: 0;}
 	#proarticle .npcl .twonav a.list-group-item.active{ background-color: transparent; border-left: #18bbc2 solid 3px;}
-	#proarticle .npcl .twonav a.list-group-item:hover, #proarticle .npcl .twonav a.list-group-item.active:hover{ background-color: #f1f1f1;}
+	#proarticle .npcl .twonav a.list-group-item:hover, #proarticle .npcl .twonav a.list-group-item.active:hover,, #proarticle .npcl .twonav a.list-group-item.active:focus{ background-color: #f1f1f1; color: #333;}
 }
