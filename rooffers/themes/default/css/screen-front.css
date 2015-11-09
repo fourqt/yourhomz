@@ -159,7 +159,7 @@ section#project-head ul li:first-child span{ display: none;}
 .panel-group .panel .panel-heading .panel-title{}
 .panel-group .panel .panel-heading .panel-title a{ display: block; padding: 10px 10px 10px 0; font-weight: 400; font-size: 18px;}
 .panel-group .panel .panel-heading .panel-title a i{ color: #18bbc2;}
-#configtab .panel .panel-body{ padding: 15px 0;}
+#configtab .panel .panel-body{ padding: 10px;}
 #configtab .panel .panel-body .imgd{ position: relative; height: 250px; width: 100%; text-align: center; line-height: 250px; font-size: 0; border: 1px solid #ebebeb;}
 #configtab .panel .panel-body .imgd img{ max-width: 100%; max-height: 100%;}
 #configtab .panel .panel-body .imgd .btn-group{ position: absolute; right: 10px; top: 10px; z-index: 2;}
