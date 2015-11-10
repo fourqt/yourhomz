@@ -167,12 +167,14 @@ function autocomplete_init() {
   $("#gmaps_input_address").bind('keydown', function(event) {
     if(event.keyCode == 13) {
       geocode_lookup( 'address', $('#gmaps_input_address').val(), true );
-
       // ensures dropdown disappears when enter is pressed
       $('#gmaps_input_address').autocomplete("disable")
+
     } else {
+
       // re-enable if previously disabled above
       $('#gmaps_input_address').autocomplete("enable")
+
     }
   });
 }; // autocomplete_init
@@ -190,7 +192,7 @@ function toggle_property_form(){
       if($(this).attr('data-id') == '1'){
         if(this.checked){
             $('#rootwizard').bootstrapWizard('display', $(this).attr('data-id'));
-            init_dropzone($('#dropZoneDynCoverImage'), 2, 'gallery', 1);
+            init_dropzone($('#dropZoneDynCoverImage'), 2, 'cover', 1);
             init_dropzone($('#dropZoneDynGalleryImage'), 3, 'gallery', 10);
         }else{
             //$('#rootwizard').bootstrapWizard('hide', $(this).attr('data-id'));
@@ -227,7 +229,7 @@ function prepare_post_data(){
     dataPost['project_types'] = {};
     dataPost['projectsUnits'] = {};
     dataPost['project_id'] = $('input#proj_id').val();
-    dataPost['project_name'] = $('input#InputProjectName').val();
+    dataPost['project_name'] = $('input#ProjectName').val();
     dataPost['builder_id'] = $('select#builderId').val();
     $('div#project_types select.selprojtype').each(function(i, ele){
         dataPost['project_types'][$(this).attr('data-id')] = $(this).val();
@@ -283,8 +285,8 @@ function prepare_post_data(){
 
         dataPost['projectsUnits'][$(this).attr('data-id')] = unitsInfo;
     });
-
-    return dataPost;
+console.log(dataPost);
+  return dataPost;
 }
 
 
@@ -313,13 +315,15 @@ function submit_proj_form(){
                 //$('#rootwizard').bootstrapWizard('show', 13);
                 if(strData.project_id){
                   $('input#proj_id').val(strData.project_id);
+                  $('a#preview_link').attr('href','http://localhost/4qt/rooffers/home/detail/' + $('input#proj_id').val());
                 }
             }
-           });
+  });
 }
 
 function insert_project(){
-submit_proj_form();
+  submit_proj_form();
+  toaster_init('info', 'Never Mind', 'Saving Data');
 }
 
 function populate_apartment_form(tab, navigation, index){
@@ -345,11 +349,11 @@ function populate_apartment_form(tab, navigation, index){
            '<div id="tabsleft-tab' + i + 
            '" class="tab-pane ' + cls + 
            ' fade in apt_units" data-id="' + $( this ).attr('data-unit_type') + 
-           ' data-area="' + $( this ).attr('data-area') + 
+           '" data-area="' + $( this ).attr('data-area') + 
            '" data-text="' + $( this ).attr('data-unit_type_text') + '">' + 
            $('div.apt_unit_frm').html() +'</div>'
           );
-        init_dropzone($('#tabsleft div.tab-content div#tabsleft-tab' + i + ' div.dropZoneDyn'), project_types[0], $( this ).attr('data-unit_type_text'), 1);
+        init_dropzone($('#tabsleft div.tab-content div#tabsleft-tab' + i + ' div.dropZoneDyn'), project_types[0], $( this ).attr('data-unit_type_text') +'#'+ $( this ).attr('data-area'), 1);
         apt_unit_type[i] = $(selected).text();
       }
     });
@@ -492,8 +496,6 @@ $(document).ready(function() {
         $('#sel_city_select').select2();
     }
 
-     
-   
     if( $('#gmaps-canvas').length  ) {
         gmaps_init();
         autocomplete_init();

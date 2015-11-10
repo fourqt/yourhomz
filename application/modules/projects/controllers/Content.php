@@ -229,7 +229,7 @@ class Content extends Admin_Controller
                'raw_data' => json_encode($_POST)
             );
         
-        if($_POST['project_id'] != ''){
+        if(isset($_POST['project_id']) && $_POST['project_id'] != ''){
             $id = $_POST['project_id'];
             $this->db->where('id', $id);
             $this->db->update('projects', $data);

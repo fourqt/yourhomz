@@ -90,12 +90,15 @@
          <?php } ?>
              <div class="tab-pane fade" id="tab4">
                  <div class="row">
+                 Click next!!!
                 </div>
              </div>
              <div class="tab-pane fade" id="tab5">
                  <h2 class="no-s">Thank You !</h2>
                  <div class="alert alert-info m-t-sm m-b-lg" role="alert">
                      Congratulations ! You got the last step.
+                     <br />
+                     <h2><a href="http://localhost/4qt/rooffers/home/detail/" id="preview_link" target="_blank">Preview</a></h2>
                  </div>
              </div>
              <ul class="pager wizard no-m m-t-md">
@@ -108,6 +111,7 @@
 </div>
 
 <!-- Reusable Templates -->
+<input type="hidden" name="proj_id" id="proj_id" value="" />
 <input type="hidden" name="gmaps_output_latitude" id="gmaps_output_latitude" value="" />
 <input type="hidden" name="gmaps_output_latitude" id="gmaps_output_longitude" value="" />
 <input type="hidden" name="gmaps_output" id="gmaps-output" value="" />
