@@ -243,11 +243,12 @@ function prepare_post_data(){
     dataPost['project_locality'] = $('#project_locality').val();
     
     dataPost['total_units'] = $('input#total_units').val();
-    dataPost['ownership_type'] = $('input#ownership_type').val();
+    dataPost['ownership_type'] = $('select#ownership_type').val();
     dataPost['proj_area'] = $('input#proj_area').val();
     dataPost['proj_started'] = $('input#proj_started').val();
     dataPost['completes_on'] = $('input#completes_on').val();
     dataPost['possession_starts'] = $('input#possession_starts').val();
+    dataPost['building_count'] = $('select#project_type_0').val();
     
     $('div.apt_units').each(function(i, ele){
         var unitsInfo = {};
@@ -257,8 +258,8 @@ function prepare_post_data(){
         unitsInfo['interiors']['Walls'] = {};
         unitsInfo['amenities'] = {};
 
-        unitsInfo['unitText'] = $(this).attr('data-text');
-        unitsInfo['builtupArea'] = $(this).find('input#builtupArea').val();
+        unitsInfo['unitText'] = $(this).attr('data-text') + '#' + $(this).attr('data-area');
+        unitsInfo['builtupArea'] = $(this).attr('data-area');
         unitsInfo['possessionStarts'] = $(this).find('input#possessionStarts').val();
         unitsInfo['minTotalPrice'] = $(this).find('input#minTotalPrice').val();
         
