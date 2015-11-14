@@ -101,7 +101,7 @@
                      <h2><a href="http://localhost/4qt/rooffers/home/detail/" id="preview_link" target="_blank">Preview</a></h2>
                  </div>
              </div>
-             <ul class="pager wizard no-m m-t-md">
+             <ul class="pager wizard no-m m-t-md" id="ppager">
                  <li class="previous"><a href="#" class="btn btn-default">Previous</a></li>
                  <li class="next"><a href="#" class="btn btn-default">Next</a></li>
              </ul>
