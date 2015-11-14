@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                       <label for="ProjectName">Project Name</label>
-                      <input type="texttext" class="form-control" name="ProjectName" id="ProjectName" placeholder="Project name" >
+                      <input type="text" class="form-control" name="ProjectName" id="ProjectName" placeholder="Project name" >
                     </div>
 
                     <div class="form-group" id="project_types">

@@ -12,6 +12,10 @@ $images[$row->bhkType][] = $row->image_name;
 }
 
 $unit_types = $this->config->item('unit.types');
+
+foreach($rawData->projectsUnits){
+
+}
 ?>
 <header id="big-detail" style="background-image:url(<?=base_url();?>assets/uploads/0/<?=$images['cover'][0]?>);">
 <div id="innerhead">
@@ -499,9 +503,9 @@ $unit_types = $this->config->item('unit.types');
         </div>
 	</div>
 </div>
-<div onclick="$(this).find('div').toggle()">
+<div>
 Show debug
-<div  style="display:none;">
+<div  style="border:1px;">
 <?php
 echo "<pre>";
 print_r($rawData);
