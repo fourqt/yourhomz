@@ -42,13 +42,11 @@
                       <input type="text" class="form-control" name="ProjectName" id="ProjectName" placeholder="Project name" >
                     </div>
 
-                    <div class="form-group" id="project_types">
+                    <div class="cuschk-group clearfix" id="project_types">
                       <?php foreach($this->config->item('project.types') as $project_type){ ?>
-                      <div class="checkbox btn btn-info" onClick="$(this).toggleClass('check');">
-                        <label>
-                          <input type="checkbox" id="property_type_<?php echo $project_type['id']; ?>" class="property_type" data-id="<?php echo $project_type['id']+1; ?>" /><?=$project_type['name']?>
+                        <label class="cus_box_hidden">
+                          <input type="checkbox" id="property_type_<?php echo $project_type['id']; ?>" class="cus_checkbox property_type" data-id="<?php echo $project_type['id']+1; ?>" /><?=$project_type['name']?>
                         </label>
-                      </div>
                       <?php } ?>
                     </div>
                   </div>

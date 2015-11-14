@@ -1,7 +1,7 @@
 <?php
 
 Assets::add_css(array(
-                    'uniform.default.css',
+                    'jquery-custom-form-v2.css',
                     'bootstrap.css',
                     'font-awesome.css',
                     'simple-line-icons.css',
@@ -23,7 +23,7 @@ Assets::add_js(array(
                     'jquery.blockui.js',
                     'jquery.slimscroll.min.js',
                     'switchery.min.js',
-                    'jquery.uniform.min.js',
+                    'jquery-custom-form-v2.js',
                     'bootstrap.min.js',
                     'classie.js',
                     'navmain.js',

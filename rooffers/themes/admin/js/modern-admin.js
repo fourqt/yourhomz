@@ -62,7 +62,7 @@ $(document).ready(function() {
     });
     var i = $("input[type=checkbox]:not(.switchery), input[type=radio]:not(.no-uniform)");
     i.size() > 0 && i.each(function() {
-        $(this).uniform()
+        //$(this).uniform()
     }), $.fn.toggleAttr = function(e, n) {
         var a = void 0 === n;
         return this.each(function() {
@@ -170,5 +170,7 @@ $(document).ready(function() {
             })
         })
     }
+
+$(".cus_checkbox").cuscheckbox();
 
 });
