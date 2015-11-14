@@ -31,6 +31,7 @@ class Content extends Admin_Controller
                             'plugins/select2/css/select2.min.css',
                             'plugins/line-icons/simple-line-icons.css', 
                             'plugins/dropzone/dropzone.min.css',
+                            'plugins/toastr/toastr.min.css'
                         ));
         
         Assets::add_js(array(
@@ -39,6 +40,7 @@ class Content extends Admin_Controller
                             'plugins/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js', 
                             'plugins/dropzone/dropzone.min.js',
                             'plugins/jquery-gmap3/gmap3.js',
+                            'plugins/toastr/toastr.min.js'
                             ));
         
         Assets::add_module_js('projects', 'projects.js');
@@ -95,7 +97,7 @@ class Content extends Admin_Controller
 
         Template::set('records', $records);
         
-    Template::set('toolbar_title', lang('projects_manage'));
+        Template::set('toolbar_title', lang('projects_manage'));
 
         Template::render();
     }
@@ -145,9 +147,7 @@ class Content extends Admin_Controller
                                         'longitude'
                                      )
                                  );
-        
         Template::set('cities', $this->cities_model->find_all());
-
         Template::set('toolbar_title', lang('projects_action_create'));
         Template::render();
     }
@@ -155,34 +155,70 @@ class Content extends Admin_Controller
 
     public function imageUpload($data_unit_type, $imgFor){
 
-        echo $data_unit_type.' '.$imgFor.' '; echo '#'.realpath(FCPATH).'#';
-        print_r($_POST);
+        //echo $data_unit_type.' '.$imgFor.' '; echo '#'.realpath(FCPATH).'#';
+        //print_r($_FILES);
+ 
         $config = array(
             'upload_path' => FCPATH . '/assets/uploads/0/',
-            'file_name' => uniqid($imgFor.'_', false).'.'.pathinfo($_POST['file']['name'], PATHINFO_EXTENSION),
             'allowed_types' => "*",
             'overwrite' => TRUE,
             'max_size' => "2048000", // Can be set to particular file size , here it is 2 MB(2048 Kb)
             'max_height' => "768",
             'max_width' => "1024"
             );
-        
-        $this->load->library('upload', $config);
-        if($this->upload->do_upload('file'))
-        {
-            $upload_data = $this->upload->data();
-            $data = array(
-               'image_name' => $upload_data['file_name'],
-               'img_for' => $imgFor ,
-               'bhkType' => $this->input->post('bhkType')
-            );
+        if(is_array($_POST['file']['name'])){
+            foreach($_POST['file']['name'] as $key=>$file){
+                $config['file_name'] = uniqid($imgFor.'_', false).'.'.pathinfo($_POST['file']['name'][$key], PATHINFO_EXTENSION);
+                $this->load->library('upload', $config);
+                    $_FILES['userfile']['name']= $_POST['file']['name'][$key];
+                    $_FILES['userfile']['type']= $_POST['file']['type'][$key];
+                    $_FILES['userfile']['tmp_name']= $_POST['file']['tmp_name'][$key];
+                    $_FILES['userfile']['error']= $_POST['file']['error'][$key];
+                    $_FILES['userfile']['size']= $_POST['file']['size'][$key];
 
-            $this->db->insert('images_uploaded', $data);
-            echo 1;
-        }else{
-            echo $this->upload->display_errors();
-        }
+                    if($this->upload->do_upload())
+                    {
+                        $upload_data = $this->upload->data();
+                        $data = array(
+                           'image_name' => $upload_data['file_name'],
+                           'img_for' => $imgFor ,
+                           'bhkType' => $this->input->post('bhkType')
+                        );
 
+                        $this->db->insert('images_uploaded', $data);
+                        echo 1;
+                    }else{
+                        echo $this->upload->display_errors();
+                    }
+                }
+     }else{
+                
+                $config['file_name'] = uniqid($imgFor.'_', false).'.'.pathinfo($_POST['file']['name'], PATHINFO_EXTENSION);
+                $this->load->library('upload', $config);
+                    
+                    $_FILES['userfile']['name']= $_POST['file']['name'];
+                    $_FILES['userfile']['type']= $_POST['file']['type'];
+                    $_FILES['userfile']['tmp_name']= $_POST['file']['tmp_name'];
+                    $_FILES['userfile']['error']= $_POST['file']['error'];
+                    $_FILES['userfile']['size']= $_POST['file']['size'];
+
+                    if($this->upload->do_upload())
+                    {
+                        $upload_data = $this->upload->data();
+                        $data = array(
+                           'image_name' => $upload_data['file_name'],
+                           'img_for' => $imgFor ,
+                           'bhkType' => $this->input->post('bhkType')
+                        );
+
+                        $this->db->insert('images_uploaded', $data);
+                        echo 1;
+                    }else{
+                        echo $this->upload->display_errors();
+                    }
+
+
+     }
     }
     
     public function submitProject(){
@@ -192,17 +228,24 @@ class Content extends Admin_Controller
                'created_by' => 1,
                'raw_data' => json_encode($_POST)
             );
-
-        $this->db->insert('projects', $data);
-
-        $id = $this->db->insert_id();
         
+        if(isset($_POST['project_id']) && $_POST['project_id'] != ''){
+            $id = $_POST['project_id'];
+            $this->db->where('id', $id);
+            $this->db->update('projects', $data);
+        }else{
+            $this->db->insert('projects', $data);
+            $id = $this->db->insert_id();
+        }
+
         $data = array(
                'project_id' => $id
             );
 
-        $this->db->where('project_id', NULL);
+        $this->db->where('project_id', null);
         $this->db->update('images_uploaded', $data); 
+
+        echo json_encode(array('project_id'=>$id));
     }
     
     public function create_form_configuration()

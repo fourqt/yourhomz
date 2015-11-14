@@ -2,12 +2,11 @@
 <div class="apt_unit_frm hidden">
 <div class="row" id="">
     <div class="col-md-4">
-      <label for="exampleInputEmail">Builtup Area (Sq. Ft.)</label>
-      <input type="texttext" class="form-control" name="builtupArea" id="builtupArea" placeholder="Builtup Area" >
+      <input type="hidden" class="form-control" name="builtupArea" id="builtupArea" placeholder="Builtup Area" >
       <label for="exampleInputEmail">Possession Starts</label>
-      <input type="texttext" class="form-control date-picker" name="possessionStarts" id="possessionStarts" placeholder="Possession Starts" >  
+      <input type="text" class="form-control date-picker" name="possessionStarts" id="possessionStarts" placeholder="Possession Starts" >  
       <label for="exampleInputEmail">Min. Total Price</label>
-      <input type="texttext" class="form-control" name="minTotalPrice" id="minTotalPrice" placeholder="Min. Total Price" >  
+      <input type="text" class="form-control" name="minTotalPrice" id="minTotalPrice" placeholder="Min. Total Price" >  
     </div>
     <div class="col-md-3">
         <div class="panel panel-white">
