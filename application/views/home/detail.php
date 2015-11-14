@@ -34,6 +34,7 @@ foreach($rawData->projectsUnits){
     
 </div>
 </header>
+<div ng-app="projApp" ng-controller="projCtrl">
 <section id="project-head">
 	<div class="container">
 		<div class="row">
@@ -65,6 +66,7 @@ foreach($rawData->projectsUnits){
 		</div>
 	</div>
 </section>
+
 <div class="container m-t-lg">
 	<div class="row">
 		<div class="col-lg-9 col-md-9">
@@ -152,7 +154,7 @@ foreach($rawData->projectsUnits){
 							</ul>
 							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small><?=$rawData->project_types->{'1'}?> Apartments</small></div>
 							<div class="list-group twonav">
-							  <a href="#" class="list-group-item active"><?=$rawData->projectsUnits->{'0'}->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs</b> <small>onwards</small></a>
+							  <a href="javascript:void(0);" class="list-group-item active"><?=$rawData->projectsUnits->{'0'}->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs</b> <small>onwards</small></a>
 							</div>
 						</div>
 						<div class="col-lg-9 npcr b-l">
@@ -170,11 +172,11 @@ foreach($rawData->projectsUnits){
 						    		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 						      		<div class="panel-body">
 						        		<div class="imgd">
-						        			<a class="magnific-imgpop 3d" href="<?=base_url();?>assets/images/projectgallery/img1.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img2d?>"></a>
-						        			<a class="magnific-imgpop 2d hidden" href="<?=base_url();?>assets/images/projectgallery/img2.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img3d?>"></a>
+						        			<a class="magnific-imgpop 3d" ng-show="tabActive == 1" href="<?=base_url();?>assets/images/projectgallery/img1.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img2d?>"></a>
+						        			<a class="magnific-imgpop 2d" ng-show="tabActive == 2" href="<?=base_url();?>assets/images/projectgallery/img2.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img3d?>"></a>
 						        			<div class="btn-group" role="group" aria-label="apartment-image-button">
-						        				<button type="button" class="btn btn-default active">3D</button>
-						        				<button type="button" class="btn btn-default">2D</button>
+						        				<button type="button" class="btn btn-default active" ng-class="{'active':tabActive == 1}" ng-click="tabActive = 1">3D</button>
+						        				<button type="button" class="btn btn-default" ng-class="{'active':tabActive == 2}" ng-click="tabActive = 2">2D</button>
 											</div>
 						        		</div>
 						        		<div class="row">
@@ -455,6 +457,7 @@ foreach($rawData->projectsUnits){
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

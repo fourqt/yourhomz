@@ -44,7 +44,7 @@
 
                     <div class="form-group" id="project_types">
                       <?php foreach($this->config->item('project.types') as $project_type){ ?>
-                      <div class="checkbox col-md-6" style="margin-top:5px;">
+                      <div class="checkbox btn btn-info" onClick="$(this).toggleClass('check');">
                         <label>
                           <input type="checkbox" id="property_type_<?php echo $project_type['id']; ?>" class="property_type" data-id="<?php echo $project_type['id']+1; ?>" /><?=$project_type['name']?>
                         </label>
