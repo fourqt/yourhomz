@@ -16,10 +16,10 @@
                   <li><a href="#tab5" data-toggle="tab" data-tab-index="5"><i class="fa fa-check m-r-xs"></i>Finish</a></li>
                </ul>
 
-              <div class="progress progress-sm m-t-xs m-b-xxs">
+               <div class="progress progress-sm m-t-xs m-b-xxs">
                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                 </div>
-              </div>
+               </div>
             </div>
          </div>
          
@@ -27,53 +27,55 @@
          <div class="tab-content">
             <div class="tab-pane active fade in" id="tab1">
                <div id="tabone" class="row">
-                <form id="tabonev">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInputName">Select Builder</label>
-                      <select class="form-control m-b-sm" name="builder" id="builderId">
-                      <?php foreach($builders as $builder){ ?>
-                        <option value="<?=$builder->id?>"><?=$builder->display_name?></option>
-                      <?php } ?>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="ProjectName">Project Name</label>
-                      <input type="text" class="form-control" name="ProjectName" id="ProjectName" placeholder="Project name" >
-                    </div>
-
-                    <div class="cuschk-group clearfix" id="project_types">
-                      <?php foreach($this->config->item('project.types') as $project_type){ ?>
-                        <label class="cus_box_hidden">
-                          <input type="checkbox" id="property_type_<?php echo $project_type['id']; ?>" class="cus_checkbox property_type" data-id="<?php echo $project_type['id']+1; ?>" /><?=$project_type['name']?>
-                        </label>
-                      <?php } ?>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="row">
-                      <div class="form-group col-md-12">
-                        <label for="exampleInputPassword1">City</label>
-                        <select class="js-states form-control" id="sel_city_select" tabindex="-1" style="display: none; width: 100%">
-                        <?php if($cities){
-                          foreach($cities as $city){
-                        ?>
-                          <option value="<?=$city->id?>" data-latitude="<?=$city->latitude?>" data-longitude="<?=$city->longitude?>"><?=$city->city_name?></option>
-                        <?php
-                            }
-                          }
-                        ?>
-                        </select>   
-                      </div>
-                      <div class="form-group col-md-12">
-                          <label for="exampleInputPassword2">Address</label>
-                          <input type="text" class="form-control" name="gmaps_input_address" id="gmaps_input_address" placeholder="Location" />
-                          <label for="exampleInputPassword2">Click and move the marker to exact project location</label>
-                          <div id='gmaps-canvas' style="width:100%; height:200px;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                  <form id="tabonev">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="exampleInputName">Select Builder</label>
+                           <select class="form-control m-b-sm" name="builder" id="builderId">
+                              <?php foreach($builders as $builder){ ?>
+                              <option value="<?=$builder->id?>"><?=$builder->display_name?></option>
+                              <?php } ?>
+                           </select>
+                        </div>
+                        <div class="form-group">
+                           <label for="ProjectName">Project Name</label>
+                           <input type="text" class="form-control" name="ProjectName" id="ProjectName" placeholder="Project name" >
+                        </div>
+                        <div class="form-group">
+                           <label for="ProjectName">Select Property Types</label>
+                           <div class="cuschk-group clearfix" id="project_types">
+                              <?php foreach($this->config->item('project.types') as $project_type){ ?>
+                              <label class="cus_box_hidden btn-rounded">
+                                 <input type="checkbox" id="property_type_<?php echo $project_type['id']; ?>" class="cus_checkbox property_type" data-id="<?php echo $project_type['id']+1; ?>" /><?=$project_type['name']?>
+                              </label>
+                              <?php } ?>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="row">
+                           <div class="form-group col-md-12">
+                              <label for="exampleInputPassword1">City</label>
+                              <select class="js-states form-control" id="sel_city_select" tabindex="-1" style="display: none; width: 100%">
+                                 <?php if($cities){
+                                   foreach($cities as $city){
+                                 ?>
+                                 <option value="<?=$city->id?>" data-latitude="<?=$city->latitude?>" data-longitude="<?=$city->longitude?>"><?=$city->city_name?></option>
+                                 <?php
+                                     }
+                                   }
+                                 ?>
+                              </select>   
+                           </div>
+                           <div class="form-group col-md-12">
+                              <label for="exampleInputPassword2">Address</label>
+                              <input type="text" class="form-control" name="gmaps_input_address" id="gmaps_input_address" placeholder="Location" />
+                              <label class="m-t-sm" for="exampleInputPassword2">Click and move the marker to exact project location</label>
+                              <div id='gmaps-canvas' style="width:100%; height:200px;"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
                 </div>
             </div>
       <!-- Tab 2 Start-->

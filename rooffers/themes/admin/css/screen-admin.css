@@ -19,3 +19,6 @@ body {
 
 /* - button style checkbox radio - */
 .cuschk-group{}
+.cuschk-group .parent_checkbox{ background-color: #12afcb; color: #fff; display: inline-block; cursor: pointer; padding: 6px 12px;}
+.cuschk-group .parent_checkbox.cus_active{ background-color: #7a6fbe;}
+.cuschk-group .parent_checkbox .cus_che{ display: none;}
