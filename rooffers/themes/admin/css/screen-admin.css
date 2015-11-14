@@ -14,10 +14,12 @@ body {
 .filter-link-list a { display: inline-block; margin:0 3px; line-height: 2.0;}
 /* - sticky project tab menu - */
 #stickypnav-outer{ min-height: 95px;}
-#stickypnav-outer .stickypnav{ background-color: #FFF; border-bottom: 1px solid #FFF; position: relative; z-index: 1010;}
+#stickypnav-outer .stickypnav{ background-color: #FFF; border-bottom: 1px solid #FFF; position: relative;}
 #stickypnav-outer .stickypnav.sticky{ position: fixed; left: 0; right: 0; top: 0; border-bottom-color: #ddd; padding: 10px 35px 5px;}
+#stickypnav-outer .stickypnav.highz{ z-index: 9999;}
 
 /* - button style checkbox radio - */
-.btn.radio, .btn.checkbox{ margin: 0 5px 5px 0; padding: 0;}
-.btn.radio input[type="radio"], .btn.radio-inline input[type="radio"], .btn.checkbox input[type="checkbox"], .btn.checkbox-inline input[type="checkbox"]{ margin-left: -10px;}
-.btn.radio label, .btn.checkbox label{ padding: 6px 12px;}
+.cuschk-group{}
+.cuschk-group .parent_checkbox{ background-color: #12afcb; color: #fff; display: inline-block; cursor: pointer; padding: 6px 12px;}
+.cuschk-group .parent_checkbox.cus_active{ background-color: #7a6fbe;}
+.cuschk-group .parent_checkbox .cus_che{ display: none;}
