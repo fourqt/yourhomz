@@ -33,3 +33,5 @@ body {
 
 .panel-body.apt-cimg{ text-align: center; padding: 0 !important;}
 .panel-body.apt-gimg{ padding: 0 !important;}
+
+.tab-content .tab-content{ border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;}

@@ -365,7 +365,7 @@ function populate_apartment_form(tab, navigation, index){
         setDate: new Date()
       });
     // Initialize checkboxes
-    $('.dynCheckbox').uniform();
+    //$('.dynCheckbox').uniform();
   }else if(index == 4){
       submit_proj_form();
   }
