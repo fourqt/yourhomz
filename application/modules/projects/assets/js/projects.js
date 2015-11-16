@@ -366,6 +366,7 @@ function populate_apartment_form(tab, navigation, index){
       });
     // Initialize checkboxes
     //$('.dynCheckbox').uniform();
+    $(".cus_checkbox").cuscheckbox();
   }else if(index == 4){
       submit_proj_form();
   }

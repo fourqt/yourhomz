@@ -366,6 +366,7 @@ function populate_apartment_form(tab, navigation, index){
       });
     // Initialize checkboxes
     //$('.dynCheckbox').uniform();
+    $(".cus_checkbox").cuscheckbox();
   }else if(index == 4){
       submit_proj_form();
   }
@@ -566,22 +567,22 @@ $(document).ready( function() {
 
 
    // create project page fix footer button on scroll
-   var stickyfOffset = $('#ppager').offset().top + 56;
-   $(window).scroll(function(){
-      var stickyf = $('#ppager'),
-         scrollf = $(window).scrollTop() + $(window).height();
+   // var stickyfOffset = $('#ppager').offset().top + 56;
+   // $(window).scroll(function(){
+   //    var stickyf = $('#ppager'),
+   //       scrollf = $(window).scrollTop() + $(window).height();
 
-      if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
-      else stickyf.removeClass('sticky');
-   });
+   //    if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
+   //    else stickyf.removeClass('sticky');
+   // });
 
-   $(window).load(function(){
-      var stickyf = $('#ppager'),
-         scrollf = $(window).scrollTop() + $(window).height();
+   // $(window).load(function(){
+   //    var stickyf = $('#ppager'),
+   //       scrollf = $(window).scrollTop() + $(window).height();
 
-      if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
-      else stickyf.removeClass('sticky');
-   });
+   //    if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
+   //    else stickyf.removeClass('sticky');
+   // });
 
 
    // $('#ppager .previous, #ppager .next').click(function(){
@@ -594,8 +595,27 @@ $(document).ready( function() {
    //       else stickyf.removeClass('sticky');
    //    },600);
    // });
+
+
    
    
 
 
-})
+});
+
+
+$(window).load(function(){
+function checkOffset() {
+    if($('#ppager').offset().top + $('#ppager').height() >= $('.page-footer').offset().top - 256)
+        $('#ppager').addClass('sticky');
+    if($(document).scrollTop() + window.innerHeight < $('.page-footer').offset().top)
+        $('#ppager').removeClass('sticky'); // restore when you scroll up
+    $('#ppager').text($('#ppager').offset().top + $('#ppager').height());
+}
+$(document).scroll(function() {
+    checkOffset();
+});
+
+
+});
+
