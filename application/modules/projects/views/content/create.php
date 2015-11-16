@@ -24,7 +24,7 @@
          </div>
          
          
-         <div class="tab-content">
+         <div class="tab-content no-p-b prelative">
             <div class="tab-pane active fade in" id="tab1">
                <div id="tabone" class="row">
                   <form id="tabonev">
@@ -102,8 +102,8 @@
                  </div>
              </div>
              <ul class="pager wizard no-m m-t-md" id="ppager">
-                 <li class="previous"><a href="#" class="btn btn-default">Previous</a></li>
-                 <li class="next"><a href="#" class="btn btn-default">Next</a></li>
+                 <li class="previous"><a href="javascript:void(0);" class="btn btn-default">Previous</a></li>
+                 <li class="next"><a href="javascript:void(0);" class="btn btn-default">Next</a></li>
              </ul>
          </div>
       </div>

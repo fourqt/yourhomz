@@ -12,6 +12,8 @@ body {
 .top-menu .nav .open > a, .top-menu .nav .open > a:focus, .top-menu .nav .open > a:hover{ color: #ebebeb;}
 /* Link Lists */
 .filter-link-list a { display: inline-block; margin:0 3px; line-height: 2.0;}
+
+/*--- project page style start from here ---*/
 /* - sticky project tab menu - */
 #stickypnav-outer{ min-height: 95px;}
 #stickypnav-outer .stickypnav{ background-color: #FFF; border-bottom: 1px solid #FFF; position: relative;}
@@ -23,3 +25,11 @@ body {
 .cuschk-group .parent_checkbox{ background-color: #12afcb; color: #fff; display: inline-block; cursor: pointer; padding: 6px 12px;}
 .cuschk-group .parent_checkbox.cus_active{ background-color: #7a6fbe;}
 .cuschk-group .parent_checkbox .cus_che{ display: none;}
+
+/* - create project form wizard button - */
+.tab-content.prelative{ position: relative;}
+#ppager{ margin: 0 -36px; padding: 15px 35px; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; background-color: #FFF;}
+#ppager.sticky{ position: fixed; bottom: 0; left: 15px; right: 15px; border-top: 1px solid #e9e9e9; padding: 10px 35px;}
+
+.panel-body.apt-cimg{ text-align: center; padding: 0 !important;}
+.panel-body.apt-gimg{ padding: 0 !important;}

@@ -28,16 +28,36 @@ $(document).ready( function() {
 
 
    // create project page fix footer button on scroll
-   var bottom = $(window).height() - $('#ppager').offset().top - $('#ppager').height();
-   var stickyfOffset = $('#ppager').offset().top ;
-   
+   var stickyfOffset = $('#ppager').offset().top + 56;
    $(window).scroll(function(){
-   var stickyf = $('#ppager'),
-       scrollf = $(window).scrollTop() + $(window).height();
-       //alert(scrollf);
+      var stickyf = $('#ppager'),
+         scrollf = $(window).scrollTop() + $(window).height();
 
-   if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
-   else stickyf.removeClass('sticky');
+      if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
+      else stickyf.removeClass('sticky');
    });
+
+   $(window).load(function(){
+      var stickyf = $('#ppager'),
+         scrollf = $(window).scrollTop() + $(window).height();
+
+      if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
+      else stickyf.removeClass('sticky');
+   });
+
+
+   // $('#ppager .previous, #ppager .next').click(function(){
+   //    setTimeout(function(){
+   //       $('#ppager').removeClass('sticky');
+   //       var stickyfOffset = $('#ppager').offset().top + 56;
+   //       var stickyf = $('#ppager'),
+   //          scrollf = $(window).scrollTop() + $(window).height();
+   //       if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
+   //       else stickyf.removeClass('sticky');
+   //    },600);
+   // });
+   
+   
+
 
 })

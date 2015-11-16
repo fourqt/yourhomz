@@ -516,7 +516,7 @@ $(document).ready(function() {
               }
         },
         'onNext': function(tab, navigation, index) {
-          return validate_project_form_tabwise(index);          
+          return validate_project_form_tabwise(index);
         },
         'onTabClick': function(tab, navigation, index) {
          return false;
