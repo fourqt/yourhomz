@@ -149,7 +149,7 @@ section#project-head ul li:first-child span{ display: none;}
 #proarticle .npcl ul.onenav li.active > a, #proarticle .npcl ul.onenav li.active > a:hover, #proarticle .npcl ul.onenav li.active > a:active, #proarticle .npcl ul.onenav li.active > a:focus{ background: transparent; color: #18bbc2; border-bottom: #18bbc2 solid 2px;}
 
 #proarticle .npcr{ margin-left: -1px; padding-top: 10px;}
-#configtab{}
+.configtab{}
 .panel-group .fa-plus-square-o{ display: none;}
 .panel-group .fa-minus-square-o{ display: inline-block;}
 .panel-group .collapsed .fa-plus-square-o{ display: inline-block;}
@@ -159,12 +159,12 @@ section#project-head ul li:first-child span{ display: none;}
 .panel-group .panel .panel-heading .panel-title{}
 .panel-group .panel .panel-heading .panel-title a{ display: block; padding: 10px 10px 10px 0; font-weight: 400; font-size: 18px;}
 .panel-group .panel .panel-heading .panel-title a i{ color: #18bbc2;}
-#configtab .panel .panel-body{ padding: 10px;}
-#configtab .panel .panel-body .imgd{ position: relative; height: 250px; width: 100%; text-align: center; line-height: 250px; font-size: 0; border: 1px solid #ebebeb;}
-#configtab .panel .panel-body .imgd img{ max-width: 100%; max-height: 100%;}
-#configtab .panel .panel-body .imgd .btn-group{ position: absolute; right: 10px; top: 10px; z-index: 2;}
+.configtab .panel .panel-body{ padding: 10px;}
+.configtab .panel .panel-body .imgd{ position: relative; height: 250px; width: 100%; text-align: center; line-height: 250px; font-size: 0; border: 1px solid #ebebeb;}
+.configtab .panel .panel-body .imgd img{ max-width: 100%; max-height: 100%;}
+.configtab .panel .panel-body .imgd .btn-group{ position: absolute; right: 10px; top: 10px; z-index: 2;}
 
-#configtab .panel .panel-body .clist{ list-style: none;}
+.configtab .panel .panel-body .clist{ list-style: none;}
 
 .npmapbox{ margin-bottom: 20px; position: relative;}
 .npmapbox .map-controls{ border-width: 1px; clear: both; color: #fff; display: inline-block; overflow: hidden; position: absolute; right: 20px; top: 10px; z-index: 1;}

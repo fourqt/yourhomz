@@ -80,6 +80,18 @@ class Home extends MX_Controller
 	 */
 	public function detail()
 	{
+        Assets::add_js('home.js');
+		if (! class_exists('Template')) {
+				$this->load->library('Template');
+			}
+		$this->load->library('users/auth');
+		$this->set_current_user();
+
+		Template::render();
+	}//end index()
+
+	public function detail_bkp()
+	{
 		if (! class_exists('Template')) {
 				$this->load->library('Template');
 			}

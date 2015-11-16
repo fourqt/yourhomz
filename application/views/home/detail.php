@@ -13,8 +13,14 @@ $images[$row->bhkType][] = $row->image_name;
 
 $unit_types = $this->config->item('unit.types');
 
-foreach($rawData->projectsUnits){
-
+$projectsUnits = array();
+$projectPrices = array();
+$pricePerSqft = array();
+foreach($rawData->projectsUnits as $Units){
+	$unitsTypes = explode('#', $Units->unitText);
+	$projectsUnits[$unitsTypes[0]][] = $Units;
+	$projectPrices[] = $Units->minTotalPrice;
+	$pricePerSqft[] = $Units->minTotalPrice/$Units->builtupArea;
 }
 ?>
 <header id="big-detail" style="background-image:url(<?=base_url();?>assets/uploads/0/<?=$images['cover'][0]?>);">
@@ -46,9 +52,9 @@ foreach($rawData->projectsUnits){
 						<p><?=$rawData->address?></p>
 					</div>
 					<div class="col-lg-4">
-						<h2><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs +</h2>
+						<h2><?=formatInIndianStyle(min($projectPrices))?></h2>
 						<ul class="fa-ul">
-							<li><span>&bull;</span><?=$rawData->projectsUnits->{'0'}->builtupArea?>/sq.ft+</li>
+							<li><span>&bull;</span><?=formatInIndianStyle(min($pricePerSqft))?>/sq.ft+</li>
 							<li><span>&bull;</span>EMI starting 34.9 k</li>
 						</ul>
 					</div>
@@ -73,73 +79,95 @@ foreach($rawData->projectsUnits){
 			<div id="proarticle">
 				<div class="bgwhite p clearfix">
 				<div class="swipe-gallery">
+				<?php 
+				if( count($images['gallery']) ){
+					$imageCount = count($images['gallery']);
+					$initCount = 0;
+					foreach($images['gallery'] as $galleryImage){
+						$imageSize = getimagesize ( base_url().'assets/uploads/0/'.$galleryImage );
+						$initCount++;
+						$imageCount--;
+				?>
+				<?php if( $initCount == 1 ){ ?>
 					<figure class="size1 m-r-xxs m-b-xxs morebig">
-						<a href="<?=base_url();?>assets/images/projectgallery/img1.jpg" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img1.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  1</figcaption>
-						<div class="moreimg hidden-sm hidden-md hidden-lg">10+<span>More</span></div>
+						<figcaption></figcaption>
+						<div class="moreimg hidden-sm hidden-md hidden-lg"><?=$imageCount?>+<span>More</span></div>
 					</figure>
+					<?php }elseif( $initCount == 2 ){ ?>
 					<figure class="size1 m-r-xxs m-b-xxs hidden-xs">
-						<a href="<?=base_url();?>assets/images/projectgallery/img2.jpg" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img2.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  2</figcaption>
+						<figcaption></figcaption>
 					</figure>
+					<?php }elseif( $initCount == 3 ){ ?>
 					<figure class="size1 m-b-xxs hidden-xs">
-						<a href="<?=base_url();?>assets/images/projectgallery/img3.jpg" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img3.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  3</figcaption>
+						<figcaption></figcaption>
 					</figure>
+					<?php }elseif( $initCount == 4 ){ ?>
 					<figure class="size2 m-r-xxs hidden-xs">
-						<a href="<?=base_url();?>assets/images/projectgallery/img4.jpg" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img4.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  4</figcaption>
+						<figcaption></figcaption>
 					</figure>
+					<?php }elseif( $initCount == 5 ){ ?>
 					<figure class="size2 m-r-xxs hidden-xs">
-						<a href="<?=base_url();?>assets/images/projectgallery/img1.jpg" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img1.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  5</figcaption>
+						<figcaption></figcaption>
 					</figure>
+					<?php }elseif( $initCount == 6 ){ ?>
 					<figure class="size2 m-r-xxs hidden-xs">
-						<a href="<?=base_url();?>assets/images/projectgallery/img2.jpg" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img2.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  6</figcaption>
+						<figcaption></figcaption>
 					</figure>
+					<?php }elseif( $initCount == 7 ){ ?>
 					<figure class="size2 moresmall hidden-xs">
-						<a href="<?=base_url();?>assets/images/projectgallery/img3.jpg" class="more" data-size="1547x870">
-							<img src="<?=base_url();?>assets/images/projectgallery/small/img3.jpg" alt="Image description" />
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
 						</a>
-						<figcaption>Image caption  7</figcaption>
-						<div class="moreimg">4+<span>More</span></div>
+						<figcaption></figcaption>
+						<div class="moreimg hidden-sm hidden-md hidden-lg"><?=$imageCount?>+<span>More</span></div>
 					</figure>
+					<?php }else{ ?>
+					<figure class="size2 moresmall hidden-xs">
+						<a href="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" data-size="<?=$imageSize[0].'x'.$imageSize[1]?>">
+							<img src="<?=base_url();?>assets/uploads/0/<?=$galleryImage?>" alt="<?=$galleryImage?>" />
+						</a>
+						<figcaption></figcaption>
+					</figure>
+					<?php } ?>
+				<?php 
+					}
+				}
+				?>
+
 				</div>
 				</div>
 				<div id="pdoverview" class="overview bgwhite p m-t-md">
 					<h2 class="no-s">Overview</h2>
 					<hr class="m-t-sm m-b-sm">
 					<ul class="fa-ul clearfix">
-					  <li><i class="fa-li fa fa-2x fa-building-o"></i>Ownership Type<b>Freehold</b></li>
-					  <li><i class="fa-li fa fa-2x fa-calendar"></i>Year of Construction<b>2015</b></li>
-					  <li><i class="fa-li fa fa-2x fa-arrows-alt"></i>Project Size<b>16 Buildings - 1632 units</b></li>
-					  <li><i class="fa-li fa fa-2x fa-calendar-plus-o"></i>Completed<b>15 January 2017</b></li>
-					  <li><i class="fa-li fa fa-2x fa-square-o"></i>Project Area<b>10 Acres ( 20% open)</b></li>
-					  <li><i class="fa-li fa fa-2x fa-calendar-check-o"></i>Possession Starts<b>15 March 2017</b></li>
-					  <li><i class="fa-li fa fa-2x fa-th"></i>Configurations<b><?php foreach($rawData->apt_unit_type as $utype){ echo $unit_types[$utype]['name'].',';  } ?> Apartment</b></li>
-					  <li><i class="fa-li fa fa-2x fa-object-group"></i>Total Apartments<b><?=$rawData->project_types->{'1'}?></b></li>
+					  <li><i class="fa-li fa fa-2x fa-building-o"></i>Ownership Type<b><?=$rawData->ownership_type?></b></li>
+					  <li><i class="fa-li fa fa-2x fa-calendar"></i>Year of Construction<b><?=$rawData->proj_started?></b></li>
+					  <li><i class="fa-li fa fa-2x fa-arrows-alt"></i>Project Size<b><?=$rawData->building_count?> Buildings - <?=$rawData->total_units?> units</b></li>
+					  <li><i class="fa-li fa fa-2x fa-calendar-plus-o"></i>Completed<b><?=$rawData->completes_on?></b></li>
+					  <li><i class="fa-li fa fa-2x fa-square-o"></i>Project Area<b><?=$rawData->proj_area?> Acres ( 20% open)</b></li>
+					  <li><i class="fa-li fa fa-2x fa-calendar-check-o"></i>Possession Starts<b><?=$rawData->possession_starts?></b></li>
+					  <li><i class="fa-li fa fa-2x fa-th"></i>Configurations<b><?php foreach($projectsUnits as $key=>$val){ echo $key.',';  } ?> Apartment</b></li>
+					  <li><i class="fa-li fa fa-2x fa-object-group"></i>Total Apartments<b><?=$rawData->building_count?></b></li>
 					</ul>
-					<p>An exclusively designed residential haven, Manjiri Greenwoods, offers a new perspective to lifestyle living. The project comprises of exquisite buildings, each of 12 storeys and finely crafted to offer you with a royal living. It is the ideal combination of intelligent planning and a design that invokes a sense of community. Each apartment here is a pool of fresh ideas molded into living spaces. From leisure to entertainment to daily activities, it will bring you a splendid array of services.</p>
-					<ul>
-						<li>Convenient Store within the Premises</li>
-						<li>Transition Plaza with Water Feature</li>
-						<li>Grand Entrance Plaza with Focal Water Feature</li>
-						<li>85% Landscaped Arena</li>
-						<li>Fire Security Sprinklers</li>
-					</ul>
+					<p><?=$rawData->project_overview?></p>
 				</div>
 				<div id="pdconfig" class="npconfig bgwhite p m-t-md">
 					<h2 class="no-s">Configuration</h2>
@@ -147,33 +175,49 @@ foreach($rawData->projectsUnits){
 					<div class="row">
 						<div class="col-lg-3 no-p-h npcl b-r">
 							<ul class="nav nav-pills onenav m-l-sm m-r-sm">
-							<?php foreach($rawData->apt_unit_type as $utype){ 
-								echo '<li class=""><a href="">'.$unit_types[$utype]['name'].'</a></li>';  
+							<?php foreach($projectsUnits as $key=>$val){ 
+								echo '<li class=""><a href="">'.$key.'</a></li>';  
 									} 
 							?>
 							</ul>
-							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small><?=$rawData->project_types->{'1'}?> Apartments</small></div>
+							<div class="p-h-md p-v-xs bg-gray body"><b>1 BHK</b> - <small> Apartments</small></div>
+							<?php
+								$i=0; 
+								foreach($projectsUnits as $key=>$val){ 
+									foreach($val as $ukey=>$unitVal){
+									$i++; 
+							?>
 							<div class="list-group twonav">
-							  <a href="javascript:void(0);" class="list-group-item active"><?=$rawData->projectsUnits->{'0'}->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=$rawData->projectsUnits->{'0'}->minTotalPrice?> Lacs</b> <small>onwards</small></a>
+							  <a href="javascript:void(0);" class="list-group-item <?=($i==1)?'active':''?>" onclick="$('div.npcr').hide(); $('div#c<?=str_replace('#', '', str_replace(' ', '', $unitVal->unitText))?>').show(); $('.twonav .list-group-item').removeClass('active'); $(this).addClass('active');"><?=$unitVal->builtupArea?> sq. ft.<br><i class="fa fa-inr"></i><b><?=formatInIndianStyle($unitVal->minTotalPrice)?></b> <small>onwards</small></a>
 							</div>
+							<?php 
+								}
+							} 
+							?>
 						</div>
-						<div class="col-lg-9 npcr b-l">
-							<div class="panel-group" id="configtab" role="tablist" aria-multiselectable="true">
+						<?php 
+							$i=0;
+							foreach($projectsUnits as $key=>$val){ 
+								foreach($val as $ukey=>$unitVal){
+								$i++; 
+						?>
+						<div class="col-lg-9 npcr b-l" style="<?=($i!=1)?'display:none;':''?>" id="c<?=str_replace('#', '', str_replace(' ', '', $unitVal->unitText))?>">
+							<div class="panel-group configtab" id="configtab<?=$i?>" role="tablist" aria-multiselectable="true">
 						  		<div class="panel panel-default">
-						    		<div class="panel-heading no-s bg-n no-b" role="tab" id="headingOne">
+						    		<div class="panel-heading no-s bg-n no-b" role="tab" id="headingOne<?=$i?>">
 						      		<h3 class="panel-title">
-						        		<a role="button" data-toggle="collapse" data-parent="#configtab" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+						        		<a role="button" data-toggle="collapse" data-parent="#configtab<?=$i?>" href="#collapseOne<?=$i?>" aria-expanded="true" aria-controls="collapseOne<?=$i?>">
 							          		<i class="fa fa-plus-square-o fa-lg fa-fw"></i>
 							          		<i class="fa fa-minus-square-o fa-lg fa-fw"></i>
 							          		Overview
 						        		</a>
 						      		</h3>
 						    		</div>
-						    		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+						    		<div id="collapseOne<?=$i?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne<?=$i?>">
 						      		<div class="panel-body">
 						        		<div class="imgd">
-						        			<a class="magnific-imgpop 3d" ng-show="tabActive == 1" href="<?=base_url();?>assets/images/projectgallery/img1.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img2d?>"></a>
-						        			<a class="magnific-imgpop 2d" ng-show="tabActive == 2" href="<?=base_url();?>assets/images/projectgallery/img2.jpg"><img src="<?=base_url();?>assets/uploads/0/<?=$img3d?>"></a>
+						        			<a class="magnific-imgpop 3d" ng-show="tabActive == 1" href="<?=base_url();?>assets/uploads/0/<?=$images[$unitVal->unitText][0]?>"><img src="<?=base_url();?>assets/uploads/0/<?=$images[$unitVal->unitText][0]?>"></a>
+						        			<a class="magnific-imgpop 2d" ng-show="tabActive == 2" href="<?=base_url();?>assets/uploads/0/<?=$images[$unitVal->unitText][1]?>"><img src="<?=base_url();?>assets/uploads/0/<?=$images[$unitVal->unitText][1]?>"></a>
 						        			<div class="btn-group" role="group" aria-label="apartment-image-button">
 						        				<button type="button" class="btn btn-default active" ng-class="{'active':tabActive == 1}" ng-click="tabActive = 1">3D</button>
 						        				<button type="button" class="btn btn-default" ng-class="{'active':tabActive == 2}" ng-click="tabActive = 2">2D</button>
@@ -189,7 +233,7 @@ foreach($rawData->projectsUnits){
 						        			</div>
 						        			<div class="col-sm-3 col-xs-12">
 						        				<div class="m-t-sm p-h-xs p-v-xs bg-gray body">
-						        					<small class="text-uppercase"><b>min. total price</b></small><h3 class="no-m"><i class="fa fa-rupee"></i>&nbsp;65.44 Lacs</h3><small>(onwards)</small>
+						        					<small class="text-uppercase"><b>min. total price</b></small><h3 class="no-m"><i class="fa fa-rupee"></i>&nbsp;<?=formatInIndianStyle($unitVal->minTotalPrice)?></h3><small>(onwards)</small>
 						        				</div>
 						        			</div>
 						        		</div>
@@ -197,16 +241,16 @@ foreach($rawData->projectsUnits){
 						    		</div>
 						  		</div>
 						  <div class="panel panel-default">
-						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingTwo">
+						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingTwo<?=$i?>">
 						      <h3 class="panel-title">
-						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab<?=$i?>" href="#collapseTwo<?=$i?>" aria-expanded="false" aria-controls="collapseTwo<?=$i?>">
 									<i class="fa fa-plus-square-o fa-lg fa-fw"></i>
 					          		<i class="fa fa-minus-square-o fa-lg fa-fw"></i>
 					          		Details
 			        			</a>
 						      </h3>
 						    </div>
-						    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+						    <div id="collapseTwo<?=$i?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo<?=$i?>">
 						      <div class="panel-body">
 						        <ul class="clearfix clist row no-s">
 
@@ -219,16 +263,16 @@ foreach($rawData->projectsUnits){
 						    </div>
 						  </div>
 						  <div class="panel panel-default">
-						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingThree">
+						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingThree<?=$i?>">
 						      <h3 class="panel-title">
-						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab<?=$i?>" href="#collapseThree<?=$i?>" aria-expanded="false" aria-controls="collapseThree<?=$i?>">
 									<i class="fa fa-plus-square-o fa-lg fa-fw"></i>
 					          		<i class="fa fa-minus-square-o fa-lg fa-fw"></i>
 					          		Amenities
 			        			</a>
 						      </h3>
 						    </div>
-						    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+						    <div id="collapseThree<?=$i?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree<?=$i?>">
 						      <div class="panel-body">
 						        <ul class="clearfix clist row no-s">
 									  <li class="col-xs-6 col-sm-4 p-v-xs p-h-xxs"><i class="ico sm room"></i>Living Room</li>
@@ -240,16 +284,16 @@ foreach($rawData->projectsUnits){
 						    </div>
 						  </div>
 						  <div class="panel panel-default">
-						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingFour">
+						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingFour<?=$i?>">
 						      <h3 class="panel-title">
-						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab<?=$i?>" href="#collapseFour<?=$i?>" aria-expanded="false" aria-controls="collapseFour<?=$i?>">
 									<i class="fa fa-plus-square-o fa-lg fa-fw"></i>
 					          		<i class="fa fa-minus-square-o fa-lg fa-fw"></i>
 					          		Interiors
 			        			</a>
 						      </h3>
 						    </div>
-						    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+						    <div id="collapseFour<?=$i?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour<?=$i?>">
 						      <div class="panel-body">
 						        	<h3 class="m-t-xs p-h-xxs">Flooring</h3>
 						        	<ul class="clearfix clist row no-s">
@@ -279,16 +323,16 @@ foreach($rawData->projectsUnits){
 						    </div>
 						  </div>
 						  <div class="panel panel-default">
-						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingFive">
+						    <div class="panel-heading no-s bg-n no-b" role="tab" id="headingFive<?=$i?>">
 						      <h3 class="panel-title">
-						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+						        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#configtab<?=$i?>" href="#collapseFive<?=$i?>" aria-expanded="false" aria-controls="collapseFive<?=$i?>">
 									<i class="fa fa-plus-square-o fa-lg fa-fw"></i>
 					          		<i class="fa fa-minus-square-o fa-lg fa-fw"></i>
 					          		EMI Calculator
 			        			</a>
 						      </h3>
 						    </div>
-						    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+						    <div id="collapseFive<?=$i?>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive<?=$i?>">
 						      <div class="panel-body">
 						        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 						      </div>
@@ -296,13 +340,16 @@ foreach($rawData->projectsUnits){
 						  </div>
 						</div>
 						</div>
+					<?php 
+						} 
+					}
+					?>
 					</div>
 				</div>
 				<div id="pdlocal" class="locality bgwhite p m-t-md">
 					<h2 class="no-s">Locality</h2>
 					<hr class="m-t-sm no-m">
-					<h4>Insights into Electronic City</h4>
-					<p>Located off the NH-VII (Bangalore-Hosur Road), Phase I of the Electronic City is the important segment among other two phases. Divided into three phases, Electronic City is the largest technology hub of Bangalore. Popularly known as ECity, it is the Silicon Valley of India, which houses around 300 companies with a very large work force of employees. This industrial estate boasts an oasis of large, medium and small industries spanning software services, hardware; high end telecommunications; manufacture of indigenous components; electronic musical instruments, just to name a few. Infosys, Wipro, Biocon, HP, Siemens, Mahindra Satyam are some of the renowned industries located over here. NH-VII, the 10 lane stretch between Silk Board Junction and Electronic is the longest elevated highway in India. Also, the NICE Road(Bangalore-Mysore Structure Corridor) that further connects NH-VII and Bannerghatta Road also passes through the vicinity. To boost the connectivity for the people, the BMRCL (Bangalore Metro Rail Corporation Ltd) has started working on the Metro Line starting from R.V. Road to Bommasandra. This new line will be an added advantage for the inhabitants and the working professionals to travel to their destinations with ease. In addition to excellent location,Electronic City is at a close proximity from places like Koramangala, JP Nagar, etc. Also within the vicinity, you can find various shopping malls and convenient stores. This is the perfect place for the residents wherein they have an option to live in a pollution free environment away from the city buzz, yet connected to the main Bangalore City.</p>
+					<p><?=$rawData->project_locality?></p>
 					<section class="map hidden-xs">
 						<h3 class="text-uppercase">Explore Neighbourhood - Map View</h3>
 						<div class="npmapbox">
@@ -511,7 +558,7 @@ Show debug
 <div  style="border:1px;">
 <?php
 echo "<pre>";
-print_r($rawData);
+print_r($projectsUnits);
 echo "</pre>";
 ?>
 </div>
