@@ -15,7 +15,7 @@ body {
 
 /*--- project page style start from here ---*/
 /* - sticky project tab menu - */
-#stickypnav-outer{ min-height: 95px;}
+#stickypnav-outer{ height: 92px;}
 #stickypnav-outer .stickypnav{ background-color: #FFF; border-bottom: 1px solid #FFF; position: relative;}
 #stickypnav-outer .stickypnav.sticky{ position: fixed; left: 0; right: 0; top: 0; border-bottom-color: #ddd; padding: 10px 35px 5px;}
 #stickypnav-outer .stickypnav.highz{ z-index: 9999;}
@@ -28,6 +28,7 @@ body {
 
 /* - create project form wizard button - */
 .tab-content.prelative{ position: relative;}
+#ppager-outer{ height: 61px;}
 #ppager{ margin: 0 -36px; padding: 15px 35px; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; background-color: #FFF;}
 #ppager.sticky{ position: fixed; bottom: 0; left: 15px; right: 15px; border-top: 1px solid #e9e9e9; padding: 10px 35px;}
 

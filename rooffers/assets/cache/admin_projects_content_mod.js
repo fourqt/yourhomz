@@ -378,18 +378,7 @@ function add_unit_type_area(){
     if( $.isNumeric($('input#unit_area').val()) ){
       if(!$('ul#listUnitsWithArea li[data-area="' + $('input#unit_area').val() +'"][data-unit_type="' + $('select#apt_unit_type').val() +'"]').length){
       $('ul#listUnitsWithArea').append(
-          '<li data-area="' + 
-          $('input#unit_area').val() +
-          '" ' +
-          'data-unit_type="' +
-          $('select#apt_unit_type').val() +
-          '" data-unit_type_text="' +
-          $('select#apt_unit_type option:selected').text() +
-          '""><a href="javascript:void(0);" class="">' + 
-          $('select#apt_unit_type option:selected').text() + 
-          '(' + 
-          $('input#unit_area').val() + ')' + 
-          '</a></li>'
+          '<li class="alert alert-info alert-dismissible" data-area="' + $('input#unit_area').val() + '" data-unit_type="' + $('select#apt_unit_type').val() + '" data-unit_type_text="' + $('select#apt_unit_type option:selected').text() + '"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + $('select#apt_unit_type option:selected').text() + '(' + $('input#unit_area').val() + ')' + '</li>'
         );
       }else{
       toaster_init('error', 'Error', 'Unit Type already added.');
@@ -566,52 +555,15 @@ $(document).ready( function() {
    });
 
 
-   // create project page fix footer button on scroll
-   // var stickyfOffset = $('#ppager').offset().top + 56;
-   // $(window).scroll(function(){
-   //    var stickyf = $('#ppager'),
-   //       scrollf = $(window).scrollTop() + $(window).height();
-
-   //    if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
-   //    else stickyf.removeClass('sticky');
-   // });
-
-   // $(window).load(function(){
-   //    var stickyf = $('#ppager'),
-   //       scrollf = $(window).scrollTop() + $(window).height();
-
-   //    if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
-   //    else stickyf.removeClass('sticky');
-   // });
-
-
-   // $('#ppager .previous, #ppager .next').click(function(){
-   //    setTimeout(function(){
-   //       $('#ppager').removeClass('sticky');
-   //       var stickyfOffset = $('#ppager').offset().top + 56;
-   //       var stickyf = $('#ppager'),
-   //          scrollf = $(window).scrollTop() + $(window).height();
-   //       if (scrollf <= stickyfOffset) stickyf.addClass('sticky');
-   //       else stickyf.removeClass('sticky');
-   //    },600);
-   // });
-
-
-   
-   
-
-
 });
 
 
 $(window).load(function(){
-function checkOffset() {
-    if($('#ppager').offset().top + $('#ppager').height() >= $('.page-footer').offset().top - 256)
-        $('#ppager').addClass('sticky');
-    if($(document).scrollTop() + window.innerHeight < $('.page-footer').offset().top)
-        $('#ppager').removeClass('sticky'); // restore when you scroll up
-    $('#ppager').text($('#ppager').offset().top + $('#ppager').height());
-}
+   function checkOffset() {
+      if($(document).scrollTop() + window.innerHeight + 54 < $('.page-footer').offset().top)
+          $('#ppager').addClass('sticky');
+      else $('#ppager').removeClass('sticky');
+   }
 $(document).scroll(function() {
     checkOffset();
 });

@@ -44,7 +44,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <ul id="listUnitsWithArea"></ul>
+                    <ul id="listUnitsWithArea" class="clearfix"></ul>
                 </div>
             </div>
             <div class="row">
