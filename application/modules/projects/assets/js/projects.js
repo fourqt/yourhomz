@@ -378,18 +378,7 @@ function add_unit_type_area(){
     if( $.isNumeric($('input#unit_area').val()) ){
       if(!$('ul#listUnitsWithArea li[data-area="' + $('input#unit_area').val() +'"][data-unit_type="' + $('select#apt_unit_type').val() +'"]').length){
       $('ul#listUnitsWithArea').append(
-          '<li data-area="' + 
-          $('input#unit_area').val() +
-          '" ' +
-          'data-unit_type="' +
-          $('select#apt_unit_type').val() +
-          '" data-unit_type_text="' +
-          $('select#apt_unit_type option:selected').text() +
-          '""><a href="javascript:void(0);" class="">' + 
-          $('select#apt_unit_type option:selected').text() + 
-          '(' + 
-          $('input#unit_area').val() + ')' + 
-          '</a></li>'
+          '<li class="alert alert-info alert-dismissible" data-area="' + $('input#unit_area').val() + '" data-unit_type="' + $('select#apt_unit_type').val() + '" data-unit_type_text="' + $('select#apt_unit_type option:selected').text() + '"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + $('select#apt_unit_type option:selected').text() + '(' + $('input#unit_area').val() + ')' + '</li>'
         );
       }else{
       toaster_init('error', 'Error', 'Unit Type already added.');

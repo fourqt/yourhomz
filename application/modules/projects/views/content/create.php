@@ -4,12 +4,12 @@
          <div id="stickypnav-outer" class="clearfix">
             <div class="stickypnav p-v-sm m-l-n-md m-r-n-md p-h-md">
                <ul class="nav nav-tabs" role="tablist">
-                  <li class="active"><a href="#tab1" data-toggle="tab" data-tab-index="1"><i class="fa fa-building m-r-xs"></i>Project Info</a></li>
+                  <li class="active"><a href="#tab1" data-toggle="tab" data-tab-index="1"><i class="fa fa-object-group m-r-xs"></i>Project Info</a></li>
                   <?php foreach($this->config->item('project.types') as $project_type){ 
                        if($project_type['id'] == 0){
                   ?>
-                  <li><a href="#tab<?php echo $project_type['id']+2; ?>" data-toggle="tab" data-tab-index="2"><span class="icon-settings m-r-xs"></span><?php echo $project_type['name']; ?></a></li>
-                  <li><a href="#tab3" data-toggle="tab" data-tab-index="3"><span class="icon-settings m-r-xs"></span>Configuration</a></li>
+                  <li><a href="#tab<?php echo $project_type['id']+2; ?>" data-toggle="tab" data-tab-index="2"><i class="fa fa-building-o m-r-xs"></i><?php echo $project_type['name']; ?></a></li>
+                  <li><a href="#tab3" data-toggle="tab" data-tab-index="3"><i class="fa fa-square-o m-r-xs"></i>Configuration</a></li>
                   <?php } ?>
                   <?php } ?>
                   <li><a href="#tab4" data-toggle="tab" data-tab-index="4"><i class="fa fa-credit-card m-r-xs"></i>Payment</a></li>

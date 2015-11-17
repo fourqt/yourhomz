@@ -19,6 +19,20 @@ body {
 #stickypnav-outer .stickypnav{ background-color: #FFF; border-bottom: 1px solid #FFF; position: relative;}
 #stickypnav-outer .stickypnav.sticky{ position: fixed; left: 0; right: 0; top: 0; border-bottom-color: #ddd; padding: 10px 35px 5px;}
 #stickypnav-outer .stickypnav.highz{ z-index: 9999;}
+/* - create project form wizard button - */
+.tab-content.prelative{ position: relative;}
+#ppager-outer{ height: 61px;}
+#ppager{ margin: 0 -36px; padding: 15px 35px; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; background-color: #FFF;}
+#ppager.sticky{ position: fixed; bottom: 0; left: 15px; right: 15px; border-top: 1px solid #e9e9e9; padding: 10px 35px;}
+/* - cover image and gallery image box - */
+.panel-body.apt-cimg{ text-align: center; padding: 0 !important;}
+.panel-body.apt-gimg{ padding: 0 !important;}
+/* - configuration child tab content - */
+.tab-content .tab-content{ border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+/* - add partment pills - */
+ul#listUnitsWithArea{ list-style: none; padding: 0;}
+ul#listUnitsWithArea li{ display: inline-block; border-radius: 50px !important; padding: 5px 20px 5px 10px !important; margin: 0 5px 5px 0;}
+ul#listUnitsWithArea li .close{ line-height: 18px !important; right: -8px !important; top: -1px !important}
 
 /* - button style checkbox radio - */
 .cuschk-group{}
@@ -26,13 +40,5 @@ body {
 .cuschk-group .parent_checkbox.cus_active{ background-color: #7a6fbe;}
 .cuschk-group .parent_checkbox .cus_che{ display: none;}
 
-/* - create project form wizard button - */
-.tab-content.prelative{ position: relative;}
-#ppager-outer{ height: 61px;}
-#ppager{ margin: 0 -36px; padding: 15px 35px; border-left: 1px solid #e9e9e9; border-right: 1px solid #e9e9e9; background-color: #FFF;}
-#ppager.sticky{ position: fixed; bottom: 0; left: 15px; right: 15px; border-top: 1px solid #e9e9e9; padding: 10px 35px;}
 
-.panel-body.apt-cimg{ text-align: center; padding: 0 !important;}
-.panel-body.apt-gimg{ padding: 0 !important;}
 
-.tab-content .tab-content{ border-left: 1px solid #ddd; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd;}
